@@ -104,4 +104,5 @@
   </platform>
   <preference name="Fullscreen" value="False" />
   <preference name="android-minSdkVersion" value="14" />
+  <plugin name="cordova-plugin-inappbrowser" version="1.4.0" />
 </widget>
