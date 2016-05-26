@@ -3,7 +3,7 @@
   <name>Scrummer</name>
   <description>
   </description>
-  <content src="index.html" />
+  <content src="login.html" />
   <access origin="*" />
   <vs:features />
   <preference name="SplashScreen" value="screen" />

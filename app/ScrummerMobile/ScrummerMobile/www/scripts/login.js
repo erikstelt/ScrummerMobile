@@ -1,26 +1,39 @@
-﻿(function () {
-    "use strict";
+﻿(function() {
+    'use strict';
 
+    // check token age -> check profile  -> navigate to index
+    //                                  |
+    //                                  |-> go to login
 
-    document.addEventListener('deviceready', function () {
-        console.log(this);
+    var token = localStorage.getItem('token'),
+        expires = localStorage.getItem('token_expires');
 
-        var url = 'http://scrummer.space/api/oauth2/authorize/';
+    api.token = token;
 
-        var target = "_blank";
+    if (Date.now < expires) {
+        api.getProfile().then(function (data) {
 
-        var options = "location=yes,hidden=yes";
-
-        inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
-
-        inAppBrowserRef.addEventListener('loadstart', function (e) {
-            console.log(e);
+            window.location.replace('index.html');
+        }).catch(function () {
+            login();
         });
+    }
 
-        inAppBrowserRef.addEventListener('loadstop', function (e) {
-            console.log(e);
-        });
+    // TODO: attach to actual login button
+    document.addEventListener('touchend', function (e) {
+        login();
+    });
 
-        inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
-    }.bind(this), false);
-})()
+    function login() {
+        // Login and fetch the token
+        api.login().then(function (data) {
+            // Store the token and expiry date
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('token_expires', new Date(Date.now + data['expires_in'] * 1000).getTime());
+
+            // Navigate to the main page
+            window.location.replace('index.html');
+        })
+        .catch(notify);
+    }
+})();
