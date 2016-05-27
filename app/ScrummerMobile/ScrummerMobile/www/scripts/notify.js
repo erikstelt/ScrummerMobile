@@ -1,8 +1,16 @@
-﻿// notification code goes here
+﻿(function() {
+    'use strict';
 
-function notify(content)
-{
-    // TODO: implement notification for user
+    var notify = {
+        show: function(data) {
+            console.log(data);
 
-    console.log(content);
-}
+            // Todo: notify user
+        },
+        hide: function() {
+
+        }
+    };
+
+    window.notify = notify;
+})();

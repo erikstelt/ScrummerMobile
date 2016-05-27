@@ -1,39 +1,53 @@
 ﻿(function() {
     'use strict';
 
-    // check token age -> check profile  -> navigate to index
-    //                                  |
-    //                                  |-> go to login
+    // if token
+    //      if check profile
+    //          go to index
+    //      else
+    //          try get new token
+    //  else
+    //      show login screen
 
-    var token = localStorage.getItem('token'),
-        expires = localStorage.getItem('token_expires');
+    document.addEventListener('deviceready', function() {
+        var token = localStorage.getItem('token'),
+            expires = localStorage.getItem('token_expires');
 
-    api.token = token;
+        if (token && expires) {
+            // check age of token
+            if (Date.now() < expires) {
+                // Set the token in the api
+                api.token = token;
 
-    if (Date.now < expires) {
-        api.getProfile().then(function (data) {
+                api.getProfile()
+                    .then(function(data) {
+                       window.location.replace('index.html');
+                    })
+                    .catch(function() {
+                        login();
+                    });
+            } else {
+                login();
+            }
+        }
+    
 
-            window.location.replace('index.html');
-        }).catch(function () {
+        // TODO: attach to actual login button
+        document.addEventListener('touchend', function (e) {
             login();
         });
-    }
 
-    // TODO: attach to actual login button
-    document.addEventListener('touchend', function (e) {
-        login();
-    });
+        function login() {
+            // Login and fetch the token
+            api.login().then(function (data) {
+                // Store the token and expiry date
+                localStorage.setItem('token', data.access_token);
+                localStorage.setItem('token_expires', new Date(Date.now() + parseInt(data['expires_in'], 10) * 1000).getTime());
 
-    function login() {
-        // Login and fetch the token
-        api.login().then(function (data) {
-            // Store the token and expiry date
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('token_expires', new Date(Date.now + data['expires_in'] * 1000).getTime());
-
-            // Navigate to the main page
-            window.location.replace('index.html');
-        })
-        .catch(notify);
-    }
+                // Navigate to the main page
+                window.location.replace('index.html');
+            })
+            .catch(notify.show);
+        }
+    }.bind(this), false);
 })();
