@@ -9,12 +9,44 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
     <title>Scrummers</title>
 </head>
 <body>
 
-login goes here
+    <!--The main container of the page-->
+    <div class="main-container">
+        <!--We add some whitespace divs for the styling of the page-->
+        <div class="whitespace"></div>
+        <!--This div and the div below contain the logo and the title aligned next to it-->
+        <div class="logo">
+            <img src="img/scrummer.svg" height="85" />
+        </div>
+        <div class="title">
+            <center>
+                <h2>Scrummer Mobile</h2>
+            </center>
+        </div>
+        <div>
+            <center>Press the button to login</center>
+        </div>
+        <!--We gave the login button a class to style it in the custom.css-->
+        <div class="login-button">
+            <form action="index.html" method="get">
+                <center><button>Login</button></center>
+            </form>
+        </div>
+        <div>
+            <!--We need to add the links here later-->
+            <center>
+                <a href="#">Register</a><br />
+                <a href="#">Recover password</a>
+            </center>
+        </div>
+        <div class="whitespace"></div>
+    </div>
 
 <script src="cordova.js"></script>
 <script src="scripts/platformOverrides.js"></script>
