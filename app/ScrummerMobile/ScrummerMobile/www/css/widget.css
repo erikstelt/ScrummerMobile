@@ -41,6 +41,7 @@ body {
 .profile-class {
     width: 100%;
     height: 15%;
+    margin-top: 15px;
 }
 
 .profile-points {
@@ -63,7 +64,7 @@ body {
 .analysis {
     float: left;
     background-color: #00CC99;
-    height: 32%;
+    height: 40%;
     width: 17%;
     border-style: solid;
     border-width: 2px 1px 2px 2px;
@@ -73,7 +74,7 @@ body {
 .design {
     float: left;
     background-color: #FF9900;
-    height: 32%;
+    height: 40%;
     width: 17%;
     border-style: solid;
     border-width: 2px 1px 2px 1px;
@@ -83,7 +84,7 @@ body {
 .data {
     float: left;
     background-color: #999999;
-    height: 32%;
+    height: 40%;
     width: 17%;
     border-style: solid;
     border-width: 2px 1px 2px 1px;
@@ -93,7 +94,7 @@ body {
 .coding {
     float: left;
     background-color: #9900FF;
-    height: 32%;
+    height: 40%;
     width: 17%;
     border-style: solid;
     border-width: 2px 1px 2px 1px;
@@ -103,7 +104,7 @@ body {
 .docs {
     float: left;
     background-color: #6699FF;
-    height: 32%;
+    height: 40%;
     width: 17%;
     border-style: solid;
     border-width: 2px 2px 2px 1px;
