@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="css/lib/flickity.min.css"/>
 
     <!-- Own -->
-    <link rel="stylesheet" href="css/vars.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/notification.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/vars.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/notification.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/cards.css"/>
 
     <title>Scrummer</title>
 </head>
@@ -43,7 +43,22 @@
         </nav>
         <div class="slider">
             <section>2.1</section>
-            <section>2.2</section>
+            <section>
+                <div class="card verified">
+                    <div class="title">Fix the thing</div>
+                    <div class="duration">6 days</div>
+
+                    <div class="content">{{content}}</div>
+
+                    <div class="tag design">
+                        Design
+                    </div>
+                    <div class="owner">
+                        <img src="http://placehold.it/25x25" class="owner-avatar"/>
+                        Mark meteenhelelangeachternaam
+                    </div>
+                </div>
+            </section>
             <section>2.3</section>
         </div>
     </section>
@@ -77,15 +92,17 @@
 <script src="scripts/index.js"></script>
 
 <template id="cards-template">
-    <div class="card">
-        <div class="title"></div>
-        <div class="duration"></div>
+    <div class="card {{type}}">
+        <div class="title">{{title}}</div>
+        <div class="duration">{{days}}</div>
 
         <div class="content">{{content}}</div>
 
-        <div class="type"></div>
-        <div class="owner-avatar"></div>
-        <div class="owner"></div>
+        <div class="tag {{tag}}">{{tag}}</div>
+        <div class="owner">
+            <img src="{{owner.avatar}}" class="owner-avatar"/>
+            {{owner.firstname}} {{owner.lastname}}
+        </div>
     </div>
 </template>
 </body>

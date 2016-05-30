@@ -35,7 +35,7 @@ body {
 }
 
 .slider-nav input[type="radio"]:checked + label {
-    background: var(--highlight-color);
+    background: var(--primary-color);
 }
 
 /* TODO: move this to profile-widget.css */

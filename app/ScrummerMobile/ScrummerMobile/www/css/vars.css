@@ -1,6 +1,20 @@
 :root {
-    --highlight-color: #00cc99;
+    --primary-color: #00cc99;
+    --text-color: #33333;
+    --alternate-text-color: #ffffff;
     --highlight-text-color: #ffffff;
     --background-color: #666666;
-    --space-medium: 10px;
+    --section-spacing: 25px;
+
+    --card-border-color: #cccccc;
+    --card-to-do: #f2f2f2;
+    --card-doing: #e9f0ff;
+    --card-verify: #f0dbff;
+    --card-done: dbfff6;
+
+    --tag-docs: #6699ff;
+    --tag-data: #999999;
+    --tag-coding: #9900ff;
+    --tag-design: #ff9900;
+    --tag-analysis: #00cc99;
 }
