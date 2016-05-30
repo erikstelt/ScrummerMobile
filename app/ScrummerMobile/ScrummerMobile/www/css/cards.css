@@ -1,0 +1,17 @@
+.cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards .slider {
+    flex: 1;
+}
+
+.cards section {
+    background: red;
+    padding: var(--space-medium);
+}
+
+.card {
+    border-radius: 0 0 10px 10px;
+}

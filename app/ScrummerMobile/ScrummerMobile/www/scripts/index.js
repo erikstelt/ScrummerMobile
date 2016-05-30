@@ -23,31 +23,39 @@
         // TODO: This application has been reactivated. Restore application state here.
     }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        // Initialize main slider
-        var flickity = new Flickity(document.querySelector('.main'), {
-            initialIndex: 1,
-            setGallerySize: false,
-            pageDots: false,
-            prevNextButtons: false
-        });
+    // Override this slider's dragMove to prevent events from 'escaping' to the parent slider
+    // Also disable overscroll
+    Flickity.prototype.dragMove = function( event, pointer, moveVector ) {
+        //preventDefaultEvent( event );
 
-        var mainNav = document.querySelector('.main-nav');
+        this.previousDragX = this.dragX;
+        // reverse if right-to-left
+        var direction = this.options.rightToLeft ? -1 : 1;
+        var dragX = this.dragStartPosition + moveVector.x * direction;
 
-        // Update the button state after a swipe
-        flickity.on('cellSelect', function () {
-            mainNav.querySelector('[data-slide-index="' + flickity.selectedIndex + '"]').checked = true;
-        });
+        if ( !this.options.wrapAround && this.cells.length ) {
+            // slow drag
+            var originBound = Math.max( -this.cells[0].target, this.dragStartPosition );
+            dragX = dragX > originBound ? originBound : dragX;
+            var endBound = Math.min( -this.getLastCell().target, this.dragStartPosition );
+            dragX = dragX < endBound ? endBound : dragX;
+        }
 
-        // Bind the main menu buttons to
-        [].forEach.call(mainNav.querySelectorAll('.main-nav input'), function (input) {
-            input.addEventListener('change', function () {
-                if (this.checked) {
-                    flickity.select(this.dataset.slideIndex);
-                }
-            });
-        });
+        this.dragX = dragX;
 
-        // TODO: Mustache the slides and widget
-    });
+        this.dragMoveTime = new Date();
+
+        if (this.selectedIndex === 0 && moveVector.x < 0) {
+            event.stopImmediatePropagation();
+        }
+        else if (this.selectedIndex === this.cells.length - 1 && moveVector.x > 0) {
+            event.stopImmediatePropagation();
+        }
+        else if (this.selectedIndex !== 0 && this.selectedIndex !== this.cells.length - 1) {
+            event.stopImmediatePropagation();
+        }
+        else {
+            this.dispatchEvent( 'dragMove', event, [ pointer, moveVector ] );
+        }
+    };
 } )();

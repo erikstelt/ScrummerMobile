@@ -14,10 +14,11 @@
     <link rel="stylesheet" href="css/lib/flickity.min.css"/>
 
     <!-- Own -->
-    <link rel="stylesheet" href="css/vars.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="stylesheet" href="css/notification.css"/>
-    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/vars.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/notification.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/cards.css" />
 
     <title>Scrummer</title>
 </head>
@@ -27,13 +28,29 @@
 
 <aside class="profile-widget"></aside>
 
-<main class="main">
+<main class="main slider">
     <section>1</section>
-    <section>2</section>
+    <section class="cards">
+        <nav class="slider-nav">
+            <input id="cards-urgent" type="radio" data-slide-index="0" name="cards"/>
+            <label for="cards-urgent">Urgent</label>
+
+            <input id="cards-verified" type="radio" data-slide-index="1" name="cards" checked/>
+            <label for="cards-verified">Verified</label>
+
+            <input id="cards-attention" type="radio" data-slide-index="2" name="cards"/>
+            <label for="cards-attention">Attention</label>
+        </nav>
+        <div class="slider">
+            <section>2.1</section>
+            <section>2.2</section>
+            <section>2.3</section>
+        </div>
+    </section>
     <section>3</section>
 </main>
 
-<nav class="main-nav">
+<nav class="main-nav slider-nav">
     <input id="profile" type="radio" data-slide-index="0" name="nav"/>
     <label for="profile"></label>
 
@@ -55,6 +72,21 @@
 <!-- Own -->
 <script src="scripts/notify.js"></script>
 <script src="scripts/api.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/cards.js"></script>
 <script src="scripts/index.js"></script>
+
+<template id="cards-template">
+    <div class="card">
+        <div class="title"></div>
+        <div class="duration"></div>
+
+        <div class="content">{{content}}</div>
+
+        <div class="type"></div>
+        <div class="owner-avatar"></div>
+        <div class="owner"></div>
+    </div>
+</template>
 </body>
 </html>

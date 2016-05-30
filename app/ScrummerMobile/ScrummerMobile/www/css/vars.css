@@ -1,4 +1,6 @@
 :root {
     --highlight-color: #00cc99;
+    --highlight-text-color: #ffffff;
     --background-color: #666666;
+    --space-medium: 10px;
 }
