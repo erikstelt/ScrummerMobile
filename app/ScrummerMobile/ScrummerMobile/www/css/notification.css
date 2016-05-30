@@ -1,0 +1,8 @@
+.notification {
+    background: red;
+    display: none;
+    transition: height .2s ease-in-out;
+}
+
+.notification.show {
+}

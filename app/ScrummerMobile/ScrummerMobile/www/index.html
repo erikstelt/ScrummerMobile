@@ -1,23 +1,60 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap: https://ssl.gstatic.com; connect-src http://scrummer.space/api/;">
-        
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Scrummer</title>
-    </head>
-    <body>
+<head>
+    <!-- Change this when going live -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'">
 
-        Content goes here
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-        bennevos@gmail.com
-        Potato90
-        
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+    <!-- Lib -->
+    <link rel="stylesheet" href="css/lib/canonical.min.css"/>
+    <link rel="stylesheet" href="css/lib/flickity.min.css"/>
+
+    <!-- Own -->
+    <link rel="stylesheet" href="css/vars.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/notification.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+
+    <title>Scrummer</title>
+</head>
+<body>
+
+<section class="notification"></section>
+
+<aside class="profile-widget"></aside>
+
+<main class="main">
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+</main>
+
+<nav class="main-nav">
+    <input id="profile" type="radio" data-slide-index="0" name="nav"/>
+    <label for="profile"></label>
+
+    <input id="cards" type="radio" data-slide-index="1" name="nav" checked/>
+    <label for="cards"></label>
+
+    <input id="perks" type="radio" data-slide-index="2" name="nav"/>
+    <label for="perks"></label>
+</nav>
+
+<!-- Cordova -->
+<script src="cordova.js"></script>
+<script src="scripts/platformOverrides.js"></script>
+
+<!-- Lib -->
+<script src="scripts/lib/flickity.pkgd.min.js"></script>
+<script src="scripts/lib/mustache.min.js"></script>
+
+<!-- Own -->
+<script src="scripts/notify.js"></script>
+<script src="scripts/api.js"></script>
+<script src="scripts/index.js"></script>
+</body>
 </html>
