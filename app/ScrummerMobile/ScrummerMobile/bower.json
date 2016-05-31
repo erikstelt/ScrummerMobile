@@ -1,8 +1,5 @@
 {
-  "name": "Scrummer",
-  "dependencies": {
-    "mustache": "2.2.*",
-    "canonical.css": "1.1.*",
-    "flickity": "1.2"
-  }
+    "name": "ScrummerMobile",
+    "dependencies": {
+    }
 }
