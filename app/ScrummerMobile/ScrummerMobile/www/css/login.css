@@ -1,0 +1,45 @@
+﻿/*We will use Roboto for now. Update to Open Sans later*/
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #666666;
+}
+
+/*Styling for the header and link text*/
+h1, h2, h3 {
+    color: #00CC99;
+}
+
+a {
+    color: #00CC99;
+}
+
+/*Styling for the whitespace*/
+.whitespace {
+    height: 150px;
+}
+
+/*Float left for the logo, so the headers align next to it*/
+.logo {
+    float: left;
+    margin-left: 20px;
+}
+
+.title {
+    margin-right: 20px;
+    height: 85px;
+}
+
+/*Styling for the login button*/
+.login-button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.login-button button {
+    width: 155px;
+    height: 40px;
+    color: white;
+    background-color: #00CC99;
+    border: none;
+    font-size: 18px;
+}
