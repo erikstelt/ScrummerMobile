@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/notification.css"/>
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/widget.css" />
+    <link rel="stylesheet" href="css/cards.css"/>
 
     <title>Scrummer</title>
 </head>
@@ -48,13 +49,44 @@
     </div>
 </aside>
 
-<main class="main">
+<main class="main slider">
     <section>1</section>
-    <section>2</section>
+    <section class="cards">
+        <nav class="slider-nav">
+            <input id="cards-urgent" type="radio" data-slide-index="0" name="cards"/>
+            <label for="cards-urgent">Urgent</label>
+
+            <input id="cards-verified" type="radio" data-slide-index="1" name="cards" checked/>
+            <label for="cards-verified">Verified</label>
+
+            <input id="cards-attention" type="radio" data-slide-index="2" name="cards"/>
+            <label for="cards-attention">Attention</label>
+        </nav>
+        <div class="slider">
+            <section>2.1</section>
+            <section>
+                <div class="card verified">
+                    <div class="title">Fix the thing</div>
+                    <div class="duration">6 days</div>
+
+                    <div class="content">{{content}}</div>
+
+                    <div class="tag design">
+                        Design
+                    </div>
+                    <div class="owner">
+                        <img src="http://placehold.it/25x25" class="owner-avatar"/>
+                        Mark meteenhelelangeachternaam
+                    </div>
+                </div>
+            </section>
+            <section>2.3</section>
+        </div>
+    </section>
     <section>3</section>
 </main>
 
-<nav class="main-nav">
+<nav class="main-nav slider-nav">
     <input id="profile" type="radio" data-slide-index="0" name="nav"/>
     <label for="profile"></label>
 
@@ -76,6 +108,23 @@
 <!-- Own -->
 <script src="scripts/notify.js"></script>
 <script src="scripts/api.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/cards.js"></script>
 <script src="scripts/index.js"></script>
+
+<template id="cards-template">
+    <div class="card {{type}}">
+        <div class="title">{{title}}</div>
+        <div class="duration">{{days}}</div>
+
+        <div class="content">{{content}}</div>
+
+        <div class="tag {{tag}}">{{tag}}</div>
+        <div class="owner">
+            <img src="{{owner.avatar}}" class="owner-avatar"/>
+            {{owner.firstname}} {{owner.lastname}}
+        </div>
+    </div>
+</template>
 </body>
 </html>
