@@ -1,0 +1,34 @@
+﻿/* Styling for the trophies tab of the application */
+
+/*We will use Roboto for now. Update to Open Sans later*/
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #666666;
+}
+
+.title {
+    color: #00CC99;
+}
+
+.title hr {
+    width: 85%;
+}
+
+.achievements {
+    margin-top: -10px;
+}
+
+.block {
+    height: 80px;
+    width: 80px;
+}
+
+.icon {
+    height: 60px;
+    width: 80px;
+}
+
+.name {
+    height: 20px;
+    width: 80px;
+}

@@ -25,7 +25,7 @@ body {
     border-radius: 150px;
 	-webkit-border-radius: 150px;
 	-moz-border-radius: 150px;
-	background: url(ice_maze.jpg) no-repeat;
+	background: url(../img/shrek.jpg) no-repeat;
 	-moz-box-shadow: 0 0 3px #fff;
     -webkit-box-shadow: 0 0 3px #fff;
     box-shadow: 0px 0px 3px #fff;
@@ -36,6 +36,7 @@ body {
     height: 35%;
     margin-bottom: -15px;
     padding-top: 15px;
+    font-size: 18px;
 }
 
 .profile-class {
