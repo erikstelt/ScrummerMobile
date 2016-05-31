@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider > .flickity-viewport {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slider-nav {
+    height: 50px;
+    position: relative;
+    display: flex;
+}
+
+.slider-nav input[type="radio"] {
+    display: none;
+}
+
+.slider-nav label {
+    flex: 1;
+    background: var(--background-color);
+    transition: background-color .1s ease-in-out;
+    color: var(--highlight-text-color);
+    text-align: center;
+    line-height: 50px;
+}
+
+.slider-nav input[type="radio"]:checked + label {
+    background: var(--primary-color);
+}
+
+/* TODO: move this to profile-widget.css */
+.profile-widget {
+    height: 110px;
+    background: blue;
+}
