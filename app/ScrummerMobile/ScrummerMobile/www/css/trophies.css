@@ -8,27 +8,168 @@ body {
 
 .title {
     color: #00CC99;
+    margin-bottom: -10px;
 }
 
 .title hr {
     width: 85%;
 }
 
-.achievements {
-    margin-top: -10px;
-}
-
+/* Styling for the block elements with the icon and name in it*/
 .block {
     height: 80px;
     width: 80px;
+    float: left;
 }
 
 .icon {
     height: 60px;
     width: 80px;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #666666;
 }
 
 .name {
     height: 20px;
     width: 80px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+}
+
+.perks {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* Styling for the achievements part of the page */
+.achievements {
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: 25px;
+    width: 86%;
+    /* Scrollable for now. We have to fix this with flickity later */
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.achievements .content {
+    height: 100px;
+    width: 460px;
+    margin-bottom: -18px;
+}
+
+.achievements .block {
+    margin-right: 12px;
+}
+
+.achievements .name {
+    background-color: #666666;
+}
+
+/* Global styling for all the perk name and point div's */
+.perk-name {
+    float: left;
+    width: 50%;
+}
+
+.perk-points {
+    float: left;
+    width: 50%;
+}
+
+/* Styling for the research part of the page */
+.research-perk {
+    width: 78%;
+    height: 110px;
+    margin: auto;
+    margin-top: -18px;
+}
+
+.research-perk .perk-name {
+    color: #00CC99;
+}
+
+.research-perk .perk-points {
+}
+
+.research-perk .name {
+    background-color: #00CC99;
+}
+
+/* Styling for the design part of the page */
+.design-perk {
+    width: 78%;
+    height: 110px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.design-perk .perk-name {
+    color: #FF9900;
+}
+
+.design-perk .perk-points {
+}
+
+.design-perk .name {
+    background-color: #FF9900;
+}
+
+/* Styling for the interaction part of the page */
+.interaction-perk {
+    width: 78%;
+    height: 110px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.interaction-perk .perk-name {
+    color: #999999;
+}
+
+.interaction-perk .perk-points {
+}
+
+.interaction-perk .name {
+    background-color: #999999;
+}
+
+/* Styling for the production part of the page */
+.production-perk {
+    width: 78%;
+    height: 110px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.production-perk .perk-name {
+    color: #9900FF;
+}
+
+.production-perk .perk-points {
+}
+
+.production-perk .name {
+    background-color: #9900FF;
+}
+
+/* Styling for the documentation part of the page */
+.documentation-perk {
+    width: 78%;
+    height: 110px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.documentation-perk .perk-name {
+    color: #6699FF;
+}
+
+.documentation-perk .perk-points {
+}
+
+.documentation-perk .name {
+    background-color: #6699FF;
 }
