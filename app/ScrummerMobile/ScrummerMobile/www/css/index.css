@@ -3,6 +3,7 @@ body {
     flex-flow: column;
     height: 100vh;
     font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Segoe UI';
+    color: var(--text-color);
 }
 
 h1, h2, h3, h4, h5, h6 {
