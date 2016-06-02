@@ -27,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
  * Slider Nav
  */
 .slider-nav {
-    height: 40px;
+    height: 30px;
     position: relative;
     display: flex;
     flex: none;
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color .1s ease-in-out;
     color: var(--highlight-text-color);
     text-align: center;
-    line-height: 40px;
+    line-height: 30px;
 }
 
 .slider-nav input[type="radio"]:checked + label {

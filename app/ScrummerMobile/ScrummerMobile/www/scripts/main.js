@@ -27,6 +27,13 @@
         });
 
         // TODO: Mustache the slides and widget
+
+        // Find each element that requires a template
+        [].forEach.call(document.querySelectorAll('[data-template]'), function (element) {
+            var template = element.dataset.template;
+
+            templates.parse(template);
+        });
     });
 })();
 

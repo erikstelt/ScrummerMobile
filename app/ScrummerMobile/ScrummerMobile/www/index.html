@@ -28,7 +28,7 @@
 
 <section class="notification"></section>
 
-<aside class="widget">
+<aside class="widget" data-template="widget">
 
 </aside>
 
@@ -89,11 +89,13 @@
 <script src="scripts/lib/mustache.min.js"></script>
 
 <!-- Own -->
-<script src="scripts/notify.js"></script>
 <script src="scripts/api.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/notify.js"></script>
+<script src="scripts/templates.js"></script>
 <script src="scripts/main.js"></script>
 <script src="scripts/cards.js"></script>
-<script src="scripts/index.js"></script>
+<script src="scripts/widget.js"></script>
 
 <template id="widget-template">
     <input id="widget-toggle" type="checkbox"/>
@@ -101,7 +103,7 @@
     <img src="http://scrummer.space/static/avatars/default.png"/>
 
     <div class="left">
-        <h1>{{ first_name }} {{ last_name</h1>
+        <h1>{{ name }}</h1>
         <h2>Class: {{ class }}</h2>
         <div class="points">
             <div class="analysis">{{ power1 }}</div>
