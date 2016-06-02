@@ -11,36 +11,59 @@ body {
     margin-bottom: -10px;
 }
 
+h3 {
+    text-align: center;
+}
+
 .title hr {
     width: 85%;
 }
 
-/* Styling for the block elements with the icon and name in it*/
+/* General styling for the block elements with the icon and name in it*/
+
 .block {
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     float: left;
 }
 
 .icon {
-    height: 60px;
-    width: 80px;
+    height: 70px;
+    width: 90px;
     border-style: solid;
     border-width: 1px 1px 1px 1px;
-    border-color: #666666;
+    border-color: #999999;
+}
+
+.icon i {
+    font-size: 48px;
+    margin: 20px;
 }
 
 .name {
     height: 20px;
-    width: 80px;
+    width: 90px;
     font-size: 14px;
     color: white;
     text-align: center;
 }
 
-.perks {
+.trophies {
     overflow-y: scroll;
     overflow-x: hidden;
+}
+
+/* Styling progress bar for Chrome and Safari */
+progress::-webkit-progress-bar { 
+    background: #fff; 
+}
+
+/* We use flexbox to automatically asign the right margins */
+.perks {
+    float: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Styling for the achievements part of the page */
@@ -55,8 +78,8 @@ body {
 }
 
 .achievements .content {
-    height: 100px;
-    width: 460px;
+    height: 110px;
+    width: 510px;
     margin-bottom: -18px;
 }
 
@@ -81,13 +104,27 @@ body {
 
 /* Styling for the research part of the page */
 .research-perk {
-    width: 78%;
+    width: 85%;
     height: 110px;
     margin: auto;
-    margin-top: -18px;
+    margin-top: -14px;
 }
 
 .research-perk .perk-name {
+    color: #00CC99;
+}
+
+.research-perk progress {
+    border: 1px solid #00CC99;
+    height: 14px;
+    width: 100%;
+}
+
+.research-perk progress::-webkit-progress-value { 
+    background: #00CC99;
+}
+
+.research-perk i {
     color: #00CC99;
 }
 
@@ -100,14 +137,28 @@ body {
 
 /* Styling for the design part of the page */
 .design-perk {
-    width: 78%;
+    width: 85%;
     height: 110px;
     margin: auto;
-    margin-top: 5px;
+    margin-top: 12px;
 }
 
 .design-perk .perk-name {
     color: #FF9900;
+}
+
+.design-perk i {
+    color: #FF9900;
+}
+
+.design-perk progress {
+    border: 1px solid #FF9900;
+    height: 14px;
+    width: 100%;
+}
+
+.design-perk progress::-webkit-progress-value { 
+    background: #FF9900;
 }
 
 .design-perk .perk-points {
@@ -119,14 +170,28 @@ body {
 
 /* Styling for the interaction part of the page */
 .interaction-perk {
-    width: 78%;
+    width: 85%;
     height: 110px;
     margin: auto;
-    margin-top: 5px;
+    margin-top: 12px;
 }
 
 .interaction-perk .perk-name {
     color: #999999;
+}
+
+.interaction-perk i {
+    color: #999999;
+}
+
+.interaction-perk progress {
+    border: 1px solid #999999;
+    height: 14px;
+    width: 100%;
+}
+
+.interaction-perk progress::-webkit-progress-value { 
+    background: #999999;
 }
 
 .interaction-perk .perk-points {
@@ -138,14 +203,28 @@ body {
 
 /* Styling for the production part of the page */
 .production-perk {
-    width: 78%;
+    width: 85%;
     height: 110px;
     margin: auto;
-    margin-top: 5px;
+    margin-top: 12px;
 }
 
 .production-perk .perk-name {
     color: #9900FF;
+}
+
+.production-perk i {
+    color: #9900FF;
+}
+
+.production-perk progress {
+    border: 1px solid #9900FF;
+    height: 14px;
+    width: 100%;
+}
+
+.production-perk progress::-webkit-progress-value { 
+    background: #9900FF;
 }
 
 .production-perk .perk-points {
@@ -157,14 +236,29 @@ body {
 
 /* Styling for the documentation part of the page */
 .documentation-perk {
-    width: 78%;
+    width: 85%;
     height: 110px;
     margin: auto;
-    margin-top: 5px;
+    margin-top: 12px;
+    margin-bottom: 20px;
 }
 
 .documentation-perk .perk-name {
     color: #6699FF;
+}
+
+.documentation-perk i {
+    color: #6699FF;
+}
+
+.documentation-perk progress {
+    border: 1px solid #6699FF;
+    height: 14px;
+    width: 100%;
+}
+
+.documentation-perk progress::-webkit-progress-value { 
+    background: #6699FF;
 }
 
 .documentation-perk .perk-points {
