@@ -16,24 +16,13 @@
         if (token && expires) {
             // check age of token
             if (Date.now() < expires) {
-                // Set the token in the api
-                api.token = token;
-
-                api.getProfile()
-                    .then(function(data) {
-                       window.location.replace('index.html');
-                    })
-                    .catch(function() {
-                        login();
-                    });
+                window.location.replace('index.html');
             } else {
                 login();
             }
         }
     
-
-        // TODO: attach to actual login button
-        document.addEventListener('touchend', function (e) {
+        document.querySelector('.login-button button').addEventListener('click', function (e) {
             login();
         });
 

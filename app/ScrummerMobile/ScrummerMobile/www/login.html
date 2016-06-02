@@ -3,20 +3,25 @@
 <head>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap: https://ssl.gstatic.com; connect-src http://scrummer.space/api/;">
 
-
-
-
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+
+    <!-- Lib -->
+    <link rel="stylesheet" href="css/lib/canonical.min.css"/>
+
+    <!-- Own -->
+    <link rel="stylesheet" href="css/vars.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="stylesheet" href="css/notification.css" />
     <title>Scrummers</title>
 </head>
 <body>
 
-    <!--The main container of the page-->
+<section class="notification"></section>
+
+<!--The main container of the page-->
     <div class="main-container">
         <!--We add some whitespace divs for the styling of the page-->
         <div class="whitespace"></div>
@@ -34,9 +39,7 @@
         </div>
         <!--We gave the login button a class to style it in the custom.css-->
         <div class="login-button">
-            <form action="index.html" method="get">
-                <center><button>Login</button></center>
-            </form>
+            <button>Login</button>
         </div>
         <div>
             <!--We need to add the links here later-->
@@ -50,7 +53,7 @@
 
 <script src="cordova.js"></script>
 <script src="scripts/platformOverrides.js"></script>
-<script src="scripts/notify.js"></script>
+<script src="scripts/notification.js"></script>
 <script src="scripts/api.js"></script>
 <script src="scripts/login.js"></script>
 
