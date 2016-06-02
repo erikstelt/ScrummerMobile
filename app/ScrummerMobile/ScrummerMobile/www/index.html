@@ -28,7 +28,32 @@
 
 <section class="notification"></section>
 
-<aside class="widget" data-template="widget"></aside>
+<aside id="widget-template" class="widget" data-template="widget">
+    <input id="widget-toggle" type="checkbox" {{{checked}}} />
+
+    <img src="http://scrummer.space/static/avatars/default.png"/>
+
+    <div class="left">
+        <h1>{{ name }}</h1>
+        <h2>Class: {{ class }}</h2>
+        <div class="points">
+            <div class="analysis">{{ power1 }}</div>
+            <div class="design">{{ power2 }}</div>
+            <div class="data">{{ power3 }}</div>
+            <div class="coding">{{ power4 }}</div>
+            <div class="docs">{{ power5 }}</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <label for="widget-toggle">
+            <i class="ton-li-plus"></i>
+            <i class="ton-li-cross"></i>
+        </label>
+
+        <span>Level:<br/>{{ level }}</span>
+    </div>
+</aside>
 
 <main class="main slider">
     <section>1</section>
@@ -94,33 +119,6 @@
 <script src="scripts/main.js"></script>
 <script src="scripts/cards.js"></script>
 <script src="scripts/widget.js"></script>
-
-<template id="widget-template">
-    <input id="widget-toggle" type="checkbox"/>
-
-    <img src="http://scrummer.space/static/avatars/default.png"/>
-
-    <div class="left">
-        <h1>{{ name }}</h1>
-        <h2>Class: {{ class }}</h2>
-        <div class="points">
-            <div class="analysis">{{ power1 }}</div>
-            <div class="design">{{ power2 }}</div>
-            <div class="data">{{ power3 }}</div>
-            <div class="coding">{{ power4 }}</div>
-            <div class="docs">{{ power5 }}</div>
-        </div>
-    </div>
-
-    <div class="right">
-        <label for="widget-toggle">
-            <i class="ton-li-plus"></i>
-            <i class="ton-li-cross"></i>
-        </label>
-
-        <span>Level:<br/>{{ level }}</span>
-    </div>
-</template>
 
 <template id="cards-template">
     <div class="card {{type}}">
