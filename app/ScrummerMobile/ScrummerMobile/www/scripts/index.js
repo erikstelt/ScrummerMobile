@@ -1,53 +1,41 @@
-﻿// For an introduction to the Blank template, see the following documentation:
-// http://go.microsoft.com/fwlink/?LinkID=397704
-// To debug code on page load in Ripple or on Android devices/emulators: launch your app, set breakpoints, 
-// and then run "window.location.reload()" in the JavaScript Console.
-(function () {
+﻿(function () {
     "use strict";
 
-    document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
+    api.token = window.localStorage.getItem('token');
 
-    function onDeviceReady() {
-        // Handle the Cordova pause and resume events
-        document.addEventListener( 'pause', onPause.bind( this ), false );
-        document.addEventListener( 'resume', onResume.bind( this ), false );
-        
-        // TODO: Cordova has been loaded. Perform any initialization that requires Cordova here.
-    }
+    // Override this slider's dragMove to prevent events from 'escaping' to the parent slider
+    // Also disable overscroll
+    Flickity.prototype.dragMove = function( event, pointer, moveVector ) {
+        //preventDefaultEvent( event );
 
-    function onPause() {
-        // TODO: This application has been suspended. Save application state here.
-    }
+        this.previousDragX = this.dragX;
+        // reverse if right-to-left
+        var direction = this.options.rightToLeft ? -1 : 1;
+        var dragX = this.dragStartPosition + moveVector.x * direction;
 
-    function onResume() {
-        // TODO: This application has been reactivated. Restore application state here.
-    }
+        if ( !this.options.wrapAround && this.cells.length ) {
+            // slow drag
+            var originBound = Math.max( -this.cells[0].target, this.dragStartPosition );
+            dragX = dragX > originBound ? originBound : dragX;
+            var endBound = Math.min( -this.getLastCell().target, this.dragStartPosition );
+            dragX = dragX < endBound ? endBound : dragX;
+        }
 
-    document.addEventListener('DOMContentLoaded', function () {
-        // Initialize main slider
-        var flickity = new Flickity(document.querySelector('.main'), {
-            initialIndex: 1,
-            setGallerySize: false,
-            pageDots: false,
-            prevNextButtons: false
-        });
+        this.dragX = dragX;
 
-        var mainNav = document.querySelector('.main-nav');
+        this.dragMoveTime = new Date();
 
-        // Update the button state after a swipe
-        flickity.on('cellSelect', function () {
-            mainNav.querySelector('[data-slide-index="' + flickity.selectedIndex + '"]').checked = true;
-        });
-
-        // Bind the main menu buttons to
-        [].forEach.call(mainNav.querySelectorAll('.main-nav input'), function (input) {
-            input.addEventListener('change', function () {
-                if (this.checked) {
-                    flickity.select(this.dataset.slideIndex);
-                }
-            });
-        });
-
-        // TODO: Mustache the slides and widget
-    });
+        if (this.selectedIndex === 0 && moveVector.x < 0) {
+            event.stopImmediatePropagation();
+        }
+        else if (this.selectedIndex === this.cells.length - 1 && moveVector.x > 0) {
+            event.stopImmediatePropagation();
+        }
+        else if (this.selectedIndex !== 0 && this.selectedIndex !== this.cells.length - 1) {
+            event.stopImmediatePropagation();
+        }
+        else {
+            this.dispatchEvent( 'dragMove', event, [ pointer, moveVector ] );
+        }
+    };
 } )();

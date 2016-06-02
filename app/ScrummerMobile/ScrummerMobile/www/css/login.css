@@ -1,16 +1,12 @@
 ﻿/*We will use Roboto for now. Update to Open Sans later*/
 body {
-    font-family: 'Roboto', sans-serif;
-    color: #666666;
+    font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Segoe UI';
+    color: var(--text-color);
 }
 
 /*Styling for the header and link text*/
-h1, h2, h3 {
-    color: #00CC99;
-}
-
-a {
-    color: #00CC99;
+h1, h2, h3, a {
+    color: var(--primary-color);
 }
 
 /*Styling for the whitespace*/

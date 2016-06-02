@@ -1,22 +1,22 @@
-﻿(function() {
+﻿(function () {
     'use strict';
 
     var api = {
         /**
          * The token to authenticate with
-         * 
+         *
          * @type {string}
          */
         token: null,
         /**
          * The app id within the api
-         * 
+         *
          * @type {string}
          */
         clientId: 'app',
         /**
          * API endpoints
-         * 
+         *
          * @type {Object<string, string>
          */
         urls: {
@@ -27,15 +27,15 @@
         },
         /**
          * Open a login window of the api
-         * 
-         * @returns {Promise} 
+         *
+         * @returns {Promise}
          */
         login: function () {
             return new Promise(function (resolve, reject) {
                 var options = 'hardwareback=no,navigation=no',
                     loginUrl = this.urls.base + this.urls.login,
                     callbackUrl = this.urls.base + this.urls.callback,
-                    state = window.crypto.getRandomValues(new Uint8Array(10)).join(''), // random string of 10 chars to prevent tampering
+                    state = window.crypto.getRandomValues(new Uint8Array(10)).join(''), // random string to prevent tampering
                     query = this.buildQueryString({
                         client_id: this.clientId,
                         response_type: 'token',
@@ -56,11 +56,11 @@
                         if (data.error) {
                             reject(data.error);
                         }
-                            // Check for CSRF attempts
+                        // Check for CSRF attempts
                         else if (data.state !== state) {
                             reject("Something went wrong");
                         }
-                            // Success
+                        // Success
                         else {
                             resolve(data);
                         }
@@ -70,7 +70,7 @@
                 }, false);
 
                 login.addEventListener('loaderror', function (event) {
-                    reject("Could not load the login page");
+                    reject("There was a network error");
 
                     login.close();
                 }, false);
@@ -78,34 +78,37 @@
         },
         /**
          * Get the user profile
-         * 
-         * @returns {Promise} 
+         *
+         * @returns {Promise}
          */
         getProfile: function () {
             return this.get(this.urls.base + this.urls.profile);
         },
         /**
-         * 
-         * @param {string} url 
-         * @param {Object<string, *>} data 
-         * @returns {Promise} 
+         *
+         * @param {string} url
+         * @param {Object<string, *>} data
+         * @returns {Promise}
          */
         get: function (url, data) {
-            return fetch(url,
-                    {
-                        headers: {
-                            'Authorization': 'Bearer ' + this.token
-                        }
-                    })
-                .then(function (response) {
+            return fetch(url, {
+                headers: {
+                    'Authorization': 'Bearer ' + this.token
+                }
+            }).then(function (response) {
+                if (response.ok) {
                     return response.json();
-                });
+                }
+                else {
+                    return Promise.reject('There was a network error.');
+                }
+            });
         },
         /**
-         * 
-         * 
-         * @param {string} query 
-         * @returns {Object<string, string>} 
+         *
+         *
+         * @param {string} query
+         * @returns {Object<string, string>}
          */
         parseQueryString: function (query) {
             var data = {};
@@ -119,9 +122,9 @@
             return data;
         },
         /**
-         * 
-         * @param {Object} data 
-         * @returns {string} 
+         *
+         * @param {Object} data
+         * @returns {string}
          */
         buildQueryString: function (data) {
             var query = [];

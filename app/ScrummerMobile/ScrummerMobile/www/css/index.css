@@ -2,10 +2,74 @@ body {
     display: flex;
     flex-flow: column;
     height: 100vh;
+    font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Segoe UI';
+    color: var(--text-color);
 }
 
-/* TODO: move this to profile-widget.css */
-.profile-widget {
-    height: 110px;
-    background: blue;
+h1, h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+}
+
+/**
+ * Slider
+ */
+.slider {
+    position: relative;
+    flex: 1;
+}
+
+.slider > .flickity-viewport {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ * Slider Nav
+ */
+.slider-nav {
+    height: 30px;
+    position: relative;
+    display: flex;
+    flex: none;
+}
+
+.slider-nav input[type="radio"] {
+    display: none;
+}
+
+.slider-nav label {
+    flex: 1;
+    background: var(--background-color);
+    transition: background-color .1s ease-in-out;
+    color: var(--highlight-text-color);
+    text-align: center;
+    line-height: 30px;
+}
+
+.slider-nav input[type="radio"]:checked + label {
+    background: var(--primary-color);
+}
+
+/**
+ * Tags
+ */
+.docs {
+    background: var(--tag-docs);
+}
+
+.data {
+    background-color: var(--tag-data);
+}
+
+.coding {
+    background-color: var(--tag-coding);
+}
+
+.design {
+    background-color: var(--tag-design);
+}
+
+.analysis {
+    background-color: var(--tag-analysis);
 }
