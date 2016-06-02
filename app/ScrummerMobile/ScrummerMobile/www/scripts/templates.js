@@ -24,13 +24,15 @@
          * @param {string} id
          */
         render: function (id) {
-            this.data[id]().then(function (data) {
+            var promise = this.data[id] || Promise.resolve;
+
+            promise().then(function (data) {
                 var rendered = Mustache.render(this.cache[id], data || {});
 
                 [].forEach.call(document.querySelectorAll('[data-template="' + id + '"]'), function (element) {
                     element.innerHTML = rendered;
                 });
-            }.bind(this)).catch(notification.show);
+            }.bind(this));
         },
         /**
          * Return a data object for a Mustache template

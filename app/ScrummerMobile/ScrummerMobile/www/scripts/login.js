@@ -36,7 +36,7 @@
                 // Navigate to the main page
                 window.location.replace('index.html');
             })
-            .catch(notify.show);
+            .catch(notification.show);
         }
     }.bind(this), false);
 })();

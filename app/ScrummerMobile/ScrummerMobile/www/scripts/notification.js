@@ -39,5 +39,5 @@
         notification.hide();
     });
 
-    window.notify = notification;
+    window.notification = notification;
 })();
