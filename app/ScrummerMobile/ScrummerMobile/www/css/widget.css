@@ -1,113 +1,102 @@
-﻿/*We will use Roboto for now. Update to Open Sans later*/
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #666666;
+﻿.widget {
+    padding: 10px;
+    background-image: linear-gradient(#555555, var(--background-color));
+    color: var(--alternate-text-color);
+    display: flex;
 }
 
-/*Styling for the divs in the profile widget*/
-.profile-widget {
-    height: 110px;
-    width: 100%;
-    background: linear-gradient(#555555, #666666); /* Standard syntax */
-    color: white;
+.widget input {
+    display: none;
 }
 
-.profile-img {
-    width: 32%;
-    height: 100%;
-    float: left;
+.widget label i {
+    display: none;
 }
 
-.profile-picture {
+.widget input:not(:checked) ~ .right > label > .ton-li-cross,
+.widget input:checked ~ .right > label > .ton-li-plus {
+    display: block;
+}
+
+.widget > img {
     width: 90px;
     height: 90px;
-    margin: 10px;
-    border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
-	background: url(../img/shrek.jpg) no-repeat;
-	-moz-box-shadow: 0 0 3px #fff;
-    -webkit-box-shadow: 0 0 3px #fff;
-    box-shadow: 0px 0px 3px #fff;
+    margin-right: 10px;
+    border-radius: 100%;
+    transition: .2s ease-in-out;
+    transition-property: width, height;
+    flex: none;
+    background: #f7f7f7;
 }
 
-.profile-name {
-    width: 100%;
-    height: 35%;
-    margin-bottom: -15px;
-    padding-top: 15px;
-    font-size: 18px;
+.widget input:checked ~ img {
+    width: 40px;
+    height: 40px;
 }
 
-.profile-class {
-    width: 100%;
-    height: 15%;
-    margin-top: 15px;
+.widget > .left {
+    flex: 1;
 }
 
-.profile-points {
-    width: 54%;
-    height: 50%;
-    float:left;
-    margin-top: 15px;
-    margin-bottom: -15px;
+.widget h1 {
+    margin: 0;
+    line-height: 30px;
+    font-size: var(--font-large);
+    transition: line-height .2s ease-in-out;
+}
+
+.widget input:checked ~ .left h1 {
+    line-height: 40px;
+}
+
+.widget h2 {
+    margin: 0;
+    line-height: 25px;
+    font-size: var(--font-normal);
+}
+
+.widget input:checked ~ .left h2,
+.widget input:checked ~ .left .points {
+    display: none;
+}
+
+.widget .points {
+    height: 25px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.widget .points > div {
+    border: solid var(--alternate-text-color);
+    border-width: 1px 0 1px 1px;
+    flex: 1;
     text-align: center;
-    font-size: 14px;
 }
 
-.profile-lvl {
-    width: 14%;
-    height: 50%;
-    float:left;
+.widget .points > div:last-child {
+    border-right-width: 1px;
 }
 
-/*Styling for the experience points bar*/
-.analysis {
-    float: left;
-    background-color: #00CC99;
-    height: 40%;
-    width: 17%;
-    border-style: solid;
-    border-width: 2px 1px 2px 2px;
-    border-color: white;
+.widget .right {
+    flex: none;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.design {
-    float: left;
-    background-color: #FF9900;
-    height: 40%;
-    width: 17%;
-    border-style: solid;
-    border-width: 2px 1px 2px 1px;
-    border-color: white;
+.widget .right label {
+    margin-left: auto;
+    overflow: auto;
 }
 
-.data {
-    float: left;
-    background-color: #999999;
-    height: 40%;
-    width: 17%;
-    border-style: solid;
-    border-width: 2px 1px 2px 1px;
-    border-color: white;
+.widget .right span {
+    height: 25px;
+    line-height: 12px;
+    margin: auto 0 10px 0;
+    font-size: var(--font-small);
+    text-align: right;
 }
 
-.coding {
-    float: left;
-    background-color: #9900FF;
-    height: 40%;
-    width: 17%;
-    border-style: solid;
-    border-width: 2px 1px 2px 1px;
-    border-color: white;
-}
-
-.docs {
-    float: left;
-    background-color: #6699FF;
-    height: 40%;
-    width: 17%;
-    border-style: solid;
-    border-width: 2px 2px 2px 1px;
-    border-color: white;
+.widget input:checked ~ .right span {
+    display: none;
 }
