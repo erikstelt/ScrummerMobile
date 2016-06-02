@@ -23,6 +23,8 @@
         // TODO: This application has been reactivated. Restore application state here.
     }
 
+    api.token = window.localStorage.getItem('token');
+
     // Override this slider's dragMove to prevent events from 'escaping' to the parent slider
     // Also disable overscroll
     Flickity.prototype.dragMove = function( event, pointer, moveVector ) {

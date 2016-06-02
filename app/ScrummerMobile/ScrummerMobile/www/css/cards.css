@@ -65,27 +65,6 @@
     margin: 2px 5px;
 }
 
-/* Tags */
-.docs {
-    background: var(--tag-docs);
-}
-
-.data {
-    background-color: var(--tag-data);
-}
-
-.coding {
-    background-color: var(--tag-coding);
-}
-
-.design {
-    background-color: var(--tag-design);
-}
-
-.analysis {
-    background-color: var(--tag-analysis);
-}
-
 /* Card types */
 .to-do {
     background-color: var(--card-to-do);

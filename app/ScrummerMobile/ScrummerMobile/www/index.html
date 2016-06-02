@@ -2,7 +2,7 @@
 <html>
 <head>
     <!-- Change this when going live -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' data:">
 
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
@@ -12,13 +12,14 @@
     <!-- Lib -->
     <link rel="stylesheet" href="css/lib/canonical.min.css"/>
     <link rel="stylesheet" href="css/lib/flickity.min.css"/>
+    <link rel="stylesheet" href="css/lib/tonicons.css"/>
 
     <!-- Own -->
     <link rel="stylesheet" href="css/vars.css"/>
     <link rel="stylesheet" href="css/index.css"/>
     <link rel="stylesheet" href="css/notification.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="css/widget.css" />
+    <link rel="stylesheet" href="css/widget.css"/>
     <link rel="stylesheet" href="css/cards.css"/>
 
     <title>Scrummer</title>
@@ -27,26 +28,8 @@
 
 <section class="notification"></section>
 
-<aside class="profile-widget">
-    <!--Profile widget template-->
-    <div class="profile-widget">
-        <div class="profile-img">
-            <div class="profile-picture"></div>
-        </div>
-        <div class="profile-name">Erik Steltenpool</div>
-        <div class="profile-class">Class: Lumberjack</div>
-        <div class="profile-points">
-            <div class="analysis">460</div>
-            <div class="design">220</div>
-            <div class="data">760</div>
-            <div class="coding">150</div>
-            <div class="docs">330</div>
-        </div>
-        <div class="profile-lvl">
-            level<br />
-            32
-        </div>
-    </div>
+<aside class="widget">
+
 </aside>
 
 <main class="main slider">
@@ -111,6 +94,33 @@
 <script src="scripts/main.js"></script>
 <script src="scripts/cards.js"></script>
 <script src="scripts/index.js"></script>
+
+<template id="widget-template">
+    <input id="widget-toggle" type="checkbox"/>
+
+    <img src="http://scrummer.space/static/avatars/default.png"/>
+
+    <div class="left">
+        <h1>{{ first_name }} {{ last_name</h1>
+        <h2>Class: {{ class }}</h2>
+        <div class="points">
+            <div class="analysis">{{ power1 }}</div>
+            <div class="design">{{ power2 }}</div>
+            <div class="data">{{ power3 }}</div>
+            <div class="coding">{{ power4 }}</div>
+            <div class="docs">{{ power5 }}</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <label for="widget-toggle">
+            <i class="ton-li-plus"></i>
+            <i class="ton-li-cross"></i>
+        </label>
+
+        <span>Level:<br/>{{ level }}</span>
+    </div>
+</template>
 
 <template id="cards-template">
     <div class="card {{type}}">

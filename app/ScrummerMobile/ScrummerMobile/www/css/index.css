@@ -2,10 +2,19 @@ body {
     display: flex;
     flex-flow: column;
     height: 100vh;
+    font-family: 'Roboto', 'San Francisco', 'Helvetica Neue', 'Segoe UI';
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+}
+
+/**
+ * Slider
+ */
 .slider {
     position: relative;
+    flex: 1;
 }
 
 .slider > .flickity-viewport {
@@ -14,11 +23,14 @@ body {
     height: 100%;
 }
 
-
+/**
+ * Slider Nav
+ */
 .slider-nav {
-    height: 50px;
+    height: 40px;
     position: relative;
     display: flex;
+    flex: none;
 }
 
 .slider-nav input[type="radio"] {
@@ -31,15 +43,32 @@ body {
     transition: background-color .1s ease-in-out;
     color: var(--highlight-text-color);
     text-align: center;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 .slider-nav input[type="radio"]:checked + label {
     background: var(--primary-color);
 }
 
-/* TODO: move this to profile-widget.css */
-.profile-widget {
-    height: 110px;
-    background: blue;
+/**
+ * Tags
+ */
+.docs {
+    background: var(--tag-docs);
+}
+
+.data {
+    background-color: var(--tag-data);
+}
+
+.coding {
+    background-color: var(--tag-coding);
+}
+
+.design {
+    background-color: var(--tag-design);
+}
+
+.analysis {
+    background-color: var(--tag-analysis);
 }
