@@ -22,14 +22,15 @@
          * Render the template with mustache. Takes data from data
          *
          * @param {string} id
-         * @param {Object<string, *>} data
          */
-        render: function (id, data) {
-            var rendered = Mustache.render(this.cache[id], this.data[id](data));
+        render: function (id) {
+            this.data[id]().then(function (data) {
+                var rendered = Mustache.render(this.cache[id], data || {});
 
-            [].forEach.call(document.querySelectorAll('[data-template="' + id + '"]'), function (element) {
-                element.innerHTML = rendered;
-            });
+                [].forEach.call(document.querySelectorAll('[data-template="' + id + '"]'), function (element) {
+                    element.innerHTML = rendered;
+                });
+            }.bind(this)).catch(notification.show);
         },
         /**
          * Return a data object for a Mustache template
