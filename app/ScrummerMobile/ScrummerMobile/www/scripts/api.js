@@ -17,13 +17,13 @@
         /**
          * API endpoints
          *
-         * @type {Object<string, string>
+         * @type {Object<string, string>}
          */
         urls: {
             base: 'http://scrummer.space/api',
-            login: '/oauth2/authorize',
-            callback: '/oauth2/callback',
-            profile: '/account/me'
+            login: '/oauth2/authorize/',
+            callback: '/oauth2/callback/',
+            profile: '/account/me/'
         },
         /**
          * Open a login window of the api

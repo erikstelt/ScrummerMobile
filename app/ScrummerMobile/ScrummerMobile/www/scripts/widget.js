@@ -22,7 +22,7 @@
 
             var level = Math.floor(Math.pow(data.exp / 2, 1 / 3)),
                 checked = (localStorage.getItem('widget_expanded') === 'true') ? 'checked="checked"' : '';
-            
+
             return {
                 name: data.first_name + ' ' + data.last_name,
                 class: data.class,
@@ -44,10 +44,8 @@
 
             notification.show("There was a network error");
 
-            // Return data anyway to correctly render the widget
-            return {
-                checked: (localStorage.getItem('widget_expanded') === 'true') ? 'checked="checked"' : ''
-            }
+            // End the chain here, otherwise the template will be rendered without data
+            return Promise.reject();
         });
     };
 
