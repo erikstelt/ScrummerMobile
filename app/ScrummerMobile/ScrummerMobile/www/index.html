@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/main.css"/>
     <link rel="stylesheet" href="css/widget.css"/>
     <link rel="stylesheet" href="css/cards.css"/>
+    <link rel="stylesheet" href="css/trophies.css" />
 
 
     <title>Scrummer</title>
@@ -57,20 +58,18 @@
 </aside>
 
 <main class="main slider">
-    <section>1</section>
     <section class="cards">
         <nav class="slider-nav">
-            <input id="cards-urgent" type="radio" data-slide-index="0" name="cards"/>
-            <label for="cards-urgent">Urgent</label>
+            <input id="cards-urgent" type="radio" data-slide-index="0" name="cards" />
+            <label for="cards-urgent"><i class="ton-so-info"></i>Urgent</label>
 
-            <input id="cards-verified" type="radio" data-slide-index="1" name="cards" checked/>
-            <label for="cards-verified">Verified</label>
+            <input id="cards-verified" type="radio" data-slide-index="1" name="cards" checked />
+            <label for="cards-verified"><i class="ton-so-check"></i>Verified</label>
 
-            <input id="cards-attention" type="radio" data-slide-index="2" name="cards"/>
-            <label for="cards-attention">Attention</label>
+            <input id="cards-attention" type="radio" data-slide-index="2" name="cards" />
+            <label for="cards-attention"><i class="ton-so-megaphone-2"></i> Attention</label>
         </nav>
         <div class="slider">
-            <section>2.1</section>
             <section>
                 <div class="card verified">
                     <div class="title">Fix the thing</div>
@@ -82,26 +81,149 @@
                         Design
                     </div>
                     <div class="owner">
-                        <img src="http://placehold.it/25x25" class="owner-avatar"/>
+                        <img src="http://placehold.it/25x25" class="owner-avatar" />
                         Mark meteenhelelangeachternaam
                     </div>
                 </div>
             </section>
+            <section></section>
             <section>2.3</section>
         </div>
+    </section>
+    <section class="trophies">
+        <!-- HTML template for the trophies section of the application -->
+        <div class="title">
+            <h3><i class="ton-li-star-1"></i>&nbsp&nbsp My trophies:&nbsp&nbsp<br /><hr /></h3>
+        </div>
+        <h3>Achievements</h3>
+        <div class="achievements">
+            <div class="content">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-equalizer-1"></i></div>
+                    <div class="name">Tinker</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-paper-plane"></i></div>
+                    <div class="name">Prototyper</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-satellite-tool"></i></div>
+                    <div class="name">Inventor</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-so-flag-2"></i></div>
+                    <div class="name">Master</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-people-7"></i></div>
+                    <div class="name">Teamplayer</div>
+                </div>
+            </div>
+        </div>
+        <center><h3>Perks</h3></center>
+        <div class="research-perk">
+            <div class="perk-name"><b>Research</b></div>
+            <div class="perk-points"><progress value="60" max="100"></progress></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-suitcase"></i></div>
+                    <div class="name">Organizer</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-pie-chart-1"></i></div>
+                    <div class="name">Analist</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-chart-7"></i></div>
+                    <div class="name">Professor</div>
+                </div>
+            </div>
+        </div>
+        <div class="design-perk">
+            <div class="perk-name"><b>Design</b></div>
+            <div class="perk-points"><progress value="60" max="100">220</progress></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-bulb"></i></div>
+                    <div class="name">Designer</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-photo-2"></i></div>
+                    <div class="name">Artist</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-eye"></i></div>
+                    <div class="name">Visionary</div>
+                </div>
+            </div>
+        </div>
+        <div class="interaction-perk">
+            <div class="perk-name"><b>Interaction</b></div>
+            <div class="perk-points"><progress value="60" max="100">220</progress></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-box-3"></i></div>
+                    <div class="name">Archivist</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-server-1"></i></div>
+                    <div class="name">Librarian</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-speech-buble-3"></i></div>
+                    <div class="name">Counselor</div>
+                </div>
+            </div>
+        </div>
+        <div class="production-perk">
+            <div class="perk-name"><b>Production</b></div>
+            <div class="perk-points"><progress value="60" max="100">220</progress></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-mug-1"></i></div>
+                    <div class="name">Coder</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-lock-2"></i></div>
+                    <div class="name">Hacker</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-gear-1"></i></div>
+                    <div class="name">Engineer</div>
+                </div>
+            </div>
+        </div>
+        <div class="documentation-perk">
+            <div class="perk-name"><b>Documentation</b></div>
+            <div class="perk-points"><progress value="60" max="100"></progress></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-flag-2"></i></div>
+                    <div class="name">Bookworm</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-file-1"></i></div>
+                    <div class="name">Writer</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-pen"></i></div>
+                    <div class="name">Author</div>
+                </div>
+            </div>
+        </div>  
     </section>
     <section>3</section>
 </main>
 
 <nav class="main-nav slider-nav">
     <input id="profile" type="radio" data-slide-index="0" name="nav"/>
-    <label for="profile"></label>
+    <label for="profile"><i class="ton-li-gong"></i></label>
 
     <input id="cards" type="radio" data-slide-index="1" name="nav" checked/>
-    <label for="cards"></label>
+    <label for="cards"><i class="ton-li-star-1"></i></label>
 
     <input id="perks" type="radio" data-slide-index="2" name="nav"/>
-    <label for="perks"></label>
+    <label for="perks"><i class="ton-li-id"></i></label>
 </nav>
 
 <!-- Cordova -->
