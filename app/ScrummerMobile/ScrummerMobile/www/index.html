@@ -10,17 +10,17 @@
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
     <!-- Lib -->
-    <link rel="stylesheet" href="css/lib/canonical.min.css"/>
-    <link rel="stylesheet" href="css/lib/flickity.min.css"/>
-    <link rel="stylesheet" href="css/lib/tonicons.css"/>
+    <link rel="stylesheet" href="css/lib/canonical.min.css" />
+    <link rel="stylesheet" href="css/lib/flickity.min.css" />
+    <link rel="stylesheet" href="css/lib/tonicons.css" />
 
     <!-- Own -->
-    <link rel="stylesheet" href="css/vars.css"/>
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="stylesheet" href="css/notification.css"/>
-    <link rel="stylesheet" href="css/main.css"/>
-    <link rel="stylesheet" href="css/widget.css"/>
-    <link rel="stylesheet" href="css/cards.css"/>
+    <link rel="stylesheet" href="css/vars.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/notification.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/widget.css" />
+    <link rel="stylesheet" href="css/cards.css" />
     <link rel="stylesheet" href="css/trophies.css" />
 
 
@@ -28,69 +28,118 @@
 </head>
 <body>
 
-<section class="notification"></section>
+    <section class="notification"></section>
 
-<aside id="widget-template" class="widget" data-template="widget">
-    <input id="widget-toggle" type="checkbox" {{{checked}}} />
+    <aside id="widget-template" class="widget" data-template="widget">
+        <input id="widget-toggle" type="checkbox" {{{checked}}} />
 
-    <img src="http://scrummer.space/static/avatars/default.png"/>
+        <img src="http://scrummer.space/static/avatars/default.png" />
 
-    <div class="left">
-        <h1>{{ name }}</h1>
-        <h2>Class: {{ class }}</h2>
-        <div class="points">
-            <div class="analysis">{{ power1 }}</div>
-            <div class="design">{{ power2 }}</div>
-            <div class="data">{{ power3 }}</div>
-            <div class="coding">{{ power4 }}</div>
-            <div class="docs">{{ power5 }}</div>
+        <div class="left">
+            <h1>{{ name }}</h1>
+            <h2>Class: {{ class }}</h2>
+            <div class="points">
+                <div class="analysis">{{ power1 }}</div>
+                <div class="design">{{ power2 }}</div>
+                <div class="data">{{ power3 }}</div>
+                <div class="coding">{{ power4 }}</div>
+                <div class="docs">{{ power5 }}</div>
+            </div>
         </div>
-    </div>
 
-    <div class="right">
-        <label for="widget-toggle">
-            <i class="ton-li-plus"></i>
-            <i class="ton-li-cross"></i>
-        </label>
+        <div class="right">
+            <label for="widget-toggle">
+                <i class="ton-li-plus"></i>
+                <i class="ton-li-cross"></i>
+            </label>
 
-        <span>Level:<br/>{{ level }}</span>
-    </div>
-</aside>
-
-<main class="main slider">
-    <section class="cards">
-        <nav class="slider-nav">
-            <input id="cards-urgent" type="radio" data-slide-index="0" name="cards" />
-            <label for="cards-urgent"><i class="ton-so-info"></i>Urgent</label>
-
-            <input id="cards-verified" type="radio" data-slide-index="1" name="cards" checked />
-            <label for="cards-verified"><i class="ton-so-check"></i>Verified</label>
-
-            <input id="cards-attention" type="radio" data-slide-index="2" name="cards" />
-            <label for="cards-attention"><i class="ton-so-megaphone-2"></i> Attention</label>
-        </nav>
-        <div class="slider">
-            <section>
-                <div class="card verified">
-                    <div class="title">Fix the thing</div>
-                    <div class="duration">6 days</div>
-
-                    <div class="content">{{content}}</div>
-
-                    <div class="tag design">
-                        Design
-                    </div>
-                    <div class="owner">
-                        <img src="http://placehold.it/25x25" class="owner-avatar" />
-                        Mark meteenhelelangeachternaam
-                    </div>
-                </div>
-            </section>
-            <section></section>
-            <section>2.3</section>
+            <span>Level:<br />{{ level }}</span>
         </div>
-    </section>
-    <section class="trophies">
+    </aside>
+
+    <main class="main slider">
+        <section class="cards">
+            <nav class="slider-nav">
+                <input id="cards-urgent" type="radio" data-slide-index="0" name="cards" />
+                <label for="cards-urgent"><i class="ton-so-info"></i>Urgent</label>
+
+                <input id="cards-verified" type="radio" data-slide-index="1" name="cards" checked />
+                <label for="cards-verified"><i class="ton-so-check"></i>Verified</label>
+
+                <input id="cards-attention" type="radio" data-slide-index="2" name="cards" />
+                <label for="cards-attention"><i class="ton-so-megaphone-2"></i> Attention</label>
+            </nav>
+            <div class="slider">
+                <section>
+                    <div class="card verified">
+                        <div class="title">Fix the thing</div>
+                        <div class="duration">6 days</div>
+
+                        <div class="content">{{content}}</div>
+
+                        <div class="tag design">
+                            Design
+                        </div>
+                        <div class="owner">
+                            <img src="http://placehold.it/25x25" class="owner-avatar" />
+                            Mark meteenhelelangeachternaam
+                        </div>
+                    </div>
+                </section>
+                <section></section>
+                <section>2.3</section>
+            </div>
+        </section>
+        <!-- We insert the trophies-template in the section -->
+        <section class="trophies" data-template="trophies"></section>
+        <section>3</section>
+    </main>
+
+    <nav class="main-nav slider-nav">
+        <input id="profile" type="radio" data-slide-index="0" name="nav" />
+        <label for="profile"><i class="ton-li-gong"></i></label>
+
+        <input id="cards" type="radio" data-slide-index="1" name="nav" checked />
+        <label for="cards"><i class="ton-li-star-1"></i></label>
+
+        <input id="perks" type="radio" data-slide-index="2" name="nav" />
+        <label for="perks"><i class="ton-li-id"></i></label>
+    </nav>
+
+    <!-- Cordova -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+
+    <!-- Lib -->
+    <script src="scripts/lib/flickity.pkgd.min.js"></script>
+    <script src="scripts/lib/mustache.min.js"></script>
+
+    <!-- Own -->
+    <script src="scripts/notification.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/templates.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cards.js"></script>
+    <script src="scripts/widget.js"></script>
+    <script src="scripts/trophies.js"></script>
+
+    <template id="cards-template">
+        <div class="card {{type}}">
+            <div class="title">{{title}}</div>
+            <div class="duration">{{days}}</div>
+
+            <div class="content">{{content}}</div>
+
+            <div class="tag {{tag}}">{{tag}}</div>
+            <div class="owner">
+                <img src="{{owner.avatar}}" class="owner-avatar" />
+                {{owner.firstname}} {{owner.lastname}}
+            </div>
+        </div>
+    </template>
+
+    <template id="trophies-template" class="trophies" data-template="trophies">
         <!-- HTML template for the trophies section of the application -->
         <div class="title">
             <h3><i class="ton-li-star-1"></i>&nbsp&nbsp My trophies:&nbsp&nbsp<br /><hr /></h3>
@@ -123,7 +172,7 @@
         <center><h3>Perks</h3></center>
         <div class="research-perk">
             <div class="perk-name"><b>Research</b></div>
-            <div class="perk-points"><progress value="60" max="100"></progress></div>
+            <div class="perk-points"><progress value="{{ power1 }}" max="1000"></progress><span class="progress-value">{{ power1 }}</span></div>
             <div class="perks">
                 <div class="block">
                     <div class="icon"><i class="ton-li-suitcase"></i></div>
@@ -141,7 +190,7 @@
         </div>
         <div class="design-perk">
             <div class="perk-name"><b>Design</b></div>
-            <div class="perk-points"><progress value="60" max="100">220</progress></div>
+            <div class="perk-points"><progress value="{{ power2 }}" max="1000"></progress><span class="progress-value">{{ power2 }}</span></div>
             <div class="perks">
                 <div class="block">
                     <div class="icon"><i class="ton-li-bulb"></i></div>
@@ -159,7 +208,7 @@
         </div>
         <div class="interaction-perk">
             <div class="perk-name"><b>Interaction</b></div>
-            <div class="perk-points"><progress value="60" max="100">220</progress></div>
+            <div class="perk-points"><progress value="{{ power3 }}" max="1000"></progress><span class="progress-value">{{ power3 }}</span></div>
             <div class="perks">
                 <div class="block">
                     <div class="icon"><i class="ton-li-box-3"></i></div>
@@ -177,7 +226,7 @@
         </div>
         <div class="production-perk">
             <div class="perk-name"><b>Production</b></div>
-            <div class="perk-points"><progress value="60" max="100">220</progress></div>
+            <div class="perk-points"><progress value="{{ power4 }}" max="1000"></progress><span class="progress-value">{{ power4 }}</span></div>
             <div class="perks">
                 <div class="block">
                     <div class="icon"><i class="ton-li-mug-1"></i></div>
@@ -195,7 +244,7 @@
         </div>
         <div class="documentation-perk">
             <div class="perk-name"><b>Documentation</b></div>
-            <div class="perk-points"><progress value="60" max="100"></progress></div>
+            <div class="perk-points"><progress value="{{ power5 }}" max="1000"></progress><span class="progress-value">{{ power5 }}</span></div>
             <div class="perks">
                 <div class="block">
                     <div class="icon"><i class="ton-li-flag-2"></i></div>
@@ -210,52 +259,7 @@
                     <div class="name">Author</div>
                 </div>
             </div>
-        </div>  
-    </section>
-    <section>3</section>
-</main>
-
-<nav class="main-nav slider-nav">
-    <input id="profile" type="radio" data-slide-index="0" name="nav"/>
-    <label for="profile"><i class="ton-li-gong"></i></label>
-
-    <input id="cards" type="radio" data-slide-index="1" name="nav" checked/>
-    <label for="cards"><i class="ton-li-star-1"></i></label>
-
-    <input id="perks" type="radio" data-slide-index="2" name="nav"/>
-    <label for="perks"><i class="ton-li-id"></i></label>
-</nav>
-
-<!-- Cordova -->
-<script src="cordova.js"></script>
-<script src="scripts/platformOverrides.js"></script>
-
-<!-- Lib -->
-<script src="scripts/lib/flickity.pkgd.min.js"></script>
-<script src="scripts/lib/mustache.min.js"></script>
-
-<!-- Own -->
-<script src="scripts/notification.js"></script>
-<script src="scripts/api.js"></script>
-<script src="scripts/index.js"></script>
-<script src="scripts/templates.js"></script>
-<script src="scripts/main.js"></script>
-<script src="scripts/cards.js"></script>
-<script src="scripts/widget.js"></script>
-
-<template id="cards-template">
-    <div class="card {{type}}">
-        <div class="title">{{title}}</div>
-        <div class="duration">{{days}}</div>
-
-        <div class="content">{{content}}</div>
-
-        <div class="tag {{tag}}">{{tag}}</div>
-        <div class="owner">
-            <img src="{{owner.avatar}}" class="owner-avatar"/>
-            {{owner.firstname}} {{owner.lastname}}
         </div>
-    </div>
-</template>
+    </template>
 </body>
 </html>
