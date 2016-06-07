@@ -11,6 +11,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /**
+ * Override canonical and tonicons
+ */
+i,
+i::before {
+    vertical-align: initial;
+}
+
+/**
  * Slider
  */
 .slider {
@@ -28,7 +36,6 @@ h1, h2, h3, h4, h5, h6 {
  * Slider Nav
  */
 .slider-nav {
-    height: 30px;
     position: relative;
     display: flex;
     flex: none;
@@ -44,23 +51,21 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color .1s ease-in-out;
     color: var(--highlight-text-color);
     text-align: center;
-    line-height: 30px;
 }
 
 .slider-nav input[type="radio"]:checked + label {
     background: var(--primary-color);
 }
 
-.slider-nav .label i {
-    margin: 5px;
-    font-size: 20px;
+.slider-nav label i {
+    line-height: 30px;
+    vertical-align: initial;
 }
 
 /** 
 * Main nav
 */
-
-main-nav label {
+.main-nav label {
     margin-left: auto;
     margin-right: auto;
 }
