@@ -2,7 +2,7 @@
 
     var timeouts = [5000, 30000, 300000], // 5, 30, 300 secs
         tries = 0,
-        render = templates.render.bind(templates, 'trophies');
+        render = templates.render.bind(templates, 'profile');
 
     /**
      * @returns {Promise}
