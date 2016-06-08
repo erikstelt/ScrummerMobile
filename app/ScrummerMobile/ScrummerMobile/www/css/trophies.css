@@ -37,7 +37,13 @@ h3 {
 }
 
 .icon i {
+    margin-top: auto;
+    margin-bottom: auto;
     font-size: 48px;
+}
+
+.icon i, i::before {
+    vertical-align: middle;
 }
 
 .name {
