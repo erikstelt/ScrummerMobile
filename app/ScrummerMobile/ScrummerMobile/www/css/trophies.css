@@ -1,33 +1,30 @@
-﻿/* Styling for the trophies tab of the application */
+﻿/**
+*  Styling for the trophies section of the application.
+*  Add .trophies in front of the tag to make sure we don't have any conflicts.      
+**/
 
-/*We will use Roboto for now. Update to Open Sans later*/
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #666666;
-}
-
-.title {
+.trophies .title {
     color: #00CC99;
     margin-bottom: -10px;
 }
 
-h3 {
+.trophies h3 {
     text-align: center;
 }
 
-.title hr {
+.trophies .title hr {
     width: 85%;
 }
 
 /* General styling for the block elements with the icon and name in it*/
 
-.block {
+.trophies .block {
     height: 90px;
     width: 90px;
     float: left;
 }
 
-.icon {
+.trophies .icon {
     height: 70px;
     width: 90px;
     text-align: center;
@@ -36,17 +33,17 @@ h3 {
     border-color: #999999;
 }
 
-.icon i {
+.trophies .icon i {
     margin-top: auto;
     margin-bottom: auto;
     font-size: 48px;
 }
 
-.icon i, i::before {
+.trophies .icon i, i::before {
     vertical-align: middle;
 }
 
-.name {
+.trophies .name {
     height: 20px;
     width: 90px;
     font-size: 14px;
@@ -55,17 +52,18 @@ h3 {
 }
 
 .trophies {
+    width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
 
 /* Styling progress bar for Chrome and Safari */
-progress::-webkit-progress-bar { 
+.trophies progress::-webkit-progress-bar { 
     background: #fff; 
 }
 
 /* We use flexbox to automatically asign the right margins */
-.perks {
+.trophies .perks {
     float: left;
     width: 100%;
     display: flex;
@@ -74,7 +72,7 @@ progress::-webkit-progress-bar {
 }
 
 /* Styling for the achievements part of the page */
-.achievements {
+.trophies .achievements {
     margin-top: -10px;
     margin-bottom: -10px;
     margin-left: 25px;
@@ -84,34 +82,34 @@ progress::-webkit-progress-bar {
     overflow-x: scroll;
 }
 
-.achievements .content {
+.trophies .achievements .content {
     height: 110px;
     width: 510px;
     margin-bottom: -18px;
 }
 
-.achievements .block {
+.trophies .achievements .block {
     margin-right: 12px;
 }
 
-.achievements .name {
+.trophies .achievements .name {
     background-color: #666666;
 }
 
 /* Global styling for all the perk name and point div's */
-.perk-name {
+.trophies .perk-name {
     float: left;
     width: 50%;
 }
 
-.perk-points {
+.trophies .perk-points {
     float: left;
     width: 50%;
     margin-bottom: -18px;
 }
 
 /* Styling for value in progress bar */
-.progress-value {
+.trophies .progress-value {
     position: relative;
     color: white;
     text-shadow: 1px 1px 0px #000;
@@ -121,139 +119,139 @@ progress::-webkit-progress-bar {
 }
 
 /* Styling for the research part of the page */
-.research-perk {
+.trophies .research-perk {
     width: 85%;
     height: 110px;
     margin: auto;
     margin-top: -14px;
 }
 
-.research-perk .perk-name {
+.trophies .research-perk .perk-name {
     color: #00CC99;
 }
 
-.research-perk progress {
+.trophies .research-perk progress {
     border: 1px solid #00CC99;
     height: 14px;
     width: 100%;
 }
 
-.research-perk progress::-webkit-progress-value { 
+.trophies .research-perk progress::-webkit-progress-value { 
     background: #00CC99;
 }
 
-.research-perk i {
+.trophies .research-perk i {
     color: #00CC99;
 }
 
-.research-perk .perk-points {
+.trophies .research-perk .perk-points {
 }
 
-.research-perk .name {
+.trophies .research-perk .name {
     background-color: #00CC99;
 }
 
 /* Styling for the design part of the page */
-.design-perk {
+.trophies .design-perk {
     width: 85%;
     height: 110px;
     margin: auto;
     margin-top: 12px;
 }
 
-.design-perk .perk-name {
+.trophies .design-perk .perk-name {
     color: #FF9900;
 }
 
-.design-perk i {
+.trophies .design-perk i {
     color: #FF9900;
 }
 
-.design-perk progress {
+.trophies .design-perk progress {
     border: 1px solid #FF9900;
     height: 14px;
     width: 100%;
 }
 
-.design-perk progress::-webkit-progress-value { 
+.trophies .design-perk progress::-webkit-progress-value { 
     background: #FF9900;
 }
 
-.design-perk .perk-points {
+.trophies .design-perk .perk-points {
 }
 
-.design-perk .name {
+.trophies .design-perk .name {
     background-color: #FF9900;
 }
 
 /* Styling for the interaction part of the page */
-.interaction-perk {
+.trophies .interaction-perk {
     width: 85%;
     height: 110px;
     margin: auto;
     margin-top: 12px;
 }
 
-.interaction-perk .perk-name {
+.trophies .interaction-perk .perk-name {
     color: #999999;
 }
 
-.interaction-perk i {
+.trophies .interaction-perk i {
     color: #999999;
 }
 
-.interaction-perk progress {
+.trophies .interaction-perk progress {
     border: 1px solid #999999;
     height: 14px;
     width: 100%;
 }
 
-.interaction-perk progress::-webkit-progress-value { 
+.trophies .interaction-perk progress::-webkit-progress-value { 
     background: #999999;
 }
 
-.interaction-perk .perk-points {
+.trophies .interaction-perk .perk-points {
 }
 
-.interaction-perk .name {
+.trophies .interaction-perk .name {
     background-color: #999999;
 }
 
 /* Styling for the production part of the page */
-.production-perk {
+.trophies .production-perk {
     width: 85%;
     height: 110px;
     margin: auto;
     margin-top: 12px;
 }
 
-.production-perk .perk-name {
+.trophies .production-perk .perk-name {
     color: #9900FF;
 }
 
-.production-perk i {
+.trophies .production-perk i {
     color: #9900FF;
 }
 
-.production-perk progress {
+.trophies .production-perk progress {
     border: 1px solid #9900FF;
     height: 14px;
     width: 100%;
 }
 
-.production-perk progress::-webkit-progress-value { 
+.trophies .production-perk progress::-webkit-progress-value { 
     background: #9900FF;
 }
 
-.production-perk .perk-points {
+.trophies .production-perk .perk-points {
 }
 
-.production-perk .name {
+.trophies .production-perk .name {
     background-color: #9900FF;
 }
 
 /* Styling for the documentation part of the page */
-.documentation-perk {
+.trophies .documentation-perk {
     width: 85%;
     height: 110px;
     margin: auto;
@@ -261,27 +259,27 @@ progress::-webkit-progress-bar {
     margin-bottom: 20px;
 }
 
-.documentation-perk .perk-name {
+.trophies .documentation-perk .perk-name {
     color: #6699FF;
 }
 
-.documentation-perk i {
+.trophies .documentation-perk i {
     color: #6699FF;
 }
 
-.documentation-perk progress {
+.trophies .documentation-perk progress {
     border: 1px solid #6699FF;
     height: 14px;
     width: 100%;
 }
 
-.documentation-perk progress::-webkit-progress-value { 
+.trophies .documentation-perk progress::-webkit-progress-value { 
     background: #6699FF;
 }
 
-.documentation-perk .perk-points {
+.trophies .documentation-perk .perk-points {
 }
 
-.documentation-perk .name {
+.trophies .documentation-perk .name {
     background-color: #6699FF;
 }
