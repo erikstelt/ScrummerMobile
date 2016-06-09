@@ -1,35 +1,43 @@
-.body{
-    font-family: 'Open Sans';
+/**
+*  Styling for the profile section of the application.
+*  Add .profile in front of the tag to make sure we don't have any conflicts.      
+**/
+
+.profile {
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
-.content{
-    margin-left:10px;
+.profile .title{
+    color: #00CC99;
+    margin-bottom: -10px;
 }
 
-.title{
-    font-size: 26px;
-    color: #33cccc;
+.profile h3 {
     text-align: center;
 }
 
-.sub-title{
+.profile .sub-title{
     color: #666666;
 }
 
-.exptext{
+.profile .exptext{
     color: #fff;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     position:relative;
     top:-20px; 
 }
 
-.experience{
+.profile .experience{
     width:100%;
     margin:0 auto;
     text-align:center;
 }
 
-progress {
+.profile progress {
     margin: 0 auto;
 	width: 70%;
 	height: 20px;
@@ -41,7 +49,7 @@ progress {
     border-color:#cccccc;
 }
 
-.skilltext{
+.profile .skilltext{
     color: #fff;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     position:relative;
@@ -49,21 +57,21 @@ progress {
     left: 45px; 
 }
 
-.skillpercent{
+.profile .skillpercent{
     color: #cc0066;
 }
 
-.skillbar {
+.profile .skillbar {
 	margin: -20px;
     margin-left: 40px;
     width:85%;
 }
 
-.skillmargin{
+.profile .skillmargin{
     margin-top:10px;
 }
 
-.powertext{
+.profile .powertext{
     color: #fff;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     position:relative;
@@ -72,75 +80,75 @@ progress {
     right: 47%;
 }
 
-.powerbar {
+.profile .powerbar {
 	margin: -20px;
     margin-left: 55px;
     width:80%;
 }
 /* Bar colors Power*/
-.powerresearch::-webkit-progress-value {
+.profile .powerresearch::-webkit-progress-value {
     background-color:#00cc99;
 }
 
-.researchicon{
+.profile .researchicon{
     color:#00cc99;
 }
 
-.powerdesign::-webkit-progress-value {
+.profile .powerdesign::-webkit-progress-value {
     background-color:#ff9900;
 }
 
-.designicon{
+.profile .designicon{
     color:#ff9900;
 }
 
-.powerinteraction::-webkit-progress-value {
+.profile .powerinteraction::-webkit-progress-value {
     background-color:#999999;
 }
 
-.interactionicon{
+.profile .interactionicon{
     color:#999999;
 }
 
-.powertech::-webkit-progress-value {
+.profile .powertech::-webkit-progress-value {
     background-color:#9900ff;
 }
 
-.techicon{
+.profile .techicon{
     color:#9900ff;
 }
 
-.powerdoc::-webkit-progress-value {
+.profile .powerdoc::-webkit-progress-value {
     background-color:#6699ff;
 }
 
-.docicon{
+.profile .docicon{
     color:#6699ff;
 }
 
-.powermarg{
+.profile .powermarg{
     margin-top:10px;
 }
 
-.contact{
+.profile .contact{
     font-size: 16px;
     color: #666666;
     text-align: center;
 }
 
-.contacttable{
+.profile .contacttable{
      width:60%; 
      margin:0 auto;
      color: #666666;
      text-align:left;
 }
 
-.contacttable td{
+.profile .contacttable td{
      width:20%; 
 }
 
 /* Background*/
-progress::-webkit-progress-bar {
+.profile progress::-webkit-progress-bar {
 	background: none;
 	border-radius: 0px;
 	padding-top: 0px;
@@ -149,7 +157,7 @@ progress::-webkit-progress-bar {
 }
 
 /* Bar */
-progress::-webkit-progress-value {
+.profile progress::-webkit-progress-value {
     border-radius: 0px;
     box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
     background-color: #cc0066;
