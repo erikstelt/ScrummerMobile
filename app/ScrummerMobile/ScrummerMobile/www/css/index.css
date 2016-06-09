@@ -78,11 +78,11 @@ i::before {
 }
 
 .data {
-    background-color: var(--tag-data);
+    background-color: var(--tag-interaction);
 }
 
 .coding {
-    background-color: var(--tag-coding);
+    background-color: var(--tag-production);
 }
 
 .design {
@@ -90,5 +90,5 @@ i::before {
 }
 
 .analysis {
-    background-color: var(--tag-analysis);
+    background-color: var(--tag-research);
 }
