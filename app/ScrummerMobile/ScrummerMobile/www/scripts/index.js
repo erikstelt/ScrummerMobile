@@ -38,4 +38,14 @@
             this.dispatchEvent( 'dragMove', event, [ pointer, moveVector ] );
         }
     };
+
+    /**
+     * Override Flickity's version to distinguish between horizontal and vertical (scroll)
+     *
+     * @param moveVector
+     * @return {boolean}
+     */
+    Flickity.prototype.hasDragStarted = function (moveVector) {
+        return Math.abs(moveVector.x) > 5 && Math.abs(moveVector.y) < 5;
+    }
 } )();

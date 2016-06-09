@@ -74,14 +74,14 @@ i::before {
  * Tags
  */
 .docs {
-    background: var(--tag-docs);
+    background-color: var(--tag-docs);
 }
 
-.data {
+.interaction {
     background-color: var(--tag-interaction);
 }
 
-.coding {
+.production {
     background-color: var(--tag-production);
 }
 
@@ -89,6 +89,6 @@ i::before {
     background-color: var(--tag-design);
 }
 
-.analysis {
+.research {
     background-color: var(--tag-research);
 }
