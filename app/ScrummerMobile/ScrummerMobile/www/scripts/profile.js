@@ -2,23 +2,32 @@
 
     var timeouts = [5000, 30000, 300000], // 5, 30, 300 secs
         tries = 0,
-        render = templates.render.bind(templates, 'trophies');
+        render = templates.render.bind(templates, 'profile');
 
     /**
      * @returns {Promise}
      */
-    templates.data.trophies = function () {
+    templates.data.profile = function () {
         return api.getProfile().then(function (data) {
             // Reset the attempts to fetch data
             tries = 0;
 
             // Set the values which we'd like to return
             return {
+                experience: data.exp,
+                // Skills
+                mastery: data.mastery,
+                teamwork: data.teamwork,
+                responsibility: data.responsibility,
+                // Powers
                 power1: data.power1,
                 power2: data.power2,
                 power3: data.power3,
                 power4: data.power4,
-                power5: data.power5
+                power5: data.power5,
+                // Contact
+                email: data.email,
+                phone: data.phone
             }
         }).catch(function () {
             // Try again in a while
