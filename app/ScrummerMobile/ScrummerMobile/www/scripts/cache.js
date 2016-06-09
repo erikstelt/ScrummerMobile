@@ -31,15 +31,21 @@
         }
     };
 
-    console.log('cache');
+    window.Cache = Cache;
 
+    // Populate cache
+    Cache.storage = JSON.parse(localStorage.getItem('cache') || '{}');
+    
     document.addEventListener('deviceready', function () {
         document.addEventListener('pause', function (e) {
-            console.log('pause');
+            // Persist cache to disk
+            localStorage.setItem('cache', JSON.stringify(Cache.storage));
         });
 
         document.addEventListener('resume', function (e) {
-            console.log('resume');
+            if (Object.keys(Cache.storage).length === 0) {
+                Cache.storage = JSON.parse(localStorage.getItem('cache') || '{}');
+            }
         });
     });
 })();

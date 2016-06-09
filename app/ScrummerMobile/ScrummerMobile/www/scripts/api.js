@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var api = {
+    var API = {
         /**
          * The token to authenticate with
          *
@@ -50,7 +50,7 @@
                     if (url.indexOf(callbackUrl) === 0) {
                         var hash = url.indexOf('#') !== -1, // The 'querystring' can be in the hash or in the actual querystring
                             query = url.split(hash ? '#' : '?')[1],
-                            data = api.parseQueryString(query);
+                            data = API.parseQueryString(query);
 
                         // Something went wrong. Usually the user declined
                         if (data.error) {
@@ -102,6 +102,21 @@
                 else {
                     return Promise.reject('There was a network error.');
                 }
+            }).then(function (data) {
+                Cache.set(url, data);
+                
+                return data;
+            }).catch(function (error) {
+                // If there's a cached version, return that
+                var data = Cache.get(url);
+
+                console.log(data);
+
+                if (data) {
+                    return data;
+                }
+
+                return Promise.reject(error);
             });
         },
         /**
@@ -139,5 +154,5 @@
         }
     };
 
-    window.api = api;
+    window.API = API;
 })();

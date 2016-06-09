@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var templates = {
+    var Template = {
         /**
          * Cache of templates keyed by template id
          *
@@ -42,5 +42,5 @@
         data: {}
     };
 
-    window.templates = templates;
+    window.Template = Template;
 })();

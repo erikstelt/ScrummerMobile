@@ -32,7 +32,7 @@
         [].forEach.call(document.querySelectorAll('[data-template]'), function (element) {
             var template = element.dataset.template;
 
-            templates.parse(template);
+            Template.parse(template);
         });
     });
 })();

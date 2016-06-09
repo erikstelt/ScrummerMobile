@@ -1,7 +1,7 @@
 ﻿(function() {
     'use strict';
 
-    var notification = {
+    var Notification = {
         /**
          * @type {HTMLElement}
          */
@@ -16,28 +16,28 @@
          * @param {string} message
          */
         show: function (message) {
-            notification.hide();
+            Notification.hide();
 
-            notification.element.textContent = message;
+            Notification.element.textContent = message;
 
-            notification.element.classList.add('show');
+            Notification.element.classList.add('show');
 
-            notification.timeout = window.setTimeout(notification.hide, 5000);
+            Notification.timeout = window.setTimeout(Notification.hide, 5000);
         },
         /**
          * Hide the message
          */
         hide: function() {
-            notification.element.classList.remove('show');
+            Notification.element.classList.remove('show');
 
-            window.clearTimeout(notification.timeout);
+            window.clearTimeout(Notification.timeout);
         }
     };
 
-    notification.element = document.querySelector('.notification');
-    notification.element.addEventListener('click', function () {
-        notification.hide();
+    Notification.element = document.querySelector('.notification');
+    Notification.element.addEventListener('click', function () {
+        Notification.hide();
     });
 
-    window.notification = notification;
+    window.Notification = Notification;
 })();

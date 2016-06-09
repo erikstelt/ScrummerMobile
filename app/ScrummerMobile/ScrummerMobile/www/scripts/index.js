@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    api.token = window.localStorage.getItem('token');
+    API.token = window.localStorage.getItem('token');
 
     // Override this slider's dragMove to prevent events from 'escaping' to the parent slider
     // Also disable overscroll

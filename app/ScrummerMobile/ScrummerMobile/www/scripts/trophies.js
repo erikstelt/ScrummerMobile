@@ -2,13 +2,13 @@
 
     var timeouts = [5000, 30000, 300000], // 5, 30, 300 secs
         tries = 0,
-        render = templates.render.bind(templates, 'trophies');
+        render = Template.render.bind(Template, 'trophies');
 
     /**
      * @returns {Promise}
      */
-    templates.data.trophies = function () {
-        return api.getProfile().then(function (data) {
+    Template.data.trophies = function () {
+        return API.getProfile().then(function (data) {
             // Reset the attempts to fetch data
             tries = 0;
 
@@ -28,7 +28,7 @@
                 tries++;
             }
 
-            notification.show("There was a network error");
+            Notification.show("There was a network error");
 
             // End the chain here, otherwise the template will be rendered without data
             return Promise.reject();
