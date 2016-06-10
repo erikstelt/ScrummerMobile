@@ -82,6 +82,10 @@
     overflow-x: scroll;
 }
 
+.trophies progress {
+    height: 16px;
+}
+
 .trophies .achievements .content {
     height: 110px;
     width: 510px;
@@ -110,11 +114,11 @@
 
 /* Styling for value in progress bar */
 .trophies .progress-value {
-    position: relative;
+    position: absolute;
     color: white;
     text-shadow: 1px 1px 0px #000;
-    left: 43%;
-    top: -2.00em;
+    left: 68%;
+    margin-top: -1px;
     font-size: 14px;
 }
 

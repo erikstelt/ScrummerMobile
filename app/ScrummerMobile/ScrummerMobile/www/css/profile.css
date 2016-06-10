@@ -48,7 +48,7 @@
 	/* Important Thing */
 	-webkit-appearance: none;
 	border: solid 1px;
-    border-color:#cccccc;
+    border-color: #666666;
 }
 
 .profile .skills .sub-title {
@@ -78,6 +78,10 @@
     width: 85%;
 }
 
+.profile .powers {
+    margin-bottom: 20px;
+}
+
 .profile .powers .sub-title {
     margin-top: -10px;
     margin-bottom: -20px;
@@ -98,9 +102,13 @@
     margin-left: 55px;
     width:80%;
 }
-/* Bar colors Power*/
+/* General styling for the progress bars / Bar colors Power*/
 .profile .powerresearch::-webkit-progress-value {
     background-color:#00cc99;
+}
+
+.profile .powerresearch {
+    border-color: #00cc99;
 }
 
 .profile .researchicon{
@@ -111,12 +119,20 @@
     background-color:#ff9900;
 }
 
+.profile .powerdesign {
+    border-color: #ff9900;
+}
+
 .profile .designicon{
     color:#ff9900;
 }
 
 .profile .powerinteraction::-webkit-progress-value {
     background-color:#999999;
+}
+
+.profile .powerinteraction {
+    border-color: #999999;
 }
 
 .profile .interactionicon{
@@ -127,12 +143,20 @@
     background-color:#9900ff;
 }
 
+.profile .powertech {
+    border-color: #9900ff;
+}
+
 .profile .techicon{
     color:#9900ff;
 }
 
 .profile .powerdoc::-webkit-progress-value {
     background-color:#6699ff;
+}
+
+.profile .powerdoc {
+    border-color: #6699ff;
 }
 
 .profile .docicon{
@@ -143,17 +167,12 @@
     font-size: 16px;
     color: #666666;
     text-align: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
 }
 
-.profile .contacttable{
-     width:60%; 
-     margin:0 auto;
-     color: #666666;
-     text-align:left;
-}
-
-.profile .contacttable td{
-     width:20%; 
+.profile .contact h4 {
+    margin-bottom: 5px;
 }
 
 /* Background*/
