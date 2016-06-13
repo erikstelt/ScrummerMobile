@@ -39,10 +39,10 @@
             <h1>{{ name }}</h1>
             <h2>Class: {{ class }}</h2>
             <div class="points">
-                <div class="analysis">{{ power1 }}</div>
+                <div class="research">{{ power1 }}</div>
                 <div class="design">{{ power2 }}</div>
-                <div class="data">{{ power3 }}</div>
-                <div class="coding">{{ power4 }}</div>
+                <div class="interaction">{{ power3 }}</div>
+                <div class="production">{{ power4 }}</div>
                 <div class="docs">{{ power5 }}</div>
             </div>
         </div>
@@ -53,7 +53,7 @@
                 <i class="ton-li-cross"></i>
             </label>
 
-            <span>Level:<br />{{ level }}</span>
+            <span class="level">Level<br /><br />{{ level }}</span>
         </div>
     </aside>
 
@@ -104,9 +104,6 @@
         <!-- The trophies section of the page -->
         <section id="trophies-template" class="trophies" data-template="trophies">
             <!-- HTML template for the trophies section of the application -->
-            <div class="title">
-                <h3><i class="ton-li-star-1"></i>&nbsp&nbsp My trophies:&nbsp&nbsp<br /><hr /></h3>
-            </div>
             <!-- Achievements part of the page -->
             <h3>Achievements</h3>
             <div class="achievements">
@@ -238,9 +235,6 @@
 
         <!-- The profile section of the page -->
         <section id="profile-template" class="profile" data-template="profile">
-            <div class="title">
-                <h3><i class="ton-li-id"></i>&nbsp&nbsp My profile:&nbsp&nbsp<br /><hr /></h3>
-            </div>
             <!-- Experience bar-->
             <div class="experience">
                 <div class="sub-title">
@@ -259,18 +253,18 @@
                         <h4>Skill:</h4>
                     </div>
                     <div class="skillmargin">
-                        <span class="skillpercent">50% <span class="skilltext">Mastery</span></span>
+                        <span class="skillpercent">{{ masterypercentage }} <span class="skilltext">Mastery</span></span>
                         <progress value="{{ mastery }}" max="5000" class="skillbar">
                         </progress>
 
                     </div>
                     <div class="skillmargin">
-                        <span class="skillpercent">40% <span class="skilltext">Teamwork</span></span>
+                        <span class="skillpercent">{{ teamworkpercentage }} <span class="skilltext">Teamwork</span></span>
                         <progress value="{{ teamwork }}" max="10" class="skillbar">
                         </progress>
                     </div>
                     <div class="skillmargin">
-                        <span class="skillpercent">MAX <span class="skilltext">Responsibility</span></span>
+                        <span class="skillpercent">{{ responsibilitypercentage }} <span class="skilltext">Responsibility</span></span>
                         <progress value="{{ responsibility }}" max="100" class="skillbar">
                         </progress>
                     </div>

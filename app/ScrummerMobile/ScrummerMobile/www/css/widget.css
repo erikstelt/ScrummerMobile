@@ -96,8 +96,8 @@
     height: 25px;
     line-height: 12px;
     margin: auto 0 10px 0;
-    font-size: var(--font-small);
-    text-align: right;
+    font-size: var(--font-normal);
+    text-align: left;
 }
 
 .widget input:checked ~ .right span {

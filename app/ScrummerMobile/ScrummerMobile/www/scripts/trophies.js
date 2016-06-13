@@ -8,6 +8,7 @@
      * @returns {Promise}
      */
     Template.data.trophies = function () {
+        // Get profile data
         return API.getProfile().then(function (data) {
             // Reset the attempts to fetch data
             tries = 0;
@@ -19,6 +20,28 @@
                 power3: data.power3,
                 power4: data.power4,
                 power5: data.power5
+            }
+        }).catch(function () {
+            // Try again in a while
+            window.setTimeout(render, timeouts[tries]);
+
+            if (tries < timeouts.length - 1) {
+                tries++;
+            }
+
+            Notification.show("There was a network error");
+
+            // End the chain here, otherwise the template will be rendered without data
+            return Promise.reject();
+        });
+
+        // Get badges and perk data
+        return API.getBadges().then(function (data) {
+            // Reset the attempts to fetch data
+            tries = 0;
+
+            // Set the values which we'd like to return
+            return {
             }
         }).catch(function () {
             // Try again in a while
