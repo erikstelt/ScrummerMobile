@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/vars.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/notification.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/widget.css" />
+    <link rel="stylesheet" href="css/cards.css" />
+    <link rel="stylesheet" href="css/trophies.css" />
+    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/popup.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+</head>
+<body>
+    <div class="modal ng-scope visible" ng-class="{visible: $root.modal == 'badge_' + badge.badge_id}" ng-if="$root.modal == 'badge_' + badge.badge_id" ng-modal="true">
+    <header class="ng-binding">professor</header>
+        <section>
+            <a class="ng-binding">leave more than 10 minutes early, discuss the precise amount with your teacher</a>
+            <p ng-switch="badge.power" class="ng-binding">Cost: 50 <!-- ngSwitchWhen: 1 -->
+                <i class="o o-chart-7 ng-scope" ng-switch-when="1"></i>
+        <!-- end ngSwitchWhen:  --> <!-- ngSwitchWhen: 2 --> <!-- ngSwitchWhen: 3 --> <!-- ngSwitchWhen: 4 --> <!-- ngSwitchWhen: 5 -->
+            </p>
+        </section>
+        <footer>
+            <div>
+                <button class="secondary" ng-click="$root.closeModal()">
+                    <i class="o o-cross"></i> cancel
+                </button>
+            </div>
+            <div><!-- ngIf: badge.perk.status != 1 -->
+                <button class="secondary ng-scope" ng-if="badge.perk.status != 1" disabled="disabled">
+                    <i class="o o-basket-1"></i> unavailable
+                </button><!-- end ngIf: badge.perk.status != 1 --> <!-- ngIf: badge.perk.status == 1 -->
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
