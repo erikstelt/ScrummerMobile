@@ -7,36 +7,38 @@
     <link rel="stylesheet" href="css/lib/canonical.min.css" />
     <link rel="stylesheet" href="css/lib/flickity.min.css" />
     <link rel="stylesheet" href="css/lib/tonicons.css" />
-    <link rel="stylesheet" href="css/popup.css" />
-    <link rel="stylesheet" href="css/modal.scss" />
+    <link rel="stylesheet" href="css/vars.css" />
     <link rel="stylesheet" href="css/index.css" />
+
+    <link rel="stylesheet" href="css/modal.css" />
+
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 </head>
 <body>
-    <a href="#openModal">Open Modal</a>
-<div id="openModal" class="modal">
-    <div>
-        <header class="perkheader">artist</header>
+<div class="modal">
+    <div class="{{power}}">
+        <h1>{{name}}</h1>
 
         <section>
-            <div class="perkinfo">
-                enter the class room unnoticed, even if you are up to 10 minutes late
+            <div class="info">
+                {{desc}}
             </div>
-            <div class="perkcost">
-                Cost: 30
+            <div class="cost">
+                Cost: {{cost}}
                 <i class="ton-so-eye"></i>
             </div>
         </section>
+
         <footer>
-            <div class="buttons">
-                <a href="#close" class="cancelbutton">
+            <button type="button" class="cancel">
                 <i class="ton-li-cross"></i>
-                    &nbsp Cancel
-                </a>
-                <a href="#close" class="buybutton">
+                Cancel
+            </button>
+            <button type="button" class="buy">
                 <i class="ton-so-basket-1"></i>
-                    &nbsp Buy
-                </a>
-            </div>
+                Buy
+            </button>
         </footer>
     </div>
 </div>
