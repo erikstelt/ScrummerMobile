@@ -23,7 +23,9 @@
             base: 'http://scrummer.space/api',
             login: '/oauth2/authorize/',
             callback: '/oauth2/callback/',
-            profile: '/account/me/'
+            profile: '/account/me/',
+            account: '/account/',
+            badges: '/badges/'
         },
         /**
          * Open a login window of the api
@@ -83,6 +85,14 @@
          */
         getProfile: function () {
             return this.get(this.urls.base + this.urls.profile);
+        },
+        /**
+         * Get the badges and perks
+         *
+         * @returns {Promise}
+         */
+        getBadges: function (email) {
+            return this.get(this.urls.base + this.urls.account + email + this.urls.badges);
         },
         /**
          *
