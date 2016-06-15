@@ -1,9 +1,9 @@
 ﻿(function () {
-
     var timeouts = [5000, 30000, 300000], // 5, 30, 300 secs
         tries = 0,
         render = Template.render.bind(Template, 'trophies'),
         userEmail;
+
 
     /**
      * @returns {Promise}

@@ -47,9 +47,7 @@
 }
 
 .trophies {
-    width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
+
 }
 
 /* Styling progress bar for Chrome and Safari */
