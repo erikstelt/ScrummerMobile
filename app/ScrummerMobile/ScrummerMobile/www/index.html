@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="css/cards.css" />
     <link rel="stylesheet" href="css/trophies.css" />
     <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/modal.css" />
 
     <title>Scrummer</title>
 </head>
@@ -333,6 +334,33 @@
         <input id="perks" type="radio" data-slide-index="2" name="nav" />
         <label for="perks"><i class="ton-li-id"></i></label>
     </nav>
+
+    <section class="modal">
+        <div class="{{power}}">
+            <h1>{{name}}</h1>
+
+            <section>
+                <div class="info">
+                    {{desc}}
+                </div>
+                <div class="cost">
+                    Cost: {{cost}}
+                    <i class="ton-so-eye"></i>
+                </div>
+            </section>
+
+            <footer>
+                <button type="button" class="cancel">
+                    <i class="ton-li-cross"></i>
+                    Cancel
+                </button>
+                <button type="button" class="buy">
+                    <i class="ton-so-basket-1"></i>
+                    Buy
+                </button>
+            </footer>
+        </div>
+    </section>
 
     <!-- Cordova -->
     <script src="cordova.js"></script>
