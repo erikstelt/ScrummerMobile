@@ -3,40 +3,42 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
-    <link rel="stylesheet" href="css/vars.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/notification.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/widget.css" />
-    <link rel="stylesheet" href="css/cards.css" />
-    <link rel="stylesheet" href="css/trophies.css" />
-    <link rel="stylesheet" href="css/profile.css" />
+    <title></title> 
+    <link rel="stylesheet" href="css/lib/canonical.min.css" />
+    <link rel="stylesheet" href="css/lib/flickity.min.css" />
+    <link rel="stylesheet" href="css/lib/tonicons.css" />
     <link rel="stylesheet" href="css/popup.css" />
-    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/modal.scss" />
+    <link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
-    <div class="modal ng-scope visible" ng-class="{visible: $root.modal == 'badge_' + badge.badge_id}" ng-if="$root.modal == 'badge_' + badge.badge_id" ng-modal="true">
-    <header class="ng-binding">professor</header>
+    <a href="#openModal">Open Modal</a>
+<div id="openModal" class="modal">
+    <div>
+        <header class="perkheader">artist</header>
+
         <section>
-            <a class="ng-binding">leave more than 10 minutes early, discuss the precise amount with your teacher</a>
-            <p ng-switch="badge.power" class="ng-binding">Cost: 50 <!-- ngSwitchWhen: 1 -->
-                <i class="o o-chart-7 ng-scope" ng-switch-when="1"></i>
-        <!-- end ngSwitchWhen:  --> <!-- ngSwitchWhen: 2 --> <!-- ngSwitchWhen: 3 --> <!-- ngSwitchWhen: 4 --> <!-- ngSwitchWhen: 5 -->
-            </p>
+            <div class="perkinfo">
+                enter the class room unnoticed, even if you are up to 10 minutes late
+            </div>
+            <div class="perkcost">
+                Cost: 30
+                <i class="ton-so-eye"></i>
+            </div>
         </section>
         <footer>
-            <div>
-                <button class="secondary" ng-click="$root.closeModal()">
-                    <i class="o o-cross"></i> cancel
-                </button>
-            </div>
-            <div><!-- ngIf: badge.perk.status != 1 -->
-                <button class="secondary ng-scope" ng-if="badge.perk.status != 1" disabled="disabled">
-                    <i class="o o-basket-1"></i> unavailable
-                </button><!-- end ngIf: badge.perk.status != 1 --> <!-- ngIf: badge.perk.status == 1 -->
+            <div class="buttons">
+                <a href="#close" class="cancelbutton">
+                <i class="ton-li-cross"></i>
+                    &nbsp Cancel
+                </a>
+                <a href="#close" class="buybutton">
+                <i class="ton-so-basket-1"></i>
+                    &nbsp Buy
+                </a>
             </div>
         </footer>
     </div>
+</div>
 </body>
 </html>
