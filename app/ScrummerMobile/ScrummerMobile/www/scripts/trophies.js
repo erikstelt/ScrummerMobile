@@ -1,9 +1,9 @@
 ﻿(function () {
+    'use strict';
     var timeouts = [5000, 30000, 300000], // 5, 30, 300 secs
         tries = 0,
         render = Template.render.bind(Template, 'trophies'),
         userEmail;
-
 
     /**
      * @returns {Promise}
@@ -32,9 +32,6 @@
                 // To fill values for for example power 1, perk 1 (1 is index of array at 0):
                 // Icon: powers[0].perks[0].icon
                 // Name: powers[0].perks[0].name
-                console.log(powers);
-                console.log(powers[0].perks[1]);
-
                 // Set the values which we'd like to return
                 return {
                     power1: profile.power1,
@@ -42,6 +39,7 @@
                     power3: profile.power3,
                     power4: profile.power4,
                     power5: profile.power5,
+                    // Return all the powers in the object array
                     powers: powers
                 }
             });
