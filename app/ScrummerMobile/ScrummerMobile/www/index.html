@@ -10,365 +10,373 @@
           content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
     <!-- Lib -->
-    <link rel="stylesheet" href="css/lib/canonical.min.css" />
-    <link rel="stylesheet" href="css/lib/flickity.min.css" />
-    <link rel="stylesheet" href="css/lib/tonicons.css" />
+    <link rel="stylesheet" href="css/lib/canonical.min.css"/>
+    <link rel="stylesheet" href="css/lib/flickity.min.css"/>
+    <link rel="stylesheet" href="css/lib/tonicons.css"/>
 
     <!-- Own -->
-    <link rel="stylesheet" href="css/vars.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/notification.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/widget.css" />
-    <link rel="stylesheet" href="css/cards.css" />
-    <link rel="stylesheet" href="css/trophies.css" />
-    <link rel="stylesheet" href="css/profile.css" />
+    <link rel="stylesheet" href="css/vars.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/notification.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/widget.css"/>
+    <link rel="stylesheet" href="css/cards.css"/>
+    <link rel="stylesheet" href="css/trophies.css"/>
+    <link rel="stylesheet" href="css/profile.css"/>
 
     <title>Scrummer</title>
 </head>
 <body>
 
-    <section class="notification"></section>
+<section class="notification"></section>
 
-    <aside id="widget-template" class="widget" data-template="widget">
-        <input id="widget-toggle" type="checkbox" {{{checked}}} />
+<aside id="widget-template" class="widget" data-template="widget">
+    <input id="widget-toggle" type="checkbox" {{{checked}}}/>
 
-        <img src="http://scrummer.space/static/avatars/default.png" />
+    <img src="http://scrummer.space/static/avatars/default.png"/>
 
-        <div class="left">
-            <h1>{{ name }}</h1>
-            <h2>Class: {{ class }}</h2>
-            <div class="points">
-                <div class="analysis">{{ power1 }}</div>
-                <div class="design">{{ power2 }}</div>
-                <div class="data">{{ power3 }}</div>
-                <div class="coding">{{ power4 }}</div>
-                <div class="docs">{{ power5 }}</div>
-            </div>
+    <div class="left">
+        <h1>{{ name }}</h1>
+        <h2>Class: {{ class }}</h2>
+        <div class="points">
+            <div class="analysis">{{ power1 }}</div>
+            <div class="design">{{ power2 }}</div>
+            <div class="data">{{ power3 }}</div>
+            <div class="coding">{{ power4 }}</div>
+            <div class="docs">{{ power5 }}</div>
         </div>
+    </div>
 
-        <div class="right">
-            <label for="widget-toggle">
-                <i class="ton-li-plus"></i>
-                <i class="ton-li-cross"></i>
-            </label>
+    <div class="right">
+        <label for="widget-toggle">
+            <i class="ton-li-plus"></i>
+            <i class="ton-li-cross"></i>
+        </label>
 
-            <span>Level:<br />{{ level }}</span>
+        <span>Level:<br/>{{ level }}</span>
+    </div>
+</aside>
+
+<main class="main slider">
+
+    <!-- The cards section of the page -->
+    <section class="cards">
+        <div class="card">
+            <span class="title">Lorem ipsum dolor sit amet</span>
+            <span class="deadline">6 days</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget lobortis purus, vitae tempus est.
+                <i class="ton-li-eye"></i><i class="ton-li-speech-buble-1"></i><i class="ton-li-chart-1"></i><i class="ton-li-gear-1"></i>            </p>
+
+            <div class="status">
+                <span class="deny">
+                    <i class="ton-li-cross"></i>
+                </span>
+                <span class="accept">
+                    <i class="ton-li-check"></i>
+                </span>
+            </div>
+            <span class="owner">
+                <img src="img/scrummer.svg"/>
+                Mark meteenhelelangeachternaam
+            </span>
+            <span class="tag">
+                <i class="ton-li-pen"></i>
+            </span>
         </div>
-    </aside>
+    </section>
 
-    <main class="main slider">
-
-        <!-- The cards section of the page -->
-        <section class="cards">
-            <nav class="slider-nav">
-                <input id="cards-urgent" type="radio" data-slide-index="0" name="cards" />
-                <label for="cards-urgent">
-                    <i class="ton-so-info"></i>
-                    Urgent
-                </label>
-
-                <input id="cards-verified" type="radio" data-slide-index="1" name="cards" checked />
-                <label for="cards-verified">
-                    <i class="ton-so-check"></i> Verified
-                </label>
-
-                <input id="cards-attention" type="radio" data-slide-index="2" name="cards" />
-                <label for="cards-attention">
-                    <i class="ton-so-megaphone-2"></i>
-                    Attention
-                </label>
-            </nav>
-            <div class="slider">
-                <section>
-                    <div class="card verified">
-                        <div class="title">Fix the thing</div>
-                        <div class="duration">6 days</div>
-
-                        <div class="content">{{content}}</div>
-
-                        <div class="tag design">
-                            Design
-                        </div>
-                        <div class="owner">
-                            <img src="http://placehold.it/25x25" class="owner-avatar" />
-                            Mark meteenhelelangeachternaam
-                        </div>
-                    </div>
-                </section>
-                <section></section>
-                <section>2.3</section>
-            </div>
-        </section>
-
-        <!-- The trophies section of the page -->
-        <section id="trophies-template" class="trophies" data-template="trophies">
-            <!-- HTML template for the trophies section of the application -->
-            <div class="title">
-                <h3><i class="ton-li-star-1"></i>&nbsp&nbsp My trophies:&nbsp&nbsp<br /><hr /></h3>
-            </div>
-            <!-- Achievements part of the page -->
-            <h3>Achievements</h3>
-            <div class="achievements">
-                <!-- All the perks / trophies in achievements -->
-                <div class="content">
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-equalizer-1"></i></div>
-                        <div class="name">Tinker</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-paper-plane"></i></div>
-                        <div class="name">Prototyper</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-satellite-tool"></i></div>
-                        <div class="name">Inventor</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-so-flag-2"></i></div>
-                        <div class="name">Master</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-people-7"></i></div>
-                        <div class="name">Teamplayer</div>
-                    </div>
-                </div>
-            </div>
-            <!--
-                The perks part of the page.
-                Each part has a name, progress bar and perks.
-                -->
-            <center><h3>Perks</h3></center>
-            <!-- Research -->
-            <div class="research-perk">
-                <div class="perk-name"><b>Research</b></div>
-                <div class="perk-points"><span class="progress-value">{{ power1 }}</span><progress value="{{ power1 }}" max="1000"></progress></div>
-                <div class="perks">
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-suitcase"></i></div>
-                        <div class="name">Organizer</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-pie-chart-1"></i></div>
-                        <div class="name">Analist</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-chart-7"></i></div>
-                        <div class="name">Professor</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Design -->
-            <div class="design-perk">
-                <div class="perk-name"><b>Design</b></div>
-                <div class="perk-points"><progress value="{{ power2 }}" max="1000"></progress><span class="progress-value">{{ power2 }}</span></div>
-                <div class="perks">
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-bulb"></i></div>
-                        <div class="name">Designer</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-photo-2"></i></div>
-                        <div class="name">Artist</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-eye"></i></div>
-                        <div class="name">Visionary</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Interaction -->
-            <div class="interaction-perk">
-                <div class="perk-name"><b>Interaction</b></div>
-                <div class="perk-points"><progress value="{{ power3 }}" max="1000"></progress><span class="progress-value">{{ power3 }}</span></div>
-                <div class="perks">
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-box-3"></i></div>
-                        <div class="name">Archivist</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-server-1"></i></div>
-                        <div class="name">Librarian</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-speech-buble-3"></i></div>
-                        <div class="name">Counselor</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Production -->
-            <div class="production-perk">
-                <div class="perk-name"><b>Production</b></div>
-                <div class="perk-points"><progress value="{{ power4 }}" max="1000"></progress><span class="progress-value">{{ power4 }}</span></div>
-                <div class="perks">
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-mug-1"></i></div>
-                        <div class="name">Coder</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-lock-2"></i></div>
-                        <div class="name">Hacker</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-gear-1"></i></div>
-                        <div class="name">Engineer</div>
-                    </div>
-                </div>
-            </div>
-            <!-- Documentation -->
-            <div class="documentation-perk">
-                <div class="perk-name"><b>Documentation</b></div>
-                <div class="perk-points"><progress value="{{ power5 }}" max="1000"></progress><span class="progress-value">{{ power5 }}</span></div>
-                <div class="perks">
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-flag-2"></i></div>
-                        <div class="name">Bookworm</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-file-1"></i></div>
-                        <div class="name">Writer</div>
-                    </div>
-                    <div class="block">
-                        <div class="icon"><i class="ton-li-pen"></i></div>
-                        <div class="name">Author</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- The profile section of the page -->
-        <section id="profile-template" class="profile" data-template="profile">
-            <div class="title">
-                <h3><i class="ton-li-id"></i>&nbsp&nbsp My profile:&nbsp&nbsp<br /><hr /></h3>
-            </div>
-            <!-- Experience bar-->
-            <div class="experience">
-                <div class="sub-title">
-                    <h4>Experience</h4>
-                </div>
-                <progress value="{{ experience }}" max="200000" class="expbar">
-
-                </progress>
-                <span class="exptext">{{ experience }}</span>
-
-            </div>
+    <!-- The trophies section of the page -->
+    <section id="trophies-template" class="trophies" data-template="trophies">
+        <!-- HTML template for the trophies section of the application -->
+        <div class="title">
+            <h3><i class="ton-li-star-1"></i>&nbsp&nbsp My trophies:&nbsp&nbsp<br/>
+                <hr/>
+            </h3>
+        </div>
+        <!-- Achievements part of the page -->
+        <h3>Achievements</h3>
+        <div class="achievements">
+            <!-- All the perks / trophies in achievements -->
             <div class="content">
-                <!-- Skill bar-->
-                <div class="skills">
-                    <div class="sub-title">
-                        <h4>Skill:</h4>
-                    </div>
-                    <div class="skillmargin">
-                        <span class="skillpercent">50% <span class="skilltext">Mastery</span></span>
-                        <progress value="{{ mastery }}" max="5000" class="skillbar">
-                        </progress>
-
-                    </div>
-                    <div class="skillmargin">
-                        <span class="skillpercent">40% <span class="skilltext">Teamwork</span></span>
-                        <progress value="{{ teamwork }}" max="10" class="skillbar">
-                        </progress>
-                    </div>
-                    <div class="skillmargin">
-                        <span class="skillpercent">MAX <span class="skilltext">Responsibility</span></span>
-                        <progress value="{{ responsibility }}" max="100" class="skillbar">
-                        </progress>
-                    </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-equalizer-1"></i></div>
+                    <div class="name">Tinker</div>
                 </div>
-
-                <!-- Powers bar-->
-                <div class="powers">
-                    <div class="sub-title">
-                        <h4>Powers:</h4>
-                    </div>
-                    <div class="powermarg">
-                        <i class="ton-so-chart-1 researchicon"></i>
-                        <span class="powertext">{{ power1 }}</span>
-                        <progress value="{{ power1 }}" max="1000" class="powerresearch powerbar">
-                        </progress>
-                    </div>
-                    <div class="powermarg">
-                        <i class="ton-li-eye designicon"></i>
-                        <span class="powertext">{{ power2 }}</span>
-                        <progress value="{{ power2 }}" max="1000" class="powerdesign powerbar">
-                        </progress>
-                    </div>
-                    <div class="powermarg">
-                        <i class="ton-li-speech-buble-1 interactionicon"></i>
-                        <span class="powertext">{{ power3 }}</span>
-                        <progress value="{{ power3 }}" max="1000" class="powerinteraction powerbar">
-                        </progress>
-                    </div>
-                    <div class="powermarg">
-                        <i class="ton-li-gear-2 techicon"></i>
-                        <span class="powertext">{{ power4 }}</span>
-                        <progress value="{{ power4 }}" max="1000" class="powertech powerbar">
-                        </progress>
-                    </div>
-                    <div class="powermarg">
-                        <i class="ton-li-pen docicon"></i>
-                        <span class="powertext">{{ power5 }}</span>
-                        <progress value="{{ power5 }}" max="1000" class="powerdoc powerbar">
-                        </progress>
-                    </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-paper-plane"></i></div>
+                    <div class="name">Prototyper</div>
                 </div>
-            </div>
-            <hr />
-            <div class="contact">
-                <h4>Contact</h4>
-                <i class="ton-li-mail-1"></i> {{ email }} <br />
-                <i class="ton-li-phone"></i> {{ phone }} <br />
-            </div>
-        </section>
-
-    </main>
-
-    <nav class="main-nav slider-nav">
-        <input id="profile" type="radio" data-slide-index="0" name="nav" />
-        <label for="profile"><i class="ton-li-gong"></i></label>
-
-        <input id="cards" type="radio" data-slide-index="1" name="nav" checked />
-        <label for="cards"><i class="ton-li-star-1"></i></label>
-
-        <input id="perks" type="radio" data-slide-index="2" name="nav" />
-        <label for="perks"><i class="ton-li-id"></i></label>
-    </nav>
-
-    <!-- Cordova -->
-    <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
-
-    <!-- Lib -->
-    <script src="scripts/lib/flickity.pkgd.min.js"></script>
-    <script src="scripts/lib/mustache.min.js"></script>
-
-    <!-- Own -->
-    <script src="scripts/cache.js"></script>
-    <script src="scripts/notification.js"></script>
-    <script src="scripts/api.js"></script>
-    <script src="scripts/index.js"></script>
-    <script src="scripts/template.js"></script>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/cards.js"></script>
-    <script src="scripts/widget.js"></script>
-    <script src="scripts/trophies.js"></script>
-    <script src="scripts/profile.js"></script>
-
-    <!-- Templates -->
-    <template id="cards-template">
-        <div class="card {{type}}">
-            <div class="title">{{title}}</div>
-            <div class="duration">{{days}}</div>
-
-            <div class="content">{{content}}</div>
-
-            <div class="tag {{tag}}">{{tag}}</div>
-            <div class="owner">
-                <img src="{{owner.avatar}}" class="owner-avatar" />
-                {{owner.firstname}} {{owner.lastname}}
+                <div class="block">
+                    <div class="icon"><i class="ton-li-satellite-tool"></i></div>
+                    <div class="name">Inventor</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-so-flag-2"></i></div>
+                    <div class="name">Master</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-people-7"></i></div>
+                    <div class="name">Teamplayer</div>
+                </div>
             </div>
         </div>
-    </template>
+        <!--
+            The perks part of the page.
+            Each part has a name, progress bar and perks.
+            -->
+        <center><h3>Perks</h3></center>
+        <!-- Research -->
+        <div class="research-perk">
+            <div class="perk-name"><b>Research</b></div>
+            <div class="perk-points"><span class="progress-value">{{ power1 }}</span>
+                <progress value="{{ power1 }}" max="1000"></progress>
+            </div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-suitcase"></i></div>
+                    <div class="name">Organizer</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-pie-chart-1"></i></div>
+                    <div class="name">Analist</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-chart-7"></i></div>
+                    <div class="name">Professor</div>
+                </div>
+            </div>
+        </div>
+        <!-- Design -->
+        <div class="design-perk">
+            <div class="perk-name"><b>Design</b></div>
+            <div class="perk-points">
+                <progress value="{{ power2 }}" max="1000"></progress>
+                <span class="progress-value">{{ power2 }}</span></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-bulb"></i></div>
+                    <div class="name">Designer</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-photo-2"></i></div>
+                    <div class="name">Artist</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-eye"></i></div>
+                    <div class="name">Visionary</div>
+                </div>
+            </div>
+        </div>
+        <!-- Interaction -->
+        <div class="interaction-perk">
+            <div class="perk-name"><b>Interaction</b></div>
+            <div class="perk-points">
+                <progress value="{{ power3 }}" max="1000"></progress>
+                <span class="progress-value">{{ power3 }}</span></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-box-3"></i></div>
+                    <div class="name">Archivist</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-server-1"></i></div>
+                    <div class="name">Librarian</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-speech-buble-3"></i></div>
+                    <div class="name">Counselor</div>
+                </div>
+            </div>
+        </div>
+        <!-- Production -->
+        <div class="production-perk">
+            <div class="perk-name"><b>Production</b></div>
+            <div class="perk-points">
+                <progress value="{{ power4 }}" max="1000"></progress>
+                <span class="progress-value">{{ power4 }}</span></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-mug-1"></i></div>
+                    <div class="name">Coder</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-lock-2"></i></div>
+                    <div class="name">Hacker</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-gear-1"></i></div>
+                    <div class="name">Engineer</div>
+                </div>
+            </div>
+        </div>
+        <!-- Documentation -->
+        <div class="documentation-perk">
+            <div class="perk-name"><b>Documentation</b></div>
+            <div class="perk-points">
+                <progress value="{{ power5 }}" max="1000"></progress>
+                <span class="progress-value">{{ power5 }}</span></div>
+            <div class="perks">
+                <div class="block">
+                    <div class="icon"><i class="ton-li-flag-2"></i></div>
+                    <div class="name">Bookworm</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-file-1"></i></div>
+                    <div class="name">Writer</div>
+                </div>
+                <div class="block">
+                    <div class="icon"><i class="ton-li-pen"></i></div>
+                    <div class="name">Author</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The profile section of the page -->
+    <section id="profile-template" class="profile" data-template="profile">
+        <div class="title">
+            <h3><i class="ton-li-id"></i>&nbsp&nbsp My profile:&nbsp&nbsp<br/>
+                <hr/>
+            </h3>
+        </div>
+        <!-- Experience bar-->
+        <div class="experience">
+            <div class="sub-title">
+                <h4>Experience</h4>
+            </div>
+            <progress value="{{ experience }}" max="200000" class="expbar">
+
+            </progress>
+            <span class="exptext">{{ experience }}</span>
+
+        </div>
+        <div class="content">
+            <!-- Skill bar-->
+            <div class="skills">
+                <div class="sub-title">
+                    <h4>Skill:</h4>
+                </div>
+                <div class="skillmargin">
+                    <span class="skillpercent">50% <span class="skilltext">Mastery</span></span>
+                    <progress value="{{ mastery }}" max="5000" class="skillbar">
+                    </progress>
+
+                </div>
+                <div class="skillmargin">
+                    <span class="skillpercent">40% <span class="skilltext">Teamwork</span></span>
+                    <progress value="{{ teamwork }}" max="10" class="skillbar">
+                    </progress>
+                </div>
+                <div class="skillmargin">
+                    <span class="skillpercent">MAX <span class="skilltext">Responsibility</span></span>
+                    <progress value="{{ responsibility }}" max="100" class="skillbar">
+                    </progress>
+                </div>
+            </div>
+
+            <!-- Powers bar-->
+            <div class="powers">
+                <div class="sub-title">
+                    <h4>Powers:</h4>
+                </div>
+                <div class="powermarg">
+                    <i class="ton-so-chart-1 researchicon"></i>
+                    <span class="powertext">{{ power1 }}</span>
+                    <progress value="{{ power1 }}" max="1000" class="powerresearch powerbar">
+                    </progress>
+                </div>
+                <div class="powermarg">
+                    <i class="ton-li-eye designicon"></i>
+                    <span class="powertext">{{ power2 }}</span>
+                    <progress value="{{ power2 }}" max="1000" class="powerdesign powerbar">
+                    </progress>
+                </div>
+                <div class="powermarg">
+                    <i class="ton-li-speech-buble-1 interactionicon"></i>
+                    <span class="powertext">{{ power3 }}</span>
+                    <progress value="{{ power3 }}" max="1000" class="powerinteraction powerbar">
+                    </progress>
+                </div>
+                <div class="powermarg">
+                    <i class="ton-li-gear-2 techicon"></i>
+                    <span class="powertext">{{ power4 }}</span>
+                    <progress value="{{ power4 }}" max="1000" class="powertech powerbar">
+                    </progress>
+                </div>
+                <div class="powermarg">
+                    <i class="ton-li-pen docicon"></i>
+                    <span class="powertext">{{ power5 }}</span>
+                    <progress value="{{ power5 }}" max="1000" class="powerdoc powerbar">
+                    </progress>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div class="contact">
+            <h4>Contact</h4>
+            <i class="ton-li-mail-1"></i> {{ email }} <br/>
+            <i class="ton-li-phone"></i> {{ phone }} <br/>
+        </div>
+    </section>
+
+</main>
+
+<nav class="main-nav slider-nav">
+    <input id="profile" type="radio" data-slide-index="0" name="nav"/>
+    <label for="profile"><i class="ton-li-gong"></i></label>
+
+    <input id="cards" type="radio" data-slide-index="1" name="nav" checked/>
+    <label for="cards"><i class="ton-li-star-1"></i></label>
+
+    <input id="perks" type="radio" data-slide-index="2" name="nav"/>
+    <label for="perks"><i class="ton-li-id"></i></label>
+</nav>
+
+<!-- Cordova -->
+<script src="cordova.js"></script>
+<script src="scripts/platformOverrides.js"></script>
+
+<!-- Lib -->
+<script src="scripts/lib/flickity.pkgd.min.js"></script>
+<script src="scripts/lib/mustache.min.js"></script>
+
+<!-- Own -->
+<script src="scripts/cache.js"></script>
+<script src="scripts/notification.js"></script>
+<script src="scripts/api.js"></script>
+<script src="scripts/index.js"></script>
+<script src="scripts/template.js"></script>
+<script src="scripts/main.js"></script>
+<script src="scripts/cards.js"></script>
+<script src="scripts/widget.js"></script>
+<script src="scripts/trophies.js"></script>
+<script src="scripts/profile.js"></script>
+
+<!-- Templates -->
+<template id="cards-template">
+    <div class="card">
+        <span class="title">Lorem ipsum dolor sit amet</span>
+        <span class="deadline">6 days</span>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget lobortis purus, vitae tempus est.
+        </p>
+
+        <div class="status">
+                <span class="deny">
+                    <i class="ton-li-cross"></i>
+                </span>
+                <span class="accept">
+                    <i class="ton-li-check"></i>
+                </span>
+        </div>
+            <span class="owner">
+                <img src="img/scrummer.svg"/>
+                Mark meteenhelelangeachternaam
+            </span>
+            <span class="tag">
+                <i class="ton-{{tag}}"></i>
+            </span>
+    </div>
+</template>
 
 </body>
 </html>

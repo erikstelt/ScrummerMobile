@@ -39,7 +39,7 @@
     font-size: 48px;
 }
 
-.trophies .icon i, i::before {
+.trophies .icon i, .trophies .icon i::before {
     vertical-align: middle;
 }
 

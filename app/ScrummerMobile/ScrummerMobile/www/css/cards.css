@@ -1,83 +1,94 @@
 .cards {
-    display: flex;
-    flex-direction: column;
-}
-
-.cards .slider {
-    flex: 1;
+    padding: var(--section-spacing);
 }
 
 .card {
-    border: 1px solid var(--card-border-color);
-    border-radius: 0 0 10px 10px;
-    margin: var(--section-spacing);
-    overflow: auto;
-    display: flex;
-    flex-flow: row wrap;
+    margin-bottom: var(--section-spacing);
 }
 
-.card > .title {
-    width: 70%;
-    line-height: 25px;
-    text-align: center;
-    text-wrap: none;
+.card span {
+    line-height: 40px;
+    height: 40px;
+    display: block;
+    float: left;
     text-overflow: ellipsis;
-    overflow: hidden;
-    border-right: 1px solid var(--card-border-color);
-}
-
-.card > .duration {
-    width: 30%;
-    line-height: 25px;
-    text-align: center;
-}
-
-.card > .content {
-    border: solid var(--card-border-color);
-    border-width: 1px 0;
-    padding: 5px;
-    width: 100%;
-    height: 60px;
-    overflow: hidden;
-}
-
-.card > .tag {
-    width: 30%;
-    line-height: 25px;
-    text-align: center;
-    border-right: 1px solid var(--card-border-color);
-    color: var(--alternate-text-color);
-}
-
-.card > .owner {
-    background-color: white;
-    line-height: 25px;
     white-space: nowrap;
-    text-overflow: ellipsis;
     overflow: hidden;
-    width: 70%;
+    border: 1px solid var(--card-border-color);
 }
 
-.card > .owner > img {
-    height: 21px;
-    width: 21px;
-    border-radius: 100%;
-    margin: 2px 5px;
+.card .title,
+.card .owner {
+    padding: 0 5px;
+    width: 80%;
 }
 
-/* Card types */
-.to-do {
-    background-color: var(--card-to-do);
+.card .deadline,
+.card .tag {
+    border-left-width: 0;
+    text-align: center;
+    width: 20%;
 }
 
-.doing {
-    background-color: var(--card-doing);
+.card > p {
+    border: solid var(--card-border-color);
+    border-width: 0 1px;
+    margin: 0;
+    padding: 5px;
 }
 
-.verified {
-    background-color: var(--card-verify);
+/**
+ * To do: change status colors
+ */
+.card .status {
+    background-color: orange;
+    border: solid var(--card-border-color);
+    border-width: 1px 1px 0 1px;
+    height: 31px;
 }
 
-.done {
-    background-color: var(--card-done);
+.card .status .denied {
+    background-color: red;
+}
+
+.card .status .accepted {
+    background-color: green;
+}
+
+.card .status > span {
+    line-height: 30px;
+    height: 30px;
+    color: white;
+    text-align: center;
+    width: 50%;
+    font-size: var(--font-normal);
+    border: none;
+}
+
+.card .owner img {
+    display: block;
+    float: left;
+    padding: 2px 0;
+    margin-right: 5px;
+    height: 100%;
+}
+
+.card .ton-li-pen {
+    color: var(--tag-docs);
+}
+
+.card .ton-li-eye {
+    color: var(--tag-design);
+}
+
+.card .ton-li-chart-1 {
+    color: var(--tag-research);
+}
+
+.card .ton-li-gear-1 {
+    color: var(--tag-production);
+}
+
+.card .ton-li-speech-buble-1 {
+    color: var(--tag-interaction);
 }
