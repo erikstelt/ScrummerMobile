@@ -40,11 +40,11 @@
         <h1>{{ name }}</h1>
         <h2>Class: {{ class }}</h2>
         <div class="points">
-            <div class="analysis">{{ power1 }}</div>
+            <div class="research">{{ power1 }}</div>
             <div class="design">{{ power2 }}</div>
-            <div class="data">{{ power3 }}</div>
-            <div class="coding">{{ power4 }}</div>
-            <div class="docs">{{ power5 }}</div>
+            <div class="interaction">{{ power3 }}</div>
+            <div class="production">{{ power4 }}</div>
+            <div class="documentation">{{ power5 }}</div>
         </div>
     </div>
 
@@ -89,148 +89,42 @@
 
     <!-- The trophies section of the page -->
     <section id="trophies-template" class="trophies" data-template="trophies">
-        <!-- HTML template for the trophies section of the application -->
-        <!-- Achievements part of the page
-            The template can be filled with the powers array with objects in it
-            Achievement is at position 5 of the array (6th power)-->
-        <h3>Achievements</h3>
+        <h1 class="section-title">
+            <i class="ton-li-star-1"></i>
+            Trophies
+        </h1>
+
+        <h2>Achievements</h2>
+
         <div class="achievements">
-            <!-- All the perks / trophies in achievements -->
-            <div class="content">
-                <div class="block" data-perkid="{{powers.5.perks.0.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.5.perks.0.icon}}"></i></div>
-                    <div class="name">{{powers.5.perks.0.name}}</div>
+            {{#achievements}}
+            <div class="badge" data-badgeId="{{id}}">
+                <i class="ton-li-{{icon}}"></i>
+                <span>{{name}}</span>
+            </div>
+            {{/achievements}}
+        </div>
+
+        <h2>Powers</h2>
+        {{#powers}}
+        <div class="power {{name}}">
+            <h3>{{name}}</h3>
+
+            <div class="progress">
+                <span>{{points}}</span>
+                <progress value="{{points}}" max="1000"></progress>
+            </div>
+
+            <div class="badges">
+                {{#badges}}
+                <div class="badge" data-badgeId="{{id}}">
+                    <i class="ton-li-{{icon}}"></i>
+                    <span>{{name}}</span>
                 </div>
-                <div class="block" data-perkid="{{powers.5.perks.1.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.5.perks.1.icon}}"></i></div>
-                    <div class="name">{{powers.5.perks.1.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.5.perks.2.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.5.perks.2.icon}}"></i></div>
-                    <div class="name">{{powers.5.perks.2.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.5.perks.3.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.5.perks.3.icon}}"></i></div>
-                    <div class="name">{{powers.5.perks.3.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.5.perks.4.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.5.perks.4.icon}}"></i></div>
-                    <div class="name">{{powers.5.perks.4.name}}</div>
-                </div>
+                {{/badges}}
             </div>
         </div>
-        <!--
-            The perks part of the page.
-            Each part has a name, progress bar and perks.
-            The template can be filled with the powers array with objects in it
-            Take note that power 1 is at position 0 (so -1) in the array
-            -->
-        <center><h3>Perks</h3></center>
-        <!-- Research -->
-        <div class="research-perk">
-            <div class="perk-name"><b>Research</b></div>
-            <div class="perk-points"><span class="progress-value">{{ power1 }}</span>
-                <progress value="{{ power1 }}" max="1000"></progress>
-            </div>
-            <div class="perks">
-                <div class="block" data-perkid="{{powers.0.perks.0.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.0.perks.0.icon}}"></i></div>
-                    <div class="name">{{powers.0.perks.0.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.0.perks.1.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.0.perks.1.icon}}"></i></div>
-                    <div class="name">{{powers.0.perks.1.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.0.perks.2.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.0.perks.2.icon}}"></i></div>
-                    <div class="name">{{powers.0.perks.2.name}}</div>
-                </div>
-            </div>
-        </div>
-        <!-- Design -->
-        <div class="design-perk">
-            <div class="perk-name"><b>Design</b></div>
-            <div class="perk-points">
-                <progress value="{{ power2 }}" max="1000"></progress>
-                <span class="progress-value">{{ power2 }}</span></div>
-            <div class="perks">
-                <div class="block" data-perkid="{{powers.1.perks.0.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.1.perks.0.icon}}"></i></div>
-                    <div class="name">{{powers.1.perks.0.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.1.perks.1.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.1.perks.1.icon}}"></i></div>
-                    <div class="name">{{powers.1.perks.1.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.1.perks.2.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.1.perks.2.icon}}"></i></div>
-                    <div class="name">{{powers.1.perks.2.name}}</div>
-                </div>
-            </div>
-        </div>
-        <!-- Interaction -->
-        <div class="interaction-perk">
-            <div class="perk-name"><b>Interaction</b></div>
-            <div class="perk-points">
-                <progress value="{{ power3 }}" max="1000"></progress>
-                <span class="progress-value">{{ power3 }}</span></div>
-            <div class="perks">
-                <div class="block" data-perkid="{{powers.2.perks.0.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.2.perks.0.icon}}"></i></div>
-                    <div class="name">{{powers.2.perks.0.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.2.perks.1.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.2.perks.1.icon}}"></i></div>
-                    <div class="name">{{powers.2.perks.1.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.2.perks.2.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.2.perks.2.icon}}"></i></div>
-                    <div class="name">{{powers.2.perks.2.name}}</div>
-                </div>
-            </div>
-        </div>
-        <!-- Production -->
-        <div class="production-perk">
-            <div class="perk-name"><b>Production</b></div>
-            <div class="perk-points">
-                <progress value="{{ power4 }}" max="1000"></progress>
-                <span class="progress-value">{{ power4 }}</span></div>
-            <div class="perks">
-                <div class="block" data-perkid="{{powers.3.perks.0.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.3.perks.0.icon}}"></i></div>
-                    <div class="name">{{powers.3.perks.0.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.3.perks.1.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.3.perks.1.icon}}"></i></div>
-                    <div class="name">{{powers.3.perks.1.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.3.perks.2.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.3.perks.2.icon}}"></i></div>
-                    <div class="name">{{powers.3.perks.2.name}}</div>
-                </div>
-            </div>
-        </div>
-        <!-- Documentation -->
-        <div class="documentation-perk">
-            <div class="perk-name"><b>Documentation</b></div>
-            <div class="perk-points">
-                <progress value="{{ power5 }}" max="1000"></progress>
-                <span class="progress-value">{{ power5 }}</span></div>
-            <div class="perks">
-                <div class="block" data-perkid="{{powers.4.perks.0.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.4.perks.0.icon}}"></i></div>
-                    <div class="name">{{powers.4.perks.0.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.4.perks.1.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.4.perks.1.icon}}"></i></div>
-                    <div class="name">{{powers.4.perks.1.name}}</div>
-                </div>
-                <div class="block" data-perkid="{{powers.4.perks.2.id}}">
-                    <div class="icon"><i class="ton-li-{{powers.4.perks.2.icon}}"></i></div>
-                    <div class="name">{{powers.4.perks.2.name}}</div>
-                </div>
-            </div>
-        </div>
+        {{/powers}}
     </section>
 
     <!-- The profile section of the page -->
@@ -322,9 +216,9 @@
 <!-- Lib -->
 <script src="scripts/lib/flickity.pkgd.min.js"></script>
 <script src="scripts/lib/mustache.min.js"></script>
+<script src="scripts/lib/lodash.min.js"></script>
 
 <!-- Own -->
-<script src="scripts/cache.js"></script>
 <script src="scripts/notification.js"></script>
 <script src="scripts/api.js"></script>
 <script src="scripts/index.js"></script>

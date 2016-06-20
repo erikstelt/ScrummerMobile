@@ -103,3 +103,26 @@
 .widget input:checked ~ .right span {
     display: none;
 }
+
+/**
+ * Tags
+ */
+.widget .documentation {
+    background-color: var(--tag-documentation);
+}
+
+.widget .interaction {
+    background-color: var(--tag-interaction);
+}
+
+.widget .production {
+    background-color: var(--tag-production);
+}
+
+.widget .design {
+    background-color: var(--tag-design);
+}
+
+.widget .research {
+    background-color: var(--tag-research);
+}

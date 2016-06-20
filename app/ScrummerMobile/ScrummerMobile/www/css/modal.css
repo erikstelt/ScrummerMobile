@@ -70,11 +70,11 @@
 }
 
 .modal .docs .info {
-    border-color: var(--tag-docs);
+    border-color: var(--tag-documentation);
 }
 
 .modal .docs .cost {
-    background-color: var(--tag-docs);
+    background-color: var(--tag-documentation);
 }
 
 .modal .interaction .info {

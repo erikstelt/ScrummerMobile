@@ -1,282 +1,153 @@
-﻿/**
-*  Styling for the trophies section of the application.
-*  Add .trophies in front of the tag to make sure we don't have any conflicts.      
-**/
+﻿/*
+ * Trophies section
+ * namespace: .trophies
+ */
+.trophies {
+    padding: var(--section-spacing);
+}
+
+.trophies .power {
+    margin-bottom: var(--section-spacing);
+}
 
 .trophies h3 {
-    text-align: center;
-}
-
-.trophies .title hr {
-    width: 85%;
-}
-
-/* General styling for the block elements with the icon and name in it*/
-
-.trophies .block {
-    height: 90px;
-    width: 90px;
     float: left;
+    margin: 0 0 10px 0;
+    text-transform: capitalize;
 }
 
-.trophies .icon {
-    height: 70px;
-    width: 90px;
-    text-align: center;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
-    border-color: #999999;
+.trophies .research h3,
+.trophies .research i {
+    color: var(--tag-research);
 }
 
-.trophies .icon i {
-    margin-top: auto;
-    margin-bottom: auto;
-    font-size: 48px;
+.trophies .design h3,
+.trophies .design i{
+    color: var(--tag-design);
 }
 
-.trophies .icon i, .trophies .icon i::before {
-    vertical-align: middle;
+.trophies .interaction h3,
+.trophies .interaction i {
+    color: var(--tag-interaction);
 }
 
-.trophies .name {
+.trophies .production h3,
+.trophies .production i{
+    color: var(--tag-production);
+}
+
+.trophies .documentation h3,
+.trophies .documentation i{
+    color: var(--tag-documentation);
+}
+
+.trophies .progress {
+    position: relative;
+    float: right;
     height: 20px;
-    width: 90px;
-    font-size: 14px;
-    color: white;
-    text-align: center;
+    margin-top: 4px;
 }
 
-.trophies {
-
-}
-
-/* Styling progress bar for Chrome and Safari */
-.trophies progress::-webkit-progress-bar { 
-    background: #fff; 
-}
-
-/* We use flexbox to automatically asign the right margins */
-.trophies .perks {
-    float: left;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-/* Styling for the achievements part of the page */
-.trophies .achievements {
-    margin-top: -2px;
-    margin-bottom: -4px;
-    margin-left: 25px;
-    width: 86%;
-    /* Scrollable for now. We have to fix this with flickity later */
-    overflow-y: hidden;
-    overflow-x: scroll;
+.trophies .progress span {
+    font-size: var(--font-small);
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 5px;
+    height: 20px;
+    color: var(--highlight-text-color);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .8);
 }
 
 .trophies progress {
-    height: 16px;
+    width: 130px;
+    height: 20px;
+    border: 1px solid var(--card-border-color);
+    -webkit-appearance: none;
 }
 
-.trophies .achievements .content {
-    height: 110px;
-    width: 510px;
-    margin-bottom: -18px;
+.trophies progress::-webkit-progress-bar {
+    background: #fff;
 }
 
-.trophies .achievements .block {
-    margin-right: 12px;
+.trophies .research progress::-webkit-progress-value {
+    background-color: var(--tag-research);
 }
 
-.trophies .achievements .name {
-    background-color: #666666;
+.trophies .design progress::-webkit-progress-value {
+    background-color: var(--tag-design);
 }
 
-/* Global styling for all the perk name and point div's */
-.trophies .perk-name {
-    float: left;
-    width: 50%;
+.trophies .interaction progress::-webkit-progress-value {
+    background-color: var(--tag-interaction);
 }
 
-.trophies .perk-points {
-    float: left;
-    width: 50%;
-    margin-bottom: -18px;
+.trophies .production progress::-webkit-progress-value {
+    background-color: var(--tag-production);
 }
 
-/* Styling for value in progress bar */
-.trophies .progress-value {
+.trophies .documentation progress::-webkit-progress-value {
+    background-color: var(--tag-documentation);
+}
+
+.trophies .badges {
+    display: flex;
+    clear: both;
+    justify-content: space-between;
+}
+
+.trophies .badge {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    text-align: center;
+    border: 1px solid var(--card-border-color);
+}
+
+.trophies .badge i {
+    font-size: 40px;
+    line-height: 70px;
+    display: block;
+    width: 100%;
+}
+
+.trophies .badge span {
+    font-size: var(--font-small);
+    line-height: 19px;
     position: absolute;
-    color: white;
-    text-shadow: 1px 1px 0px #000;
-    left: 68%;
-    margin-top: -1px;
-    font-size: 14px;
-}
-
-/* Styling for the research part of the page */
-.trophies .research-perk {
-    width: 85%;
-    height: 110px;
-    margin: auto;
-    margin-top: -6px;
-}
-
-.trophies .research-perk .perk-name {
-    color: #00CC99;
-}
-
-.trophies .research-perk progress {
-    border: 1px solid #00CC99;
-    height: 14px;
+    bottom: 0;
+    display: block;
     width: 100%;
+    height: 19px;
+    color: var(--highlight-text-color);
+    border-top: 1px solid var(--card-border-color);
 }
 
-.trophies .research-perk progress::-webkit-progress-value { 
-    background: #00CC99;
+.trophies .achievements .badge {
+    margin: 0 10px;
 }
 
-.trophies .research-perk i {
-    color: #00CC99;
+.trophies .achievements .badge span {
+    background: var(--tag-achievement);
 }
 
-.trophies .research-perk .perk-points {
+.trophies .research .badge span {
+    background-color: var(--tag-research);
 }
 
-.trophies .research-perk .name {
-    background-color: #00CC99;
+.trophies .design .badge span {
+    background-color: var(--tag-design);
 }
 
-/* Styling for the design part of the page */
-.trophies .design-perk {
-    width: 85%;
-    height: 110px;
-    margin: auto;
-    margin-top: 12px;
+.trophies .interaction .badge span {
+    background-color: var(--tag-interaction);
 }
 
-.trophies .design-perk .perk-name {
-    color: #FF9900;
+.trophies .production .badge span {
+    background-color: var(--tag-production);
 }
 
-.trophies .design-perk i {
-    color: #FF9900;
-}
-
-.trophies .design-perk progress {
-    border: 1px solid #FF9900;
-    height: 14px;
-    width: 100%;
-}
-
-.trophies .design-perk progress::-webkit-progress-value { 
-    background: #FF9900;
-}
-
-.trophies .design-perk .perk-points {
-}
-
-.trophies .design-perk .name {
-    background-color: #FF9900;
-}
-
-/* Styling for the interaction part of the page */
-.trophies .interaction-perk {
-    width: 85%;
-    height: 110px;
-    margin: auto;
-    margin-top: 12px;
-}
-
-.trophies .interaction-perk .perk-name {
-    color: #999999;
-}
-
-.trophies .interaction-perk i {
-    color: #999999;
-}
-
-.trophies .interaction-perk progress {
-    border: 1px solid #999999;
-    height: 14px;
-    width: 100%;
-}
-
-.trophies .interaction-perk progress::-webkit-progress-value { 
-    background: #999999;
-}
-
-.trophies .interaction-perk .perk-points {
-}
-
-.trophies .interaction-perk .name {
-    background-color: #999999;
-}
-
-/* Styling for the production part of the page */
-.trophies .production-perk {
-    width: 85%;
-    height: 110px;
-    margin: auto;
-    margin-top: 12px;
-}
-
-.trophies .production-perk .perk-name {
-    color: #9900FF;
-}
-
-.trophies .production-perk i {
-    color: #9900FF;
-}
-
-.trophies .production-perk progress {
-    border: 1px solid #9900FF;
-    height: 14px;
-    width: 100%;
-}
-
-.trophies .production-perk progress::-webkit-progress-value { 
-    background: #9900FF;
-}
-
-.trophies .production-perk .perk-points {
-}
-
-.trophies .production-perk .name {
-    background-color: #9900FF;
-}
-
-/* Styling for the documentation part of the page */
-.trophies .documentation-perk {
-    width: 85%;
-    height: 110px;
-    margin: auto;
-    margin-top: 12px;
-    margin-bottom: 20px;
-}
-
-.trophies .documentation-perk .perk-name {
-    color: #6699FF;
-}
-
-.trophies .documentation-perk i {
-    color: #6699FF;
-}
-
-.trophies .documentation-perk progress {
-    border: 1px solid #6699FF;
-    height: 14px;
-    width: 100%;
-}
-
-.trophies .documentation-perk progress::-webkit-progress-value { 
-    background: #6699FF;
-}
-
-.trophies .documentation-perk .perk-points {
-}
-
-.trophies .documentation-perk .name {
-    background-color: #6699FF;
+.trophies .documentation .badge span {
+    background-color: var(--tag-documentation);
 }

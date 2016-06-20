@@ -12,11 +12,12 @@
     --card-verify: #f0dbff;
     --card-done: dbfff6;
 
-    --tag-docs: #6699ff;
+    --tag-documentation: #6699ff;
     --tag-interaction: #999999;
     --tag-production: #9900ff;
     --tag-design: #ff9900;
     --tag-research: #00cc99;
+    --tag-achievement: #666666;
 
     --font-large: 20px;
     --font-normal: 16px;

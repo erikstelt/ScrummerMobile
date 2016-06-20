@@ -20,12 +20,12 @@
          * @type {Object<string, string>}
          */
         urls: {
-            base: 'http://scrummer.space/api',
-            login: '/oauth2/authorize/',
-            callback: '/oauth2/callback/',
-            profile: '/account/me/',
-            account: '/account/',
-            badges: '/badges/'
+            base: 'http://scrummer.space/api/',
+            login: 'oauth2/authorize/',
+            callback: 'oauth2/callback/',
+            profile: 'account/me/',
+            account: 'account/',
+            badges: 'badges/'
         },
         /**
          * Open a login window of the api
@@ -92,12 +92,12 @@
          * @returns {Promise}
          */
         getBadges: function (email) {
-            return this.get(this.urls.base + this.urls.account + email + this.urls.badges);
+            return this.get(this.urls.base + this.urls.account + email + '/' + this.urls.badges);
         },
         /**
          *
          * @param {string} url
-         * @param {Object<string, *>} data
+         * @param {Object<string, *>} [data]
          * @returns {Promise}
          */
         get: function (url, data) {
@@ -112,21 +112,6 @@
                 else {
                     return Promise.reject('There was a network error.');
                 }
-            }).then(function (data) {
-                Cache.set(url, data);
-                
-                return data;
-            }).catch(function (error) {
-                // If there's a cached version, return that
-                var data = Cache.get(url);
-
-                console.log(data);
-
-                if (data) {
-                    return data;
-                }
-
-                return Promise.reject(error);
             });
         },
         /**
