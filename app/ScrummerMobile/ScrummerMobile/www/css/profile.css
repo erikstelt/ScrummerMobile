@@ -109,3 +109,17 @@
 .profile .documentation progress::-webkit-progress-value {
     background-color: var(--tag-documentation);
 }
+
+.profile .contact {
+    margin-top: 40px;
+    border-top: 1px dashed var(--primary-color);
+}
+
+.profile .contact div {
+    text-align: center;
+}
+
+.profile .contact i {
+    float: left;
+    line-height: 24px;
+}
