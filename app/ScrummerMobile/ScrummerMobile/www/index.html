@@ -129,44 +129,88 @@
 
     <!-- The profile section of the page -->
     <section id="profile-template" class="profile" data-template="profile">
-        <!-- Experience bar-->
+        <h1 class="section-title">
+            <i class="ton-li-id"></i>
+            Profile
+        </h1>
+
+        <h2>Experience</h2>
         <div class="experience">
-            <div class="sub-title">
-                <h4>Experience</h4>
+            <span>{{exp}} / {{maxExp}}</span>
+            <progress value="{{exp}}" max="{{maxExp}}"></progress>
+        </div>
+
+        <h2>Skills</h2>
+
+        <div class="skill">
+            <span>{{mastery.percent}}</span>
+            <div class="progress">
+                <span class="progress-text">Mastery</span>
+                <progress value="{{mastery.exp}}" max="5000" ></progress>
             </div>
         </div>
-        <div class="content">
-            <!-- Skill bar-->
-            <div class="skills">
-                <div class="sub-title">
-                    <h4>Skill:</h4>
-                </div>
-                <div class="skillmargin">
-                    <span class="skillpercent">{{ masterypercentage }} <span class="skilltext">Mastery</span></span>
-                    <progress value="{{ mastery }}" max="5000" class="skillbar">
-                    </progress>
 
-                </div>
-                <div class="skillmargin">
-                    <span class="skillpercent">{{ teamworkpercentage }} <span class="skilltext">Teamwork</span></span>
-                    <progress value="{{ teamwork }}" max="10" class="skillbar">
-                    </progress>
-                </div>
-                <div class="skillmargin">
-                    <span class="skillpercent">{{ responsibilitypercentage }} <span
-                            class="skilltext">Responsibility</span></span>
-                    <progress value="{{ responsibility }}" max="100" class="skillbar">
-                    </progress>
-                </div>
+        <div class="skill">
+            <span>{{teamwork.percent}}</span>
+            <div class="progress">
+                <span>Teamwork</span>
+                <progress value="{{teamwork.exp}}" max="10" ></progress>
             </div>
-            <div class="block">
-                <div class="icon"><i class="ton-li-file-1"></i></div>
-                <div class="name">Writer</div>
+        </div>
+
+        <div class="skill">
+            <span>{{responsibility.percent}}</span>
+            <div class="progress">
+                <span>Responsibility</span>
+                <progress value="{{responsibility.exp}}" max="100" ></progress>
             </div>
-            <div class="block">
-                <div class="icon"><i class="ton-li-pen"></i></div>
-                <div class="name">Author</div>
+        </div>
+
+        <h2>Powers</h2>
+        <div class="power research">
+            <i class="ton-li-chart-1"></i>
+            <div class="progress">
+                <span>{{power1}}</span>
+                <progress value="{{power1}}" max="1000" ></progress>
             </div>
+        </div>
+        <div class="power design">
+            <i class="ton-li-eye"></i>
+            <div class="progress">
+                <span>{{power2}}</span>
+                <progress value="{{power2}}" max="1000" ></progress>
+            </div>
+        </div>
+        <div class="power interaction">
+            <i class="ton-li-speech-buble-1"></i>
+            <div class="progress">
+                <span>{{power3}}</span>
+                <progress value="{{power3}}" max="1000" ></progress>
+            </div>
+        </div>
+        <div class="power production">
+            <i class="ton-li-gear-1"></i>
+            <div class="progress">
+                <span>{{power4}}</span>
+                <progress value="{{power4}}" max="1000" ></progress>
+            </div>
+        </div>
+        <div class="power documentation">
+            <i class="ton-li-pen"></i>
+            <div class="progress">
+                <span>{{power5}}</span>
+                <progress value="{{power5}}" max="1000" ></progress>
+            </div>
+        </div>
+
+        <h2>Contact</h2>
+        <div class="contact">
+            <i class="ton-li-"></i>
+            <span>{{email}}</span>
+        </div>
+        <div class="contact">
+            <i class="ton-li-phone"></i>
+            <span>{{phone}}</span>
         </div>
     </section>
 </main>

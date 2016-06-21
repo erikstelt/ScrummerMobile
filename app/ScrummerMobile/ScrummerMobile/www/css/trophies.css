@@ -3,7 +3,7 @@
  * namespace: .trophies
  */
 .trophies {
-    padding: var(--section-spacing);
+    padding: 0 var(--section-spacing) var(--section-spacing) var(--section-spacing);
 }
 
 .trophies .power {

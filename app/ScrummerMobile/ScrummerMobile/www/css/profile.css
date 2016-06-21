@@ -1,187 +1,111 @@
 /**
-*  Styling for the profile section of the application.
-*  Add .profile in front of the tag to make sure we don't have any conflicts.      
-**/
+  * Profile section
+  * namespace: .profile
+  */
 
 .profile {
-    width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding-left: 25px;
-    padding-right: 25px;
-}
-
-.profile h3 {
-    text-align: center;
-}
-
-.profile .sub-title{
-    color: #666666;
-    text-align: left;
-}
-
-.profile .exptext{
-    color: #fff;
-    text-shadow: 1px 1px 0px #000;
-    position:relative;
-    top: -1.45em; 
-}
-
-.profile .experience{
-    width:80%;
-    margin:0 auto;
-    margin-bottom: -25px;
-    text-align:center;
+    padding: 0 var(--section-spacing) var(--section-spacing) var(--section-spacing);
 }
 
 .profile progress {
-    margin: 0 auto;
-	width: 100%;
-	height: 20px;
-    margin-top: -20px;
-	display: block;
-	/* Important Thing */
-	-webkit-appearance: none;
-	border: solid 1px;
-    border-color: #666666;
-}
-
-.profile .skills .sub-title {
-    margin-bottom: -20px;
-}
-
-.profile .skills .skillmargin {
+    -webkit-appearance: none;
+    height: 30px;
+    border: 1px solid var(--card-border-color);
     width: 100%;
-    overflow: hidden;
-    margin-top: 2%;
 }
 
-.profile .skilltext{
-    width:10%;
-    color: #fff;
-    text-shadow: 1px 1px 0px #000;
-    position:relative;
-    left: 5%;
-}
-
-.profile .skillpercent{
-    color: #cc0066;
-}
-
-.profile .skillbar {
-    margin-left: 40px;
-    width: 85%;
-}
-
-.profile .powers {
-    margin-bottom: 20px;
-}
-
-.profile .powers .sub-title {
-    margin-top: -10px;
-    margin-bottom: -20px;
-}
-
-.profile .powers .powermarg {
-    margin-top: 2%;
-}
-
-.profile .powertext{
-    color: #fff;
-    text-shadow: 1px 1px 0px #000;
-    position:relative;
-    left: 49%;
-}
-
-.profile .powerbar {
-    margin-left: 55px;
-    width:80%;
-}
-/* General styling for the progress bars / Bar colors Power*/
-.profile .powerresearch::-webkit-progress-value {
-    background-color:#00cc99;
-}
-
-.profile .powerresearch {
-    border-color: #00cc99;
-}
-
-.profile .researchicon{
-    color:#00cc99;
-}
-
-.profile .powerdesign::-webkit-progress-value {
-    background-color:#ff9900;
-}
-
-.profile .powerdesign {
-    border-color: #ff9900;
-}
-
-.profile .designicon{
-    color:#ff9900;
-}
-
-.profile .powerinteraction::-webkit-progress-value {
-    background-color:#999999;
-}
-
-.profile .powerinteraction {
-    border-color: #999999;
-}
-
-.profile .interactionicon{
-    color:#999999;
-}
-
-.profile .powertech::-webkit-progress-value {
-    background-color:#9900ff;
-}
-
-.profile .powertech {
-    border-color: #9900ff;
-}
-
-.profile .techicon{
-    color:#9900ff;
-}
-
-.profile .powerdoc::-webkit-progress-value {
-    background-color:#6699ff;
-}
-
-.profile .powerdoc {
-    border-color: #6699ff;
-}
-
-.profile .docicon{
-    color:#6699ff;
-}
-
-.profile .contact{
-    font-size: 16px;
-    color: #666666;
-    text-align: center;
-    margin-top: -10px;
-    margin-bottom: 20px;
-}
-
-.profile .contact h4 {
-    margin-bottom: 5px;
-}
-
-/* Background*/
 .profile progress::-webkit-progress-bar {
-	background: none;
-	border-radius: 0px;
-	padding-top: 0px;
-	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
-    
+    background: #fff;
 }
 
-/* Bar */
-.profile progress::-webkit-progress-value {
-    border-radius: 0px;
-    box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
-    background-color: #cc0066;
+.profile .experience,
+.profile .progress {
+    flex: 1;
+    position: relative;
+}
+
+.profile .skill,
+.profile .power {
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.profile .experience progress::-webkit-progress-value,
+.profile .skill progress::-webkit-progress-value {
+    background-color: #cc0f59;
+}
+
+.profile .experience span,
+.profile .progress span {
+    display: block;
+    position: absolute;
+    color: var(--highlight-text-color);
+    text-align: center;
+    width: 100%;
+    line-height: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+    top: 0;
+}
+
+.profile .skill .progress span {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.profile .skill > span,
+.profile .power > i {
+    width: 40px;
+    margin-right: 10px;
+    line-height: 30px;
+}
+
+.profile .skill > span {
+    text-align: right;
+}
+
+.profile .power > i {
+    text-align: center;
+    font-size: var(--font-large);
+}
+
+.profile .research i {
+    color: var(--tag-research);
+}
+
+.profile .research progress::-webkit-progress-value {
+    background-color: var(--tag-research);
+}
+
+.profile .design i {
+    color: var(--tag-design);
+}
+
+.profile .design progress::-webkit-progress-value {
+    background-color: var(--tag-design);
+}
+
+.profile .interaction i {
+    color: var(--tag-interaction);
+}
+
+.profile .interaction progress::-webkit-progress-value {
+    background-color: var(--tag-interaction);
+}
+
+.profile .production i {
+    color: var(--tag-production);
+}
+
+.profile .production progress::-webkit-progress-value {
+    background-color: var(--tag-production);
+}
+
+.profile .documentation i {
+    color: var(--tag-documentation);
+}
+
+.profile .documentation progress::-webkit-progress-value {
+    background-color: var(--tag-documentation);
 }
