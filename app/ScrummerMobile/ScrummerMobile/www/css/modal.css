@@ -1,21 +1,25 @@
 .modal {
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
-    left: 0;
+    /* Position fixed is needed to stay in view while scrolling
+       but this requires 'left: 100%' to position correct */
+    left: 100%;
+    width: 100%;
     background: rgba(136, 136, 136, .25);
     z-index: 100;
     opacity: 0;
     transition: opacity .2s ease-in-out, visibility 0s linear .2s;
-    pointer-events: none;
     visibility: hidden;
+    pointer-events: none;
+    overflow: auto;
 }
 
 .modal.visible {
     visibility: visible;
     opacity: 1;
     transition-delay: 0s, 0s;
+    pointer-events: auto;
 }
 
 .modal > div {
@@ -30,10 +34,14 @@
     text-align: center;
 }
 
+.modal p {
+    margin: 0;
+}
+
 .modal .info {
     border: 1px solid;
-    height: 100px;
-    padding: 3px;
+    min-height: 40px;
+    padding: 5px;
 }
 
 .modal .cost {
@@ -107,4 +115,20 @@
 
 .modal .research .cost {
     background-color: var(--tag-research);
+}
+
+.modal .documentation .info {
+    border-color: var(--tag-documentation);
+}
+
+.modal .documentation .cost {
+    background-color: var(--tag-documentation);
+}
+
+.modal .achievement .info {
+    border-color: var(--tag-achievement);
+}
+
+.modal .achievement .cost {
+    background-color: var(--tag-achievement);
 }

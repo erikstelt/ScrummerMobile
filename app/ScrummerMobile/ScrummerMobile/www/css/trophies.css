@@ -16,28 +16,28 @@
     text-transform: capitalize;
 }
 
-.trophies .research h3,
-.trophies .research i {
+.trophies .power.research h3,
+.trophies .power.research i {
     color: var(--tag-research);
 }
 
-.trophies .design h3,
-.trophies .design i{
+.trophies .power.design h3,
+.trophies .power.design i {
     color: var(--tag-design);
 }
 
-.trophies .interaction h3,
-.trophies .interaction i {
+.trophies .power.interaction h3,
+.trophies .power.interaction i {
     color: var(--tag-interaction);
 }
 
-.trophies .production h3,
-.trophies .production i{
+.trophies .power.production h3,
+.trophies .power.production i {
     color: var(--tag-production);
 }
 
-.trophies .documentation h3,
-.trophies .documentation i{
+.trophies .power.documentation h3,
+.trophies .power.documentation i {
     color: var(--tag-documentation);
 }
 

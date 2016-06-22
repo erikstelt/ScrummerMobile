@@ -13,7 +13,7 @@
     display: none;
 }
 
-.widget input:not(:checked) ~ .right > label > .ton-li-cross,
+.widget input:not(:checked) ~ .right > label > .ton-li-minus,
 .widget input:checked ~ .right > label > .ton-li-plus {
     display: block;
 }

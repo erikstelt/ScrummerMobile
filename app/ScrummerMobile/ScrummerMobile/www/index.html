@@ -51,7 +51,7 @@
     <div class="right">
         <label for="widget-toggle">
             <i class="ton-li-plus"></i>
-            <i class="ton-li-cross"></i>
+            <i class="ton-li-minus"></i>
         </label>
 
         <span>Level:<br/>{{ level }}</span>
@@ -59,7 +59,6 @@
 </aside>
 
 <main class="main slider">
-
     <!-- The cards section of the page -->
     <section class="cards">
         <div class="card">
@@ -89,16 +88,37 @@
 
     <!-- The trophies section of the page -->
     <section id="trophies-template" class="trophies" data-template="trophies">
-        <h1 class="section-title">
-            <i class="ton-li-star-1"></i>
-            Trophies
-        </h1>
+        <section id="modal-template" class="modal rendered" data-template="modal">
+            <div class="{{power}}">
+                <h1>{{name}}</h1>
+
+                <section>
+                    <p class="info">
+                        {{desc}}
+                    </p>
+                    <p class="cost">
+                        Cost: {{cost}}
+                    </p>
+                </section>
+
+                <footer>
+                    <button type="button" class="cancel">
+                        <i class="ton-li-cross"></i>
+                        Cancel
+                    </button>
+                    <button type="button" class="buy">
+                        <i class="ton-so-basket-1"></i>
+                        Buy
+                    </button>
+                </footer>
+            </div>
+        </section>
 
         <h2>Achievements</h2>
 
         <div class="achievements">
             {{#achievements}}
-            <div class="badge" data-badgeId="{{id}}">
+            <div class="badge" data-perk-id="{{id}}">
                 <i class="ton-li-{{icon}}"></i>
                 <span>{{name}}</span>
             </div>
@@ -117,7 +137,7 @@
 
             <div class="badges">
                 {{#badges}}
-                <div class="badge" data-badgeId="{{id}}">
+                <div class="badge" data-perk-id="{{id}}">
                     <i class="ton-li-{{icon}}"></i>
                     <span>{{name}}</span>
                 </div>
@@ -125,15 +145,11 @@
             </div>
         </div>
         {{/powers}}
+
     </section>
 
     <!-- The profile section of the page -->
     <section id="profile-template" class="profile" data-template="profile">
-        <h1 class="section-title">
-            <i class="ton-li-id"></i>
-            Profile
-        </h1>
-
         <h2>Experience</h2>
         <div class="experience">
             <span>{{exp}} / {{maxExp}}</span>
@@ -228,33 +244,6 @@
     <input id="perks" type="radio" data-slide-index="2" name="nav"/>
     <label for="perks"><i class="ton-li-id"></i></label>
 </nav>
-
-<section class="modal">
-    <div class="{{power}}">
-        <h1>{{name}}</h1>
-
-        <section>
-            <div class="info">
-                {{desc}}
-            </div>
-            <div class="cost">
-                Cost: {{cost}}
-                <i class="ton-so-eye"></i>
-            </div>
-        </section>
-
-        <footer>
-            <button type="button" class="cancel">
-                <i class="ton-li-cross"></i>
-                Cancel
-            </button>
-            <button type="button" class="buy">
-                <i class="ton-so-basket-1"></i>
-                Buy
-            </button>
-        </footer>
-    </div>
-</section>
 
 <!-- Cordova -->
 <script src="cordova.js"></script>

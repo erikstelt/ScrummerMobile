@@ -25,7 +25,8 @@
             callback: 'oauth2/callback/',
             profile: 'account/me/',
             account: 'account/',
-            badges: 'badges/'
+            badges: 'badges/',
+            perks: 'perks/'
         },
         /**
          * Open a login window of the api
@@ -89,10 +90,19 @@
         /**
          * Get the badges and perks
          *
+         * @param {string} email
          * @returns {Promise}
          */
         getBadges: function (email) {
             return this.get(this.urls.base + this.urls.account + email + '/' + this.urls.badges);
+        },
+        /**
+         *
+         * @param {string} email
+         * @returns {Promise}
+         */
+        getPerks: function (email) {
+            return this.get(this.urls.base + this.urls.account + email + '/' + this.urls.perks);
         },
         /**
          *

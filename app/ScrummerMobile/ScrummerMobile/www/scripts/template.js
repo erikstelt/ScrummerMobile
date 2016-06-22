@@ -30,23 +30,32 @@
          * Render the template with mustache. Takes data from data
          *
          * @param {string} id
+         * @param {object} [data]
          * @return {Promise}
          */
-        render: function (id) {
+        render: function (id, data) {
             var scope = this,
-                promise = this.data[id] || Promise.resolve;
+                promise;
 
-            return promise().then(function (data) {
+            if (data !== undefined) {
+                promise = Promise.resolve(data);
+            } else if (this.data[id]) {
+                promise = this.data[id]();
+            } else {
+                promise = Promise.resolve();
+            }
+
+            return promise.then(function (data) {
                 // Reset the failed status
                 delete scope.failed[id];
 
-                var rendered = Mustache.render(scope.cache[id], data || {});
+                var rendered = Mustache.render(scope.cache[id], data || {}),
+                    element = document.querySelector('[data-template="' + id + '"]');
 
-                [].forEach.call(document.querySelectorAll('[data-template="' + id + '"]'), function (element) {
-                    element.classList.add('rendered');
+                element.classList.add('rendered');
+                element.innerHTML = rendered;
 
-                    element.innerHTML = rendered;
-                });
+                return element;
             }).catch(function (error) {
                 var tries = scope.failed[id] || 0,
                     timeout = timeouts[Math.min(tries, timeouts.length - 1)];
