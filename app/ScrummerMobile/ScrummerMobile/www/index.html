@@ -61,29 +61,7 @@
 <main class="main slider">
     <!-- The cards section of the page -->
     <section class="cards">
-        <div class="card">
-            <span class="title">Lorem ipsum dolor sit amet</span>
-            <span class="deadline">6 days</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget lobortis purus, vitae tempus est.
-                <i class="ton-li-eye"></i><i class="ton-li-speech-buble-1"></i><i class="ton-li-chart-1"></i><i
-                        class="ton-li-gear-1"></i></p>
-
-            <div class="status">
-                <span class="deny">
-                    <i class="ton-li-cross"></i>
-                </span>
-                <span class="accept">
-                    <i class="ton-li-check"></i>
-                </span>
-            </div>
-            <span class="owner">
-                <img src="img/scrummer.svg"/>
-                Mark meteenhelelangeachternaam
-            </span>
-            <span class="tag">
-                <i class="ton-li-pen"></i>
-            </span>
-        </div>
+        test123
     </section>
 
     <!-- The trophies section of the page -->
@@ -310,10 +288,12 @@
 
 <!-- Templates -->
 <template id="cards-template">
+    {{#cards}}
     <div class="card">
-        <span class="title">Lorem ipsum dolor sit amet</span>
-        <span class="deadline">6 days</span>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget lobortis purus, vitae tempus est.
+        <span class="title">{{title}}</span>
+        <span class="deadline {{deadline.class}}">{{deadline.value}}</span>
+        <p class="description">
+            {{description}}
         </p>
 
         <div class="status">
@@ -326,12 +306,13 @@
         </div>
             <span class="owner">
                 <img src="img/scrummer.svg"/>
-                Mark meteenhelelangeachternaam
+                {{user.first_name}} {{user.last_name}}
             </span>
             <span class="tag">
-                <i class="ton-{{tag}}"></i>
+                <i class="{{icon}}"></i>
             </span>
     </div>
+    {{/cards}}
 </template>
 
 </body>

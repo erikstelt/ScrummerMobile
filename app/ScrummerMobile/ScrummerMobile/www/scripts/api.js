@@ -27,6 +27,7 @@
             account: 'account/{email}/',
             badges: 'account/{email}/badges/',
             projects: 'account/{email}/projects/',
+            cards: 'account/{email}/cards/',
             perks: {
                 list: 'account/{email}/perks/',
                 buy: 'perks/{perk}/buy/'
@@ -99,7 +100,7 @@
          */
         getBadges: function (email) {
             var url = this.buildURL(this.urls.badges, {
-                'email': email
+                email: email
             });
 
             return this.get(url);
@@ -112,7 +113,7 @@
          */
         getPerks: function (email) {
             var url = this.buildURL(this.urls.perks.list, {
-                'email': email
+                email: email
             });
 
             return this.get(url);
@@ -131,10 +132,27 @@
         },
         getTeams: function (email) {
             var url = this.buildURL(this.urls.projects, {
-                'email': email
+                email: email
             });
 
             return this.get(url);
+        },
+        /**
+         * Get the cards of the given type
+         *
+         * @param {string} email
+         * @param {string} [type] Defaults to verify
+         * @returns {Promise}
+         */
+        getCards: function (email, type) {
+            var url = this.buildURL(this.urls.cards, {
+                    email: email
+                }),
+                data = {
+                    type: type || 'verify'
+                };
+
+            return this.get(url, 'GET', data);
         },
         /**
          *
