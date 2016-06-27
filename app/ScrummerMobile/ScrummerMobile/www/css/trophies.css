@@ -2,8 +2,11 @@
  * Trophies section
  * namespace: .trophies
  */
-.trophies {
+
+.trophies .list {
     padding: 0 var(--section-spacing) var(--section-spacing) var(--section-spacing);
+    height: 100%;
+    overflow: auto;
 }
 
 .trophies .power {

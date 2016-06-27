@@ -44,9 +44,11 @@
     padding: 5px;
 }
 
-.modal .cost {
+.modal .cost,
+.modal select {
     color: var(--highlight-text-color);
     height: 40px;
+    width: 100%;
     text-align: center;
     line-height: 40px;
 }
@@ -56,15 +58,21 @@
     display: flex;
 }
 
-.modal button {
+.modal button,
+.modal .unavailable {
+    text-align: center;
     background: none;
     border: none;
-    border-radius: 20px;
     height: 40px;
     line-height: 40px;
     color: var(--highlight-text-color);
     flex: 1;
 }
+
+.modal .cancel {
+     background-color: #999999;
+     margin-right: 10px;
+ }
 
 .modal .buy {
     background-color: #00CC99;
@@ -72,9 +80,8 @@
     margin-left: 10px;
 }
 
-.modal .cancel {
-    background-color: #999999;
-    margin-right: 10px;
+.modal .unavailable {
+    color: var(--text-color);
 }
 
 .modal .docs .info {
@@ -129,6 +136,6 @@
     border-color: var(--tag-achievement);
 }
 
-.modal .achievement .cost {
+.modal .achievement select {
     background-color: var(--tag-achievement);
 }
