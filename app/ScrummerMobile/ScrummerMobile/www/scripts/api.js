@@ -26,7 +26,8 @@
             profile: 'account/me/',
             account: 'account/',
             badges: 'badges/',
-            perks: 'perks/'
+            perks: 'perks/',
+            cards: 'cards/?type=verify'
         },
         /**
          * Open a login window of the api
@@ -103,6 +104,14 @@
          */
         getPerks: function (email) {
             return this.get(this.urls.base + this.urls.account + email + '/' + this.urls.perks);
+        },
+        /**
+         * Returns the cards you have to verify
+         * @param {string} email
+         * @returns {Promise}
+         */
+        getCards: function (email) {
+            return this.get(this.urls.base + this.urls.account + email + '/' + this.urls.cards);
         },
         /**
          *
