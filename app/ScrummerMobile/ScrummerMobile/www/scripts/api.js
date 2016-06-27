@@ -24,9 +24,13 @@
             login: 'oauth2/authorize/',
             callback: 'oauth2/callback/',
             profile: 'account/me/',
-            account: 'account/',
-            badges: 'badges/',
-            perks: 'perks/'
+            account: 'account/{email}/',
+            badges: 'account/{email}/badges/',
+            projects: 'account/{email}/projects/',
+            perks: {
+                list: 'account/{email}/perks/',
+                buy: 'perks/{perk}/buy/'
+            }
         },
         /**
          * Open a login window of the api
@@ -36,8 +40,8 @@
         login: function () {
             return new Promise(function (resolve, reject) {
                 var options = 'hardwareback=no,navigation=no',
-                    loginUrl = this.urls.base + this.urls.login,
-                    callbackUrl = this.urls.base + this.urls.callback,
+                    loginUrl = this.buildURL(this.urls.login),
+                    callbackUrl = this.buildURL(this.urls.callback),
                     state = window.crypto.getRandomValues(new Uint8Array(10)).join(''), // random string to prevent tampering
                     query = this.buildQueryString({
                         client_id: this.clientId,
@@ -85,37 +89,80 @@
          * @returns {Promise}
          */
         getProfile: function () {
-            return this.get(this.urls.base + this.urls.profile);
+            return this.get(this.buildURL(this.urls.profile));
         },
         /**
-         * Get the badges and perks
+         * Get the perks info
          *
          * @param {string} email
          * @returns {Promise}
          */
         getBadges: function (email) {
-            return this.get(this.urls.base + this.urls.account + email + '/' + this.urls.badges);
+            var url = this.buildURL(this.urls.badges, {
+                'email': email
+            });
+
+            return this.get(url);
         },
         /**
+         * Get the perks
          *
          * @param {string} email
          * @returns {Promise}
          */
         getPerks: function (email) {
-            return this.get(this.urls.base + this.urls.account + email + '/' + this.urls.perks);
+            var url = this.buildURL(this.urls.perks.list, {
+                'email': email
+            });
+
+            return this.get(url);
+        },
+        /**
+         * Buy a single perk
+         *
+         * @param {number} perk
+         */
+        buyPerk: function (perk) {
+            var url = this.buildURL(this.urls.perks.buy, {
+                'perk': perk
+            });
+
+            return this.get(url, 'PUT');
+        },
+        getTeams: function (email) {
+            var url = this.buildURL(this.urls.projects, {
+                'email': email
+            });
+
+            return this.get(url);
         },
         /**
          *
          * @param {string} url
-         * @param {Object<string, *>} [data]
+         * @param {string} [method] Method of the request. Defaults to GET
+         * @param {Object<string, *>} [data] Data of the request.
          * @returns {Promise}
          */
-        get: function (url, data) {
-            return fetch(url, {
+        get: function (url, method, data) {
+
+            method = method && method.toUpperCase() || 'GET';
+
+            var request = {
+                method: method,
                 headers: {
                     'Authorization': 'Bearer ' + this.token
                 }
-            }).then(function (response) {
+            };
+
+            if (data) {
+                if (method === 'GET') {
+                    url += this.buildQueryString(data);
+                } else {
+                    request.data = data;
+                }
+            }
+
+            return fetch(url, request).then(function (response) {
                 if (response.ok) {
                     return response.json();
                 }
@@ -156,6 +203,22 @@
             }
 
             return '?' + query.join('&');
+        },
+        /**
+         * Construct an url from and endpoint and data
+         *
+         * @param endpoint The endpoint
+         * @param {object} [data]
+         * @returns {string} The fully qualified url
+         */
+        buildURL: function (endpoint, data) {
+            for (var key in data) {
+                if (!data.hasOwnProperty(key)) continue;
+
+                endpoint = endpoint.replace('{' + key + '}', data[key]);
+            }
+
+            return this.urls.base + endpoint;
         }
     };
 
