@@ -12,8 +12,16 @@
 
             cards = cards.map(function (card) {
                 card.icon = powerIcons[card.power - 1];
-
+                // Sets the class of the status part in the card (verified / denied) and status text
+                if (card.is_verified === 1) {
+                    card.statusclass = 'accepted';
+                    card.statustext = 'accepted';
+                } else if (card.is_verified === 2) {
+                    card.statusclass = 'denied';
+                    card.statustext = 'denied';
+                } else { card.statusclass = ""}
                 card.description = card.description || 'No description given.';
+                card.deadline.class = card.deadline.class.split(' ').join('');
 
                 return card;
             });

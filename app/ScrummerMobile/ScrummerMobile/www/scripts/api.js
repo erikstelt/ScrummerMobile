@@ -155,6 +155,26 @@
             return this.get(url, 'GET', data);
         },
         /**
+         * Change the status of a card
+         *
+         * @param {string} cardId
+         * @param {status} boolean
+         *
+         **/
+        changeCardStatus: function (cardId, status) {
+            var req = new XMLHttpRequest();
+            req.open('PUT', '/api/cards/' + toString(cardId) + '/verify/?verified=' + toString(status), true);
+            req.send();
+
+            req.onreadystatechange = processRequest;
+
+            function processRequest(e) {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+
+                }
+            }
+        },
+        /**
          *
          * @param {string} url
          * @param {string} [method] Method of the request. Defaults to GET
