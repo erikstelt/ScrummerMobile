@@ -27,7 +27,10 @@
             account: 'account/{email}/',
             badges: 'account/{email}/badges/',
             projects: 'account/{email}/projects/',
-            cards: 'account/{email}/cards/',
+            cards: {
+                list: 'account/{email}/cards/',
+                verify: 'cards/{cardId}/verify/'
+            },
             perks: {
                 list: 'account/{email}/perks/',
                 buy: 'perks/{perk}/buy/'
@@ -145,7 +148,7 @@
          * @returns {Promise}
          */
         getCards: function (email, type) {
-            var url = this.buildURL(this.urls.cards, {
+            var url = this.buildURL(this.urls.cards.list, {
                     email: email
                 }),
                 data = {
@@ -158,21 +161,14 @@
          * Change the status of a card
          *
          * @param {string} cardId
-         * @param {status} boolean
          *
          **/
-        changeCardStatus: function (cardId, status) {
-            var req = new XMLHttpRequest();
-            req.open('PUT', '/api/cards/' + toString(cardId) + '/verify/?verified=' + toString(status), true);
-            req.send();
+        verifyCard: function (cardId, status) {
+            var url = this.buildURL(this.urls.cards.verify, {
+                'cardId': cardId
+            });
 
-            req.onreadystatechange = processRequest;
-
-            function processRequest(e) {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-
-                }
-            }
+            return this.get(url, 'PUT', {"verified": status} );
         },
         /**
          *
