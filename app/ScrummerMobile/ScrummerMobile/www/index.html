@@ -289,7 +289,7 @@
 <!-- Templates -->
 <template id="cards-template">
     {{#cards}}
-    <div class="card">
+    <div class="card" data-card-id="{{id}}">
         <span class="title">{{title}}</span>
         <span class="deadline {{deadline.class}}">{{deadline.value}}</span>
         <p class="description">
