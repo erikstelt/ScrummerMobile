@@ -3,6 +3,13 @@
 
     API.token = window.localStorage.getItem('token');
 
+    // Refresh all views each 5 minutes
+    window.setInterval(function () {
+        Object.keys(Template.data).forEach(function (id) {
+            Template.render(id);
+        });
+    }, 5 * 60 * 1000);
+
     // Override this slider's dragMove to prevent events from 'escaping' to the parent slider
     // Also disable overscroll
     Flickity.prototype.dragMove = function( event, pointer, moveVector ) {
