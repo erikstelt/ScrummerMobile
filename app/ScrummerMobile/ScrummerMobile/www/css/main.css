@@ -2,6 +2,7 @@
     flex: 1;
 }
 
+.main > section,
 .main > .flickity-viewport > .flickity-slider > section {
     width: 100vw;
     height: 100%;
