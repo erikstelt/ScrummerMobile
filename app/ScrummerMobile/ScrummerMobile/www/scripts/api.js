@@ -27,7 +27,10 @@
             account: 'account/{email}/',
             badges: 'account/{email}/badges/',
             projects: 'account/{email}/projects/',
-            cards: 'account/{email}/cards/',
+            cards: {
+                list: 'account/{email}/cards/',
+                verify: 'cards/{cardId}/verify/'
+            },
             perks: {
                 list: 'account/{email}/perks/',
                 buy: 'perks/{perk}/buy/'
@@ -127,7 +130,6 @@
             var url = this.buildURL(this.urls.perks.buy, {
                 'perk': perk
             });
-
             return this.get(url, 'PUT');
         },
         getTeams: function (email) {
@@ -145,7 +147,7 @@
          * @returns {Promise}
          */
         getCards: function (email, type) {
-            var url = this.buildURL(this.urls.cards, {
+            var url = this.buildURL(this.urls.cards.list, {
                     email: email
                 }),
                 data = {
@@ -153,6 +155,21 @@
                 };
 
             return this.get(url, 'GET', data);
+        },
+        /**
+         * Change the status of a card
+         *
+         * @param {string} cardId
+         *
+         **/
+        verifyCard: function (cardId, status) {
+            var url = this.buildURL(this.urls.cards.verify, {
+                'cardId': cardId
+            });
+
+            return this.get(url, 'PUT', {
+                "verified": status,
+                });
         },
         /**
          *
@@ -176,7 +193,7 @@
                 if (method === 'GET') {
                     url += this.buildQueryString(data);
                 } else {
-                    request.data = data;
+                    request.body = JSON.stringify(data);
                 }
             }
 

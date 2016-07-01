@@ -127,7 +127,7 @@
                     <progress value="{{points}}" max="1000"></progress>
                 </div>
 
-                <div class="badges">
+                <div class="badges">                
                     {{#perks}}
                     <div class="badge" data-perk-id="{{id}}">
                         {{#cooldown.text}}
@@ -266,26 +266,29 @@
 <!-- Templates -->
 <template id="cards-template">
     {{#cards}}
-    <div class="card">
+    <div class="card" data-card-id="{{id}}">
         <span class="title">{{title}}</span>
         <span class="deadline {{deadline.class}}">{{deadline.value}}</span>
         <p class="description">
             {{description}}
         </p>
 
-        <div class="status">
-                <span class="deny">
+        <div class="status {{statusclass}}">
+                <span class="statustext">
+                    {{statustext}}
+                </span>
+                <span class="deny" data-card-id="{{id}}">
                     <i class="ton-li-cross"></i>
                 </span>
-                <span class="accept">
-                    <i class="ton-li-check"></i>
+                <span class="accept" data-card-id="{{id}}">
+                    <i class="ton-so-check"></i>
                 </span>
         </div>
             <span class="owner">
                 <img src="img/scrummer.svg"/>
                 {{user.first_name}} {{user.last_name}}
             </span>
-            <span class="tag">
+            <span class="tag {{bgc}}">
                 <i class="{{icon}}"></i>
             </span>
     </div>

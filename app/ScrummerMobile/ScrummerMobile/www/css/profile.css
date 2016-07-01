@@ -9,7 +9,7 @@
 
 .profile progress {
     -webkit-appearance: none;
-    height: 30px;
+    height: 22px;
     border: 1px solid var(--card-border-color);
     width: 100%;
 }
@@ -26,10 +26,10 @@
 
 .profile .skill,
 .profile .power {
-    height: 30px;
-    line-height: 30px;
+    height: 22px;
+    line-height: 22px;
     display: flex;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .profile .experience progress::-webkit-progress-value,
@@ -44,8 +44,8 @@
     color: var(--highlight-text-color);
     text-align: center;
     width: 100%;
-    line-height: 30px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+    line-height: 22px;
+    text-shadow: rgb(3, 3, 3) 1px 1px 1px;
     top: 0;
 }
 
@@ -58,7 +58,7 @@
 .profile .power > i {
     width: 40px;
     margin-right: 10px;
-    line-height: 30px;
+    line-height: 22px;
 }
 
 .profile .skill > span {
