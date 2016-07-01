@@ -12,6 +12,7 @@
 
             cards = cards.map(function (card) {
                 card.icon = powerIcons[card.power - 1];
+                card.bgc = powerNames[card.power - 1];
                 // Sets the class of the status part in the card (verified / denied) and status text
                 if (card.is_verified === 1) {
                     card.statusclass = 'accepted';
@@ -42,17 +43,24 @@
         });
     });
 
+    // Once the content is loaded we start the card events for verify / deny
     document.addEventListener('DOMContentLoaded', function () {
         delegate(document.querySelector('.cards'), '.deny, .accept', function () {
             var cardId = this.dataset.cardId,
                 status = this.classList.contains('accept');
 
+            // Start the verify card function and change the status
             API.verifyCard(cardId, status).then(function (response) {
                 if (!response.result) {
                     return Promise.reject('Card could not be changed');
                 }
 
                 // Alter card status
+                // Change classes and text for correct display
+                var newStatus = document.querySelector('.card[data-card-id="'+ cardId +'"] .status');
+                newStatus.classList.remove('accepted', 'denied');
+                newStatus.classList.add(status ? 'accepted' : 'denied');
+                document.querySelector('.card[data-card-id="' + cardId + '"] .status .statustext').innerText = status ? 'accepted' : 'denied';
             }).catch(function (error) {
                 Notification.show(error);
             });

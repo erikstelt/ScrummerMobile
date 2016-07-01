@@ -5,6 +5,7 @@
 
 .trophies .list {
     padding: 0 var(--section-spacing) var(--section-spacing) var(--section-spacing);
+    position: relative;
     height: 100%;
     overflow: auto;
 }
@@ -96,6 +97,7 @@
 
 .trophies .badges {
     display: flex;
+    position: relative;
     clear: both;
     justify-content: space-between;
 }
@@ -109,7 +111,8 @@
 }
 
 .trophies .badge i {
-    font-size: 40px;
+    font-size: 42px;
+    margin: auto;
     line-height: 70px;
     display: block;
     width: 100%;

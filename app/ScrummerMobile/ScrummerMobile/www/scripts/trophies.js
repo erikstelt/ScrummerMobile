@@ -1,7 +1,7 @@
-﻿(function () {
-    'use strict';
+﻿var powerNames = ['research', 'design', 'interaction', 'production', 'documentation'];
 
-    var powerNames = ['research', 'design', 'interaction', 'production', 'documentation'];
+(function () {
+    'use strict';
 
     Template.data.trophies = function () {
         // Get profile

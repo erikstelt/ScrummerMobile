@@ -124,6 +124,10 @@
     height: 32px;
 }
 
+.card .owner {
+    border-radius: 0 0 0 15px;
+}
+
 .card .owner img {
     display: block;
     float: left;
@@ -136,26 +140,34 @@
     font-size: 26px;
 }
 
+.card .tag {
+    border-radius: 0 0 15px 0;
+}
+
+.card .tag i {
+    color: white;
+}
+
 .card .description {
     background-color: #F0DBFF;
 }
 
-.card .ton-li-pen {
-    color: var(--tag-documentation);
+.card .documentation {
+    background-color: var(--tag-documentation);
 }
 
-.card .ton-li-eye {
-    color: var(--tag-design);
+.card .design {
+    background-color: var(--tag-design);
 }
 
-.card .ton-li-chart-7 {
-    color: var(--tag-research);
+.card .research {
+    background-color: var(--tag-research);
 }
 
-.card .ton-li-gear-1 {
-    color: var(--tag-production);
+.card .production {
+    background-color: var(--tag-production);
 }
 
-.card .ton-li-speech-buble-3 {
-    color: var(--tag-interaction);
+.card .interaction {
+    background-color: var(--tag-interaction);
 }

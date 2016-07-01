@@ -157,11 +157,11 @@
                 </div>
 
                 <div class="badges">
-                    {{#badges}}
+                    {{#badges}}                  
                     <div class="badge" data-perk-id="{{id}}">
                         <i class="ton-li-{{icon}}"></i>
                         <span>{{name}}</span>
-                    </div>
+                    </div>          
                     {{/badges}}
                 </div>
             </div>
@@ -304,14 +304,14 @@
                     <i class="ton-li-cross"></i>
                 </span>
                 <span class="accept" data-card-id="{{id}}">
-                    <i class="ton-li-check"></i>
+                    <i class="ton-so-check"></i>
                 </span>
         </div>
             <span class="owner">
                 <img src="img/scrummer.svg"/>
                 {{user.first_name}} {{user.last_name}}
             </span>
-            <span class="tag">
+            <span class="tag {{bgc}}">
                 <i class="{{icon}}"></i>
             </span>
     </div>

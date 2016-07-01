@@ -130,7 +130,6 @@
             var url = this.buildURL(this.urls.perks.buy, {
                 'perk': perk
             });
-
             return this.get(url, 'PUT');
         },
         getTeams: function (email) {
@@ -168,7 +167,9 @@
                 'cardId': cardId
             });
 
-            return this.get(url, 'PUT', {"verified": status} );
+            return this.get(url, 'PUT', {
+                "verified": status,
+                });
         },
         /**
          *
@@ -192,7 +193,7 @@
                 if (method === 'GET') {
                     url += this.buildQueryString(data);
                 } else {
-                    request.data = data;
+                    request.body = JSON.stringify(data);
                 }
             }
 
