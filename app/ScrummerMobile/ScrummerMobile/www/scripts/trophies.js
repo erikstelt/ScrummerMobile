@@ -1,12 +1,8 @@
 ﻿var powerNames = ['research', 'design', 'interaction', 'production', 'documentation'];
 
-<<<<<<< HEAD
 (function () {
     'use strict';
-=======
-    var powerNames = ['research', 'design', 'interaction', 'production', 'documentation', 'achievement'],
-        data, intervalId;
->>>>>>> develop
+    var data, intervalId;
 
     Template.data.trophies = function () {
         // Get profile
@@ -145,8 +141,6 @@
             Template.render('profile');
         });
     });
-<<<<<<< HEAD
-=======
 
     /**
      * Helper function to make event delegation easy
@@ -205,5 +199,4 @@
 
         return [hour, minute, second].join(':')
     }
->>>>>>> develop
 })();
