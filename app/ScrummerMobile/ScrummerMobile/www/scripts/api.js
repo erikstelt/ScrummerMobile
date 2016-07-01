@@ -22,6 +22,7 @@
         urls: {
             base: 'http://scrummer.space/api/',
             login: 'oauth2/authorize/',
+            logout: '',
             callback: 'oauth2/callback/',
             profile: 'account/me/',
             account: 'account/{email}/',
@@ -88,6 +89,16 @@
             }.bind(this));
         },
         /**
+         * End the user session
+         */
+        logout: function (email) {
+            var url = this.buildURL(this.urls.logout, {
+                email: email
+            });
+
+            return this.get(url);
+        },
+        /**
          * Get the user profile
          *
          * @returns {Promise}
@@ -128,8 +139,9 @@
          */
         buyPerk: function (perk) {
             var url = this.buildURL(this.urls.perks.buy, {
-                'perk': perk
+                perk: perk
             });
+
             return this.get(url, 'PUT');
         },
         getTeams: function (email) {
@@ -164,12 +176,12 @@
          **/
         verifyCard: function (cardId, status) {
             var url = this.buildURL(this.urls.cards.verify, {
-                'cardId': cardId
+                cardId: cardId
             });
 
             return this.get(url, 'PUT', {
-                "verified": status,
-                });
+                verified: status
+            });
         },
         /**
          *
@@ -243,14 +255,14 @@
          * Construct an url from and endpoint and data
          *
          * @param endpoint The endpoint
-         * @param {object} [data]
+         * @param {object} [params]
          * @returns {string} The fully qualified url
          */
-        buildURL: function (endpoint, data) {
-            for (var key in data) {
-                if (!data.hasOwnProperty(key)) continue;
+        buildURL: function (endpoint, params) {
+            for (var key in params) {
+                if (!params.hasOwnProperty(key)) continue;
 
-                endpoint = endpoint.replace('{' + key + '}', data[key]);
+                endpoint = endpoint.replace('{' + key + '}', params[key]);
             }
 
             return this.urls.base + endpoint;

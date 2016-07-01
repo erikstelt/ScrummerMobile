@@ -24,6 +24,15 @@ i::before {
     vertical-align: initial;
 }
 
+button {
+    text-align: center;
+    background: none;
+    border: none;
+    height: 40px;
+    line-height: 40px;
+    color: var(--highlight-text-color);
+}
+
 /**
  * Slider
  */

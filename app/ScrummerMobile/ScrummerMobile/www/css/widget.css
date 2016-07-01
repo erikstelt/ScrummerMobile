@@ -62,11 +62,10 @@
 
 .widget .points {
     height: 20px;
-    width: 95%;
     font-size: 14px;
+    line-height: 18px;
     display: flex;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    margin: 10px 0 0 0;
 }
 
 .widget .points > div {
@@ -82,7 +81,7 @@
 
 .widget .right {
     flex: none;
-    margin-left: 10px;
+    margin-left: 20px;
     display: flex;
     flex-direction: column;
 }

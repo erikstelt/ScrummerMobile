@@ -1,8 +1,7 @@
-﻿var powerNames = ['research', 'design', 'interaction', 'production', 'documentation'];
-
-(function () {
+﻿(function () {
     'use strict';
-    var data, intervalId;
+    var powerNames = ['research', 'design', 'interaction', 'production', 'documentation', 'achievement'],
+    data, intervalId;
 
     Template.data.trophies = function () {
         // Get profile
@@ -81,7 +80,7 @@
                     teams = values[1],
                     perk = perks[perkId];
 
-                perk.power = powerNames[perk.power - 1];
+                perk.power = powerNames[perk.power_id - 1];
                 perk.can_buy = perk.status === 1;
                 perk.has_teams = perk.id == 20; // Only Timebender has a team option
 

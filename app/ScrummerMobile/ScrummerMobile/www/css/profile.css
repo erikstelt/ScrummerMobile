@@ -110,16 +110,18 @@
     background-color: var(--tag-documentation);
 }
 
-.profile .contact {
-    margin-top: 40px;
+.profile .extra {
+    margin-top: var(--section-spacing);
     border-top: 1px dashed var(--primary-color);
 }
 
-.profile .contact div {
-    text-align: center;
+.profile .extra p,
+.profile .extra a {
+    font-size: var(--font-small);
+    color: #999999;
 }
 
-.profile .contact i {
-    float: left;
-    line-height: 24px;
+.profile .extra button {
+    background-color: #999999;
+    width: 100%;
 }

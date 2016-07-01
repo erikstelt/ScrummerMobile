@@ -60,7 +60,38 @@
 
 <main class="main slider">
     <!-- The cards section of the page -->
-    <section class="cards">
+    <section class="cards" data-template="cards" id="cards-template">
+        {{^cards}}
+        <h2>You have no cards that need verification.</h2>
+        {{/cards}}
+        {{#cards}}
+        <div class="card" data-card-id="{{id}}">
+            <span class="title">{{title}}</span>
+            <span class="deadline {{deadline.class}}">{{deadline.value}}</span>
+            <p class="description">
+                {{description}}
+            </p>
+
+            <div class="status {{statusclass}}">
+                <span class="statustext">
+                    {{statustext}}
+                </span>
+                <span class="deny" data-card-id="{{id}}">
+                    <i class="ton-li-cross"></i>
+                </span>
+                <span class="accept" data-card-id="{{id}}">
+                    <i class="ton-so-check"></i>
+                </span>
+            </div>
+            <span class="owner">
+                <img src="img/scrummer.svg"/>
+                {{user.first_name}} {{user.last_name}}
+            </span>
+            <span class="tag {{power}}">
+                <i class="{{icon}}"></i>
+            </span>
+        </div>
+        {{/cards}}
     </section>
 
     <!-- The trophies section of the page -->
@@ -127,7 +158,7 @@
                     <progress value="{{points}}" max="1000"></progress>
                 </div>
 
-                <div class="badges">                
+                <div class="badges">
                     {{#perks}}
                     <div class="badge" data-perk-id="{{id}}">
                         {{#cooldown.text}}
@@ -217,18 +248,16 @@
             </div>
         </div>
 
-        <div class="contact">
-            <h2>Contact</h2>
-            <div>
-                <i class="ton-li-mail-4"></i>
-                <span>{{email}}</span>
-            </div>
-            <div>
-                <i class="ton-li-phone-1"></i>
-                <span>{{phone}}</span>
-            </div>
+        <div class="extra">
+            <p>
+                Created with &#9829; by Davy Visser, Eric Stelt and
+                <a href="http://tomhooijenga.nl">Tom Hooijenga</a>.
+            </p>
+            <button type="button" class="logout">
+                <i class="ton-li-on-off"></i>
+                Log out
+            </button>
         </div>
-
     </section>
 </main>
 
@@ -262,38 +291,6 @@
 <script src="scripts/widget.js"></script>
 <script src="scripts/trophies.js"></script>
 <script src="scripts/profile.js"></script>
-
-<!-- Templates -->
-<template id="cards-template">
-    {{#cards}}
-    <div class="card" data-card-id="{{id}}">
-        <span class="title">{{title}}</span>
-        <span class="deadline {{deadline.class}}">{{deadline.value}}</span>
-        <p class="description">
-            {{description}}
-        </p>
-
-        <div class="status {{statusclass}}">
-                <span class="statustext">
-                    {{statustext}}
-                </span>
-                <span class="deny" data-card-id="{{id}}">
-                    <i class="ton-li-cross"></i>
-                </span>
-                <span class="accept" data-card-id="{{id}}">
-                    <i class="ton-so-check"></i>
-                </span>
-        </div>
-            <span class="owner">
-                <img src="img/scrummer.svg"/>
-                {{user.first_name}} {{user.last_name}}
-            </span>
-            <span class="tag {{bgc}}">
-                <i class="{{icon}}"></i>
-            </span>
-    </div>
-    {{/cards}}
-</template>
 
 </body>
 </html>

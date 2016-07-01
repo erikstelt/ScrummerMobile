@@ -1,47 +1,48 @@
 (function () {
     'use strict';
 
-    var powerIcons = ['ton-li-chart-7', 'ton-li-eye', 'ton-li-speech-buble-3', 'ton-li-gear-1', 'ton-li-pen'];
-    // Get profile
-    API.getProfile().then(function (profile) {
-        // Get cards that need to be verified by you
-        return API.getCards(profile.email).then(function (cards) {
-            var template = document.getElementById("cards-template").innerHTML;
+    var powerIcons = ['ton-li-chart-7', 'ton-li-eye', 'ton-li-speech-buble-3', 'ton-li-gear-1', 'ton-li-pen'],
+        powerNames = ['research', 'design', 'interaction', 'production', 'documentation', 'achievement'];
 
-            Mustache.parse(template);
+    Template.data.cards = function () {
+        // Get profile
+        return API.getProfile()
+            .then(function (profile) {
+                return profile.email;
+            })
+            .then(function (email) {
+                return API.getCards(email, 'verify');
+            })
+            .then(function (cards) {
+                cards = cards.map(function (card) {
+                    card.icon = powerIcons[card.power - 1];
+                    card.power = powerNames[card.power - 1];
+                    // Sets the class of the status part in the card (verified / denied) and status text
+                    if (card.is_verified === 1) {
+                        card.statusclass = 'accepted';
+                        card.statustext = 'accepted';
+                    } else if (card.is_verified === 2) {
+                        card.statusclass = 'denied';
+                        card.statustext = 'denied';
+                    } else {
+                        card.statusclass = ""
+                    }
+                    card.description = card.description || 'No description given.';
+                    card.deadline.class = card.deadline.class.replace('/\w/g', '');
 
-            cards = cards.map(function (card) {
-                card.icon = powerIcons[card.power - 1];
-                card.bgc = powerNames[card.power - 1];
-                // Sets the class of the status part in the card (verified / denied) and status text
-                if (card.is_verified === 1) {
-                    card.statusclass = 'accepted';
-                    card.statustext = 'accepted';
-                } else if (card.is_verified === 2) {
-                    card.statusclass = 'denied';
-                    card.statustext = 'denied';
-                } else {
-                    card.statusclass = ""
-                }
-                card.description = card.description || 'No description given.';
-                card.deadline.class = card.deadline.class.split(' ').join('');
+                    return card;
+                }).sort(function (a, b) {
+                    // Sort by deadline from early to later
+                    return a.deadline.timestamp - b.deadline.timestamp;
+                });
 
-                return card;
-            }).sort(function (a, b) {
-                if (a.deadline.timestamp > b.deadline.timestamp) {
-                    return 1;
-                } else if (b.deadline.timestamp > a.deadline.timestamp) {
-                    return -1;
-                }
-
-                return 0;
+                return {
+                    cards: cards
+                };
             });
+    };
 
-            document.querySelector(".cards").innerHTML = Mustache.render(template, {
-                cards: cards
-            });
-        });
-    });
+    Template.render('cards');
 
     // Once the content is loaded we start the card events for verify / deny
     document.addEventListener('DOMContentLoaded', function () {
@@ -49,18 +50,18 @@
             var cardId = this.dataset.cardId,
                 status = this.classList.contains('accept');
 
+            // Alter card status
+            // Change classes and text for correct display
+            var newStatus = document.querySelector('.card[data-card-id="' + cardId + '"] .status');
+            newStatus.classList.remove('accepted', 'denied');
+            newStatus.classList.add(status ? 'accepted' : 'denied');
+            newStatus.querySelector('.statustext').textContent = status ? 'accepted' : 'denied';
+
             // Start the verify card function and change the status
             API.verifyCard(cardId, status).then(function (response) {
                 if (!response.result) {
                     return Promise.reject('Card could not be changed');
                 }
-
-                // Alter card status
-                // Change classes and text for correct display
-                var newStatus = document.querySelector('.card[data-card-id="'+ cardId +'"] .status');
-                newStatus.classList.remove('accepted', 'denied');
-                newStatus.classList.add(status ? 'accepted' : 'denied');
-                document.querySelector('.card[data-card-id="' + cardId + '"] .status .statustext').innerText = status ? 'accepted' : 'denied';
             }).catch(function (error) {
                 Notification.show(error);
             });

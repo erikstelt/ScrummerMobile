@@ -1,11 +1,13 @@
 ﻿(function () {
     'use strict';
 
+    var profile = API.getProfile();
+
     /**
      * @returns {Promise}
      */
     Template.data.profile = function () {
-        return API.getProfile().then(function (data) {
+        return profile.then(function (data) {
             // Calculate skill percentages
             var mastery = Math.round(data.mastery / 5000 * 100),
                 teamwork = Math.round(data.teamwork / 10 * 100),
@@ -52,4 +54,16 @@
     };
 
     Template.render('profile');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        delegate(document.querySelector('.profile'), '.logout', function () {
+            profile.then(function (profile) {
+                API.logout(profile.email);
+
+                localStorage.clear();
+
+                window.location.replace('login.html');
+            });
+        });
+    })
 })();
