@@ -1,8 +1,8 @@
 ﻿var powerNames = ['research', 'design', 'interaction', 'production', 'documentation'];
-
 (function () {
     'use strict';
-    var data, intervalId;
+    var powerNames = ['research', 'design', 'interaction', 'production', 'documentation', 'achievement'],
+        data, intervalId;
 
     Template.data.trophies = function () {
         // Get profile
@@ -198,5 +198,5 @@
         second = second < 10 ? '0' + second : second;
 
         return [hour, minute, second].join(':')
-    }
+    };
 })();
