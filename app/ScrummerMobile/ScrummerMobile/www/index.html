@@ -61,18 +61,20 @@
 <main class="main slider">
     <!-- The cards section of the page -->
     <section class="cards">
-
     </section>
 
     <!-- The trophies section of the page -->
     <section class="trophies">
-        <section id="achievement-modal-template" class="modal rendered" data-template="achievement-modal">
+        <section id="modal-template" class="modal rendered" data-template="modal">
             <div class="{{power}}">
                 <h1>{{name}}</h1>
 
                 <section>
                     <p class="info">
                         {{desc}}
+                    </p>
+                    <p class="cost">
+                        {{cost}}
                     </p>
                     {{#has_teams}}
                     <select>
@@ -82,37 +84,6 @@
                         {{/teams}}
                     </select>
                     {{/has_teams}}
-                </section>
-
-                <footer>
-                    <button type="button" class="cancel">
-                        Cancel
-                    </button>
-
-                    {{#can_buy}}
-                    <button type="button" class="buy" data-perk-id="{{id}}">
-                        Use
-                    </button>
-                    {{/can_buy}}
-                    {{^can_buy}}
-                    <span class="unavailable">
-                        Not available
-                    </span>
-                    {{/can_buy}}
-                </footer>
-            </div>
-        </section>
-        <section id="power-modal-template" class="modal rendered" data-template="power-modal">
-            <div class="{{power}}">
-                <h1>{{name}}</h1>
-
-                <section>
-                    <p class="info">
-                        {{desc}}
-                    </p>
-                    <p class="cost">
-                        Cost: {{cost}}
-                    </p>
                 </section>
 
                 <footer>
@@ -156,13 +127,19 @@
                     <progress value="{{points}}" max="1000"></progress>
                 </div>
 
-                <div class="badges">
-                    {{#badges}}                  
+                <div class="badges">                
+                    {{#perks}}
                     <div class="badge" data-perk-id="{{id}}">
+                        {{#cooldown.text}}
+                        <div class="timeout">
+                            <i class="ton-li-clock-2"></i>
+                            <span>{{.}}</span>
+                        </div>
+                        {{/cooldown.text}}
                         <i class="ton-li-{{icon}}"></i>
                         <span>{{name}}</span>
-                    </div>          
-                    {{/badges}}
+                    </div>
+                    {{/perks}}
                 </div>
             </div>
             {{/powers}}

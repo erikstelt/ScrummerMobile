@@ -136,6 +136,7 @@
     border-color: var(--tag-achievement);
 }
 
+.modal .achievement .cost,
 .modal .achievement select {
     background-color: var(--tag-achievement);
 }

@@ -55,6 +55,10 @@
                 element.classList.add('rendered');
                 element.innerHTML = rendered;
 
+                if (scope.callback[id]) {
+                    scope.callback[id](element);
+                }
+
                 return element;
             }).catch(function (error) {
                 var tries = scope.failed[id] || 0,
@@ -73,6 +77,12 @@
          * @type {Object<string, function>}
          */
         data: {},
+        /**
+         * Refreshes the template
+         *
+         * @type {Object<string, function>}
+         */
+        callback: {},
         /**
          * Store of templates that failed. Key is id, value is amount of tries.
          *
