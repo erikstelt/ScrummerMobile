@@ -34,6 +34,10 @@
 
             Template.parse(template);
         });
+
+        document.querySelector('.logout').addEventListener('click', function () {
+            API.logout();
+        });
     });
 })();
 

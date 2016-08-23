@@ -8,12 +8,12 @@
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
     <!-- Lib -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/lib/tonicons.css">
     <link rel="stylesheet" href="css/lib/canonical.min.css"/>
 
     <!-- Own -->
     <link rel="stylesheet" href="css/vars.css" />
+    <link rel="stylesheet" href="css/index.css" />
     <link rel="stylesheet" href="css/login.css" />
     <link rel="stylesheet" href="css/notification.css" />
 
@@ -23,35 +23,16 @@
 
 <section class="notification"></section>
 
-<!--The main container of the page-->
-    <div class="main-container">
-        <!--We add some whitespace divs for the styling of the page-->
-        <div class="whitespace"></div>
-        <!--This div and the div below contain the logo and the title aligned next to it-->
-        <div class="logo">
-            <img src="img/scrummer.svg" height="85" />
-        </div>
-        <div class="title">
-            <center>
-                <h2>Scrummer Mobile</h2>
-            </center>
-        </div>
-        <div>
-            <center>Press the button to login</center>
-        </div>
-        <!--We gave the login button a class to style it in the custom.css-->
-        <div class="login-button">
-            <button><i class="ton-li-on-off"></i> Login</button>
-        </div>
-        <div>
-            <!--We need to add the links here later-->
-            <center>
-                <a href="index.html">Register</a><br />
-                <a href="#">Recover password</a>
-            </center>
-        </div>
-        <div class="whitespace"></div>
-    </div>
+<h1>
+    <img src="img/scrummer.svg" />
+    Scrummer Mobile
+</h1>
+
+<button type="button" class=".login-button">
+    <i class="ton-li-on-off"></i>
+    Log in
+</button>
+
 
 <!-- Cordova -->
 <script src="cordova.js"></script>

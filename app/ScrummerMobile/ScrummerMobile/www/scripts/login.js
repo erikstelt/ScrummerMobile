@@ -22,7 +22,7 @@
             }
         }
     
-        document.querySelector('.login-button button').addEventListener('click', function (e) {
+        document.querySelector('.login-button').addEventListener('click', function (e) {
             login();
         });
 
