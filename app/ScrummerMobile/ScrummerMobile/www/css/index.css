@@ -10,12 +10,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: lighter;
 }
 
-.section-title {
-    text-align: center;
-    border-bottom: 1px solid var(--card-border-color);
-    padding-bottom: 0.335em;
-}
-
 /**
  * Override canonical and tonicons
  */

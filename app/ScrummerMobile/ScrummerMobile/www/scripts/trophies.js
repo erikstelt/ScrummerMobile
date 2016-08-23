@@ -1,4 +1,4 @@
-﻿(function () {
+﻿﻿(function () {
     'use strict';
     var powerNames = ['research', 'design', 'interaction', 'production', 'documentation', 'achievement'],
     data, intervalId;
@@ -140,45 +140,6 @@
             Template.render('profile');
         });
     });
-
-    /**
-     * Helper function to make event delegation easy
-     *
-     * @param {Node|NodeList} element Container element to add delegation
-     * @param {string} filter Selector to filter by
-     * @param {function} handler Handler of the event
-     * @param {string} [event] Name of the event. Defaults to click
-     */
-    function delegate(element, filter, handler, event) {
-        event = event || 'click';
-
-        // NodeList is the same as calling delegate for each element in the list
-        if (element instanceof NodeList) {
-            Array.prototype.forEach.call(element, function (el) {
-                delegate(el, filter, handler, event);
-            });
-        }
-
-        element.addEventListener(event, function (e) {
-            var target;
-
-            for (var i = 0; i < e.path.length; i++) {
-                var el = e.path[i];
-
-                if (el.matches(filter)) {
-                    target = el;
-
-                    break;
-                }
-
-                if (el === element) break;
-            }
-
-            if (!target) return;
-
-            handler.call(target, e);
-        });
-    }
 
     /**
      * Format seconds into hh:mm:ss
