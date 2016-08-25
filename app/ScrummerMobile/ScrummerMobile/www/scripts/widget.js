@@ -13,9 +13,11 @@
     Template.data.widget = function () {
         return API.getProfile().then(function (data) {
             var level = Math.floor(Math.pow(data.exp / 2, 1 / 3)),
-                checked = (localStorage.getItem('widget_expanded') === 'true') ? 'checked="checked"' : '';
+                checked = (localStorage.getItem('widget_expanded') === 'true') ? 'checked="checked"' : '',
+                avatar = md5(data.email.toLowerCase().trim());
 
             return {
+                avatar: "http://scrummer.space/static/avatars/" + avatar  + '.png',
                 name: data.first_name + ' ' + data.last_name,
                 class: data.class,
                 power1: data.power1,

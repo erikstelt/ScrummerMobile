@@ -25,7 +25,7 @@
                         card.statusclass = 'denied';
                         card.statustext = 'denied';
                     } else {
-                        card.statusclass = ""
+                        card.statusclass = '';
                     }
                     card.description = card.description || 'No description given.';
                     card.deadline.class = card.deadline.class.replace('/\w/g', '');
@@ -46,7 +46,7 @@
 
     // Once the content is loaded we start the card events for verify / deny
     document.addEventListener('DOMContentLoaded', function () {
-        delegate(document.querySelector('.cards'), '.deny, .accept', function () {
+        delegate(document.querySelector('.cards'), '.deny, .accept', function() {
             var cardId = this.dataset.cardId,
                 status = this.classList.contains('accept');
 
@@ -58,13 +58,13 @@
             newStatus.querySelector('.statustext').textContent = status ? 'accepted' : 'denied';
 
             // Start the verify card function and change the status
-            API.verifyCard(cardId, status).then(function (response) {
+            API.verifyCard(cardId, status).then(function(response) {
                 if (!response.result) {
                     return Promise.reject('Card could not be changed');
                 }
-            }).catch(function (error) {
+            }).catch(function(error) {
                 Notification.show(error);
             });
-        })
+        });
     });
 })();

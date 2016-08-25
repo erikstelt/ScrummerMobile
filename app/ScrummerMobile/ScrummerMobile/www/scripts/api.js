@@ -22,7 +22,7 @@
         urls: {
             base: 'http://scrummer.space/api/',
             login: 'oauth2/authorize/',
-            logout: '',
+            logout: 'oauth2/revoke_token/',
             callback: 'oauth2/callback/',
             profile: 'account/me/',
             account: 'account/{email}/',
@@ -44,7 +44,7 @@
          */
         login: function () {
             return new Promise(function (resolve, reject) {
-                var options = 'hardwareback=no,navigation=no',
+                var options = 'hardwareback=no,navigation=no,clearcache=yes',
                     loginUrl = this.buildURL(this.urls.login),
                     callbackUrl = this.buildURL(this.urls.callback),
                     state = window.crypto.getRandomValues(new Uint8Array(10)).join(''), // random string to prevent tampering
@@ -90,11 +90,11 @@
         },
         /**
          * End the user session
+         *
+         * @returns {Promise}
          */
-        logout: function (email) {
-            var url = this.buildURL(this.urls.logout, {
-                email: email
-            });
+        logout: function () {
+            var url = this.buildURL(this.urls.logout);
 
             return this.get(url);
         },

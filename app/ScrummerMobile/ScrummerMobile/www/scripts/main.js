@@ -37,6 +37,9 @@
 
         document.querySelector('.logout').addEventListener('click', function () {
             API.logout();
+
+            localStorage.removeItem('token');
+            localStorage.removeItem('token_expires');
         });
     });
 })();

@@ -103,17 +103,18 @@
         data.then(function (values) {
             var perks = values[0];
 
-            intervalId = window.setInterval(function () {
-                _.map(perks, function (perk) {
+            intervalId = window.setInterval(function() {
+                _.map(perks, function(perk) {
                     if (perk.cooldown.left <= 0) return;
 
                     perk.cooldown.left -= 1;
                     perk.cooldown.text = formatTime(perk.cooldown.left);
 
-                    element.querySelector('[data-perk-id="' + perk.id + '"] .timeout span').textContent = perk.cooldown.text;
+                    element.querySelector('[data-perk-id="' + perk.id + '"] .timeout span').textContent = perk.cooldown.
+                        text;
                 });
 
-            }, 1000)
+            }, 1000);
         });
     };
 
@@ -157,6 +158,6 @@
         second = Math.floor(seconds % 60);
         second = second < 10 ? '0' + second : second;
 
-        return [hour, minute, second].join(':')
+        return [hour, minute, second].join(':');
     }
 })();
