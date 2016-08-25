@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Change this when going live -->
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' data:">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: 'unsafe-inline' http://scrummer.space/">
 
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
@@ -34,7 +33,7 @@
 <aside id="widget-template" class="widget" data-template="widget">
     <input id="widget-toggle" type="checkbox" {{{checked}}}/>
 
-    <img src="http://scrummer.space/static/avatars/default.png"/>
+    <img src="{{avatar}}"/>
 
     <div class="left">
         <h1>{{ name }}</h1>
@@ -213,7 +212,7 @@
 
         <h2>Powers</h2>
         <div class="power research">
-            <i class="ton-li-chart-1"></i>
+            <i class="ton-li-chart-7"></i>
             <div class="progress">
                 <span>{{power1}}</span>
                 <progress value="{{power1}}" max="1000"></progress>
@@ -227,7 +226,7 @@
             </div>
         </div>
         <div class="power interaction">
-            <i class="ton-li-speech-buble-1"></i>
+            <i class="ton-li-speech-buble-3"></i>
             <div class="progress">
                 <span>{{power3}}</span>
                 <progress value="{{power3}}" max="1000"></progress>
@@ -280,6 +279,7 @@
 <script src="scripts/lib/flickity.pkgd.min.js"></script>
 <script src="scripts/lib/mustache.min.js"></script>
 <script src="scripts/lib/lodash.min.js"></script>
+<script src="scripts/lib/md5.js"></script>
 
 <!-- Own -->
 <script src="scripts/notification.js"></script>
