@@ -61,7 +61,7 @@
             pageDots: false
         });
 
-        // Get the profile and the perks
+        // Get the teams
         var teams = data.then(function (values) {
             return API.getTeams(values[1].email);
         }).then(function (teams) {
@@ -70,6 +70,7 @@
             });
         });
 
+        // On badge click, open a modal with cancel and buy options
         delegate(element, '.badge', function () {
             var perkId = this.dataset.perkId;
 
@@ -90,8 +91,10 @@
 
                 return perk;
             }).then(function (perk) {
+                // Render the modal
                 return Template.render('modal', perk);
             }).then(function (modal) {
+                // Open the modal
                 modal.classList.add('visible');
             });
         });
@@ -103,9 +106,16 @@
         data.then(function (values) {
             var perks = values[0];
 
-            intervalId = window.setInterval(function() {
+            // Update all the perk's cooldown information each second
+            intervalId = window.setInterval(function () {
+                var hasFinished = false;
+
                 _.map(perks, function(perk) {
-                    if (perk.cooldown.left <= 0) return;
+                    if (perk.cooldown.left <= 0) {
+                        hasFinished = true;
+
+                        return;
+                    };
 
                     perk.cooldown.left -= 1;
                     perk.cooldown.text = formatTime(perk.cooldown.left);
@@ -114,6 +124,9 @@
                         text;
                 });
 
+                if (hasFinished) {
+                    Template.render('trophies');
+                }
             }, 1000);
         });
     };
@@ -139,6 +152,7 @@
             // Refresh trophies and profile
             Template.render('trophies');
             Template.render('profile');
+            Template.render('widget');
         });
     });
 
