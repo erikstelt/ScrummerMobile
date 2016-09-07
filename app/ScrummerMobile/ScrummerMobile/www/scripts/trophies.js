@@ -66,7 +66,7 @@
             return API.getTeams(values[1].email);
         }).then(function (teams) {
             return teams.map(function (team) {
-                return _.pick(team, ['id', 'name'])
+                return _.pick(team, ['id', 'name']);
             });
         });
 
@@ -74,7 +74,7 @@
             var perkId = this.dataset.perkId;
 
             data.then(function (values) {
-                return Promise.all([values[0], teams])
+                return Promise.all([values[0], teams]);
             }).then(function (values) {
                 var perks = values[0],
                     teams = values[1],
@@ -113,7 +113,6 @@
                     element.querySelector('[data-perk-id="' + perk.id + '"] .timeout span').textContent = perk.cooldown.
                         text;
                 });
-
             }, 1000);
         });
     };
@@ -127,9 +126,14 @@
     });
 
     delegate(modal, '.buy', function () {
-        var perkId = this.dataset.perkId;
+        var perkId = this.dataset.perkId,
+            team;
 
-        API.buyPerk(perkId).then(function (response) {
+        if (perkId == 20) {
+            team = modal.querySelector('select').value;
+        }
+
+        API.buyPerk(perkId, team).then(function (response) {
             if (response.result) {
                 modal.classList.remove('visible');
             } else {

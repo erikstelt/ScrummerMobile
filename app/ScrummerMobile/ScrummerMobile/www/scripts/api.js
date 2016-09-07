@@ -136,11 +136,18 @@
          * Buy a single perk
          *
          * @param {number} perk
+         * @param {team} [team]
          */
-        buyPerk: function (perk) {
+        buyPerk: function (perk, team) {
             var url = this.buildURL(this.urls.perks.buy, {
                 perk: perk
             });
+
+            if (team !== undefined) {
+                return this.get(url, 'PUT', {
+                    project: team
+                });
+            }
 
             return this.get(url, 'PUT');
         },
