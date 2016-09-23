@@ -1,7 +1,7 @@
 {
      "android": {
          "release": {
-             "keystore": "C:/Users/Erik/Downloads/scrummer-companion-key.keystore",
+             "keystore": "scrummer-companion-key.keystore",
              "storePassword": "yrfpsv4yivenh1m",
              "alias": "tom",
              "password" : "yrfpsv4yivenh1m",
